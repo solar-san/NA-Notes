@@ -1,5 +1,4 @@
 ---
-title: "Network Analysis"
 author: "solar-san"
 date-modified: "2023-02-06"
 format:
@@ -24,6 +23,7 @@ mainfont: "Atkinson Hyperlegible"
 monofont: 'Fira Code'
 ---
 
+![](Figures/NA-Notes_header.png)
 
 ```{r setup, include=F}
 knitr::opts_chunk$set(
@@ -506,7 +506,6 @@ A classic visualization of a complex network is:
 par(mar= c(0, 0, 0, 0))
 gplot(yeast_igraph, gmode = 'graph')
 ```
-
 
 # Data visualization: how to study networks
 
