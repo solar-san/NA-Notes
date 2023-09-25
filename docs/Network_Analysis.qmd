@@ -23,8 +23,6 @@ mainfont: "Atkinson Hyperlegible"
 monofont: 'Fira Code'
 ---
 
-![](Figures/NA-Notes_header.png)
-
 ```{r setup, include=F}
 knitr::opts_chunk$set(
   # fig.width = 6, fig.height = 6, fig.align = 'center'
@@ -35,6 +33,7 @@ rm(list = ls())
 files_path <- "/Volumes/Roland/Notes/Network_Analysis/Import/"
 ```
 
+![](Figures/NA-Notes_header.png)
 
 ---
 
