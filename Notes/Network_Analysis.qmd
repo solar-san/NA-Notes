@@ -1,36 +1,42 @@
 ---
 title: "Network Analysis"
 author: "solar-san"
-date: "2023-02-06"
+date-modified: "2023-02-06"
+format:
+  html:
+    theme: lux
+    toc: true
+    toc-location: left
+    fig-align: center
+    fig-width: 8
+    fig-height: 8
+    html-math-method: katex
+    code-overflow: scroll
+    code-copy: hover
+    highlight-style: gruvbox
+    citations-hover: true
+    footnotes-hover: true
+    header-includes: |
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Fira+Code&display=swap" rel="stylesheet">
 mainfont: "Atkinson Hyperlegible"
-monofont: 'Hack'
-output: 
-  pdf_document: 
-    toc: yes
-    latex_engine: xelatex
-    highlight: arrow
-  html_document:
-    toc: yes
-    toc_float: yes
-    theme: united
+monofont: 'Fira Code'
 ---
 
+
 ```{r setup, include=F}
-knitr::opts_chunk$set(fig.width = 6, fig.height = 6, fig.align = 'center')
+knitr::opts_chunk$set(
+  # fig.width = 6, fig.height = 6, fig.align = 'center'
+)
 
 rm(list = ls())
 
-files_path <- "~/Documents/DABS/Appunti/Network_Analysis/Import/"
-
-library(sna)
-library(xUCINET)
-library(igraph)
-library(FactoMineR)
-library(ergm)
+files_path <- "/Volumes/Roland/Notes/Network_Analysis/Import/"
 ```
 
----
 
+---
 
 # Intro: Network Theory
 
@@ -263,8 +269,15 @@ $$
 
 # Networks in `R`
 
-```{r echo = F}
-files_path <- "~/Documents/DABS/Appunti/Network_Analysis/Import/"
+This are the packages required to work with networks in `R`:
+```{r required packages}
+#| message: false
+#| warning: false
+library(sna)
+library(xUCINET)
+library(igraph)
+library(FactoMineR)
+library(ergm)
 ```
 
 To operate with *adjacency matrix* we need to convert each loaded files into an *array*. Before creating a project, it's good practice to compute all the data manipulations necessary.
@@ -310,7 +323,10 @@ SmallProject$Friends
 To attach attributes to your network:
 ```{r}
 Attributes <- read.csv(
-  "~/Documents/DABS/Appunti/Network_Analysis/Import/Attributes.csv",
+  paste0(
+    files_path,
+    "Attributes.csv"
+  ),
   header = T,
   sep = ";",
   row.names = 1
@@ -428,7 +444,7 @@ Each matrix element represent the distance among the network nodes. In this netw
 
 To store your project for later use:
 ```{r}
-save(SmallProject, file = "~/Documents/DABS/Appunti/Network_Analysis/Import/ClassProject.RData")
+save(SmallProject, file = paste0(files_path, "ClassProject.RData"))
 ```
 
 To work with the `sna` library, you can convert your project by calling the `as.network` function:
@@ -1020,7 +1036,7 @@ Finding properties about these aspects is a really important aspect of character
 > + ***Trail*: an open walk in which no *edge* is repeated, but a *vertex* can be repeated.**
 
 
-![](~/Documents/DABS/Appunti/Network_Analysis/Notes/Figures/Screenshot 2023-02-16 at 13.15.01.png)
+![](Figures/Screenshot 2023-02-16 at 13.15.01.png)
 
 
 > + ***Circuit*: is a closed trail in which there are no repeated *edges*, but we can have repeated *nodes*, other than the first *vertex* which should be the same as the last.**
@@ -1227,7 +1243,7 @@ In each of the following networks, $X$ as higher centrality than $Y$ according t
 
 It is always possible, once fixed a contest, to measure or distance from a *focal* node (a node which is particularly important). An example of this is the *Erdös number*.
 
-![](~/Documents/DABS/Appunti/Network_Analysis/Notes/Figures/Screenshot 2023-02-20 at 11.46.48.png)
+![](Figures/Screenshot 2023-02-20 at 11.46.48.png)
 
 
 ## Degree centrality
@@ -1354,7 +1370,7 @@ Which centrality measure is really useful? It depends on the *objective*, which 
 
 They are best used to *explore* a network.
 
-![](~/Documents/DABS/Appunti/Network_Analysis/Notes/Figures/Screenshot 2023-02-21 at 11.21.41.png)
+![](Figures/Screenshot 2023-02-21 at 11.21.41.png)
 
 
 ## Connectivity based centralities
@@ -1799,7 +1815,7 @@ We can define $p = N^z$, which is the probability of a link to exist between two
 
 However, this does not happen: real networks are not random. Many of the modelling assumptions from which we obtain a random network are not realistic, which means that our model cannot explain properly the behaviour of a real network.
 
-![](/Users/themagician/Documents/DABS/Appunti/Network_Analysis/Notes/Figures/Screenshot 2023-02-27 at 11.33.21.png)
+![](Figures/Screenshot 2023-02-27 at 11.33.21.png)
 
 
 ## 6 degrees of separation
