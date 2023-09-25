@@ -1,0 +1,117 @@
+\contentsline {section}{Intro: Network Theory}{3}{section*.2}%
+\contentsline {section}{Networks and complex systems}{3}{section*.3}%
+\contentsline {section}{Graph \& Networks}{4}{section*.4}%
+\contentsline {section}{Computational representations of a network}{5}{section*.5}%
+\contentsline {subsection}{Adjacency matrix:}{6}{section*.6}%
+\contentsline {subsection}{Edge list}{6}{section*.7}%
+\contentsline {subsection}{Node list:}{7}{section*.8}%
+\contentsline {subsection}{Subgraphs}{7}{section*.9}%
+\contentsline {section}{Networks in \texttt {R}}{7}{section*.10}%
+\contentsline {subsection}{How to work with edge lists}{16}{section*.11}%
+\contentsline {section}{Data visualization: how to study networks}{17}{section*.12}%
+\contentsline {subsection}{Optimization algorithms}{18}{section*.13}%
+\contentsline {subsection}{Plotting graphs in \texttt {R}}{18}{section*.14}%
+\contentsline {subsection}{Using a nominal attribute to generate coordinates}{28}{section*.15}%
+\contentsline {subsection}{Plotting with optimization algorithms}{32}{section*.16}%
+\contentsline {subsection}{Embedding node attributes}{37}{section*.17}%
+\contentsline {section}{Representing valued networks}{39}{section*.18}%
+\contentsline {section}{Statistical properties of networks}{45}{section*.19}%
+\contentsline {subsection}{Monadic}{45}{section*.20}%
+\contentsline {subsection}{Dyadic}{47}{section*.21}%
+\contentsline {subsubsection}{Counting paths between nodes}{48}{section*.22}%
+\contentsline {subsubsection}{Geodesic Paths}{48}{section*.23}%
+\contentsline {subsubsection}{Distance in Digraphs}{48}{section*.24}%
+\contentsline {subsubsection}{How to find the shortest path?}{49}{section*.25}%
+\contentsline {subsubsection}{Connected components}{49}{section*.26}%
+\contentsline {subsubsection}{Laplacian Matrix}{49}{section*.27}%
+\contentsline {subsubsection}{Connectivity}{50}{section*.28}%
+\contentsline {subsection}{Triadic characteristics}{50}{section*.29}%
+\contentsline {subsubsection}{Triadic closure}{50}{section*.30}%
+\contentsline {subsubsection}{Triadic balance}{50}{section*.31}%
+\contentsline {subsection}{Assortativity}{50}{section*.32}%
+\contentsline {subsection}{Why are these measures important?}{51}{section*.33}%
+\contentsline {section}{Centrality}{51}{section*.34}%
+\contentsline {subsection}{Degree centrality}{52}{section*.35}%
+\contentsline {subsubsection}{Normalize degree centrality}{52}{section*.36}%
+\contentsline {subsubsection}{Closeness centrality}{53}{section*.37}%
+\contentsline {subsubsection}{Betweenness centrality}{53}{section*.38}%
+\contentsline {subsubsection}{Flow betweenness centrality}{54}{section*.39}%
+\contentsline {subsubsection}{Edge betweenness centrality}{54}{section*.40}%
+\contentsline {subsection}{Centralities: a comparison}{54}{section*.41}%
+\contentsline {subsection}{Connectivity based centralities}{55}{section*.42}%
+\contentsline {subsubsection}{Eigenvectors centrality}{55}{section*.43}%
+\contentsline {subsubsection}{Katz centrality}{56}{section*.44}%
+\contentsline {subsubsection}{PageRank}{56}{section*.45}%
+\contentsline {subsubsection}{Wrap up}{57}{section*.46}%
+\contentsline {section}{Network statistics in \texttt {R}}{57}{section*.47}%
+\contentsline {subsubsection}{Centrality measures and their relationships}{61}{section*.48}%
+\contentsline {section}{Degree distribution and network types}{71}{section*.49}%
+\contentsline {section}{Characterizing real networks}{74}{section*.50}%
+\contentsline {section}{Random graphs}{75}{section*.51}%
+\contentsline {subsection}{The degree distribution}{75}{section*.52}%
+\contentsline {subsection}{Clustering}{75}{section*.53}%
+\contentsline {subsection}{Average shortest path}{75}{section*.54}%
+\contentsline {subsection}{Emergence of a giant component}{76}{section*.55}%
+\contentsline {subsection}{Patterns in random networks}{77}{section*.56}%
+\contentsline {subsection}{6 degrees of separation}{77}{section*.57}%
+\contentsline {subsection}{Small world}{77}{section*.58}%
+\contentsline {subsubsection}{Weak Ties}{78}{section*.59}%
+\contentsline {section}{Scale-free networks}{78}{section*.60}%
+\contentsline {subsection}{The size of the largest hub}{79}{section*.61}%
+\contentsline {subsection}{Preferential attachment}{80}{section*.62}%
+\contentsline {subsection}{Robustness to errors and attacks}{80}{section*.63}%
+\contentsline {section}{Community detection}{80}{section*.64}%
+\contentsline {subsection}{Implicit communities}{81}{section*.65}%
+\contentsline {subsection}{Communities and graphs}{81}{section*.66}%
+\contentsline {subsection}{Community discovery}{81}{section*.67}%
+\contentsline {subsection}{Fundamental assumptions}{82}{section*.68}%
+\contentsline {subsection}{Internal density}{82}{section*.69}%
+\contentsline {subsection}{Modularity}{83}{section*.70}%
+\contentsline {subsubsection}{Louvain}{83}{section*.71}%
+\contentsline {subsection}{Bridge detection}{84}{section*.72}%
+\contentsline {subsubsection}{Girvan-Newman}{84}{section*.73}%
+\contentsline {subsubsection}{Density versus Bridges}{84}{section*.74}%
+\contentsline {subsection}{Feature distance}{84}{section*.75}%
+\contentsline {subsection}{Percolation}{84}{section*.76}%
+\contentsline {subsubsection}{Label propagation}{84}{section*.77}%
+\contentsline {subsection}{Entity closeness}{85}{section*.78}%
+\contentsline {subsubsection}{InfoMap}{85}{section*.79}%
+\contentsline {subsection}{Structure definition}{85}{section*.80}%
+\contentsline {subsubsection}{k-cliques}{85}{section*.81}%
+\contentsline {subsection}{Peculiar topologies}{85}{section*.82}%
+\contentsline {subsubsection}{Community evaluation strategies}{85}{section*.83}%
+\contentsline {paragraph}{Evaluation using clustering quality measures: evaluation using clustering quality measures is commonly used when two or more community detection algorithms are available. Each algorithm is run on the target network, and the quality measure is computed for the identified communities. The algorithm that yields a more desirable quality measure value is considered a better algorithm. The SSE (\emph {Sum of Squared Errors}) and inter-cluster distance are some of the quality measures.}{86}{section*.84}%
+\contentsline {paragraph}{Evaluation with semantics: this approach consist in analysing other attributes (\emph {posts, profile information, the content generated, etc.}) of community members to see if there is coherency among community members. We can use different set of qualitative measure to perform a clustering, even though in this case the approach requires \emph {heuristics}.}{86}{section*.85}%
+\contentsline {subsubsection}{External Evaluation}{86}{section*.86}%
+\contentsline {subsection}{\texttt {R} code for communities detection}{86}{section*.87}%
+\contentsline {section}{Inferential statistics for complete networks}{91}{section*.88}%
+\contentsline {subsection}{Level of analysis}{91}{section*.89}%
+\contentsline {subsection}{Statistical testing at group level}{92}{section*.90}%
+\contentsline {subsubsection}{Permutation or randomization test}{92}{section*.91}%
+\contentsline {subsection}{Statistical tests at the node level}{93}{section*.92}%
+\contentsline {subsubsection}{Network autocorrelation}{93}{section*.93}%
+\contentsline {subsection}{Statistical testing at the dyad level}{93}{section*.94}%
+\contentsline {subsubsection}{Quadratic Assignment Problem}{94}{section*.95}%
+\contentsline {subsubsection}{How are permutation are performed?}{94}{section*.96}%
+\contentsline {subsubsection}{QAP regressions}{94}{section*.97}%
+\contentsline {subsection}{Network inference in \texttt {R}}{94}{section*.98}%
+\contentsline {section}{Systemic risk}{102}{section*.99}%
+\contentsline {subsection}{Interbank networks and their properties}{102}{section*.100}%
+\contentsline {subsubsection}{Core-periphery network}{103}{section*.101}%
+\contentsline {subsection}{Models of shock propagation}{103}{section*.102}%
+\contentsline {subsubsection}{Default contagion}{104}{section*.103}%
+\contentsline {subsubsection}{Distress contagion}{104}{section*.104}%
+\contentsline {subsubsection}{Ranking banks: impact and vulnerabilty}{105}{section*.105}%
+\contentsline {subsubsection}{Contagion due to overlapping portfolios}{105}{section*.106}%
+\contentsline {subsubsection}{Generational propagation}{105}{section*.107}%
+\contentsline {subsection}{Combination of contagion mechanisms}{105}{section*.108}%
+\contentsline {subsection}{Summary}{106}{section*.109}%
+\contentsline {section}{Exponential random graph models and stochastic actors oriented models}{106}{section*.110}%
+\contentsline {subsection}{ERGMs}{106}{section*.111}%
+\contentsline {subsection}{Types of effect}{107}{section*.112}%
+\contentsline {subsubsection}{Example: toy model}{107}{section*.113}%
+\contentsline {subsection}{Maximum likelihood estimations for ERGMs}{108}{section*.114}%
+\contentsline {subsubsection}{Markov chain approach}{108}{section*.115}%
+\contentsline {subsubsection}{Parameter selection}{108}{section*.116}%
+\contentsline {subsection}{Goodness of fit}{109}{section*.117}%
+\contentsline {subsection}{ERGMs in \texttt {R}}{109}{section*.118}%

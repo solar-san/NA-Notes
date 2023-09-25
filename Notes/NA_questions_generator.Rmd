@@ -1,0 +1,167 @@
+---
+title: "Network Analysis"
+author: "solar-san"
+date: "2023-02-11"
+mainfont: "Atkinson Hyperlegible"
+monofont: 'Hack'
+output: 
+  pdf_document: 
+    toc: yes
+    latex_engine: xelatex
+    highlight: arrow
+  html_document:
+    toc: yes
+    toc_float: yes
+    theme: united
+---
+
+```{r setup}
+library(tidyverse)
+library(plyr)
+```
+
+
+# Exam questions generator
+
+```{r}
+NA_questions_list <- list(
+  General.questions = c(
+    "What is a network?",
+    "Describe the principal classes of networks.",
+    "What are the main network characteristics?",
+    "What is the degree distribution of a network?",
+    "Describe the characterics of digraph nodes (degree, etc.)",
+    "What is a network density?",
+    "What is network connectedness?",
+    "What is network reciprocity?",
+    "What is the component ratio?",
+    "What are the main classes of networks?",
+    "What are the characteristics of real networks?",
+    "What is a giant component?"
+  ),
+  Network.visualizations = c(
+    "Describe the main algorithmic approaches to network visualization.",
+    "What is dichotomization and why is it important?"
+  ),
+  Mathematical.representations = c(
+    "What is the difference between a weakly connected and strongly connected graph?",
+    "What is an adjacency matrix?",
+    "Explain the difference between a graph and a network.",
+    "How can you compute the number of links?",
+    "What is the average degree of a network?",
+    "What is the Laplacian matrix?",
+    "What is the diameter of a graph?"
+  ),
+  Monadic.properties = c(
+    "List the main monadic properties and describe them.",
+    "How can I compute the average strenght of a node connections?"
+  ),
+  Dyiadic.properties = c(
+    "List the main diadic properties and describe them",
+    "What is and Eulerian path?",
+    "What is eccentricity and why is it important?",
+    "What is a geodesic distance/path?",
+    "What is the average shortest path and why is it important?",
+    "What are the main ways to find the average shortest distance of a network?"
+  ),
+  Triadic.properties = c(
+    "What is local clustering?",
+    "What is triadic closure and why is it important?",
+    "What are the main forces behind triadic closure?",
+    "Describe the concept of assortativity",
+    "What it means to have positive assortativity? What about disassortativity?",
+    "How can I quantify the assortativity of a network?",
+    "What are hierarchical relations, their measure, and why are they important?",
+    "What is the transitivity index?"
+  ),
+  Centrality = c(
+    "Describe the concept of centrality and its meaning.",
+    "Is centrality a measure of position? Why/why not?",
+    "What are the main connectivity based centralities?",
+    "What are the main geometric centralities?",
+    "Compare centralities.",
+    "Discuss node degree centrality.",
+    "Discuss closeness centrality and its meaning.",
+    "How can I compute closeness centrality?",
+    "Discuss betweenness centrality and its implications.",
+    "What are the pros and cons of using betweennes centrality?",
+    "What is eigenvector centrality?",
+    "What is the main concept behind eigenvector centrality?",
+    "What are the main problems with eigenvector centrality?",
+    "Describe the concepts behind katz centrality.",
+    "In katz centrality, what are alpha and beta?",
+    "What is the main issue with katz centrality and how can it be solved?",
+    "Describe the PageRank centrality.",
+    "What is Valente Foreman centrality?"
+  ),
+  Archetypal.networks = c(
+    "What are the main archetypal networks?",
+    "Define the main properties of an Erdös-Reyni random graph.",
+    "What is the expected number of edges in an E-R random graph?",
+    "What random variable/variables describe the degree distribution of an E-R?",
+    "What happens to the clustering coefficient of a random graph?",
+    "If n diverges, what happens to the average shortest path of a random graph?",
+    "Describe the 4 phases related to the emergence of a giant component in a random graph.",
+    "What causes the emergence of a giant component in a random graph?",
+    "What are the modelling assumptions behind random graphs? Are they realistic?",
+    "Describe the small world property and which real networks characteristics is modelling.",
+    "What are weal ties and why are they important?",
+    "Explain why a single large connected component has not been formed in our societies.",
+    "What are scale-free networks?",
+    "What characterizes a scale-free network?",
+    "What determines the size of the largest hub in a scale-free network?",
+    "What happens to the moments of the degrees distribution in a scale free network for 2 < gamma <= 3?",
+    "What happens to the average shortest path of a scale-free network when gamma changes?",
+    "Explain the concept of preferential attachment.",
+    "What makes scale-free networks robust to errors and attacks?"
+  ),
+  Communities = c(
+    "What characterizes communities in a social network?",
+    "Why are communities important?",
+    "What are the main differences among clustering and communities detection?",
+    "what are the main assumptions behind community detection?",
+    "Define the internal density and explain how it relates to community detection.",
+    "What is modularity?",
+    "Define what modularity is.",
+    "What is the meaning of high modularity score? What is the relative graph structure?",
+    "Describe the Louvain algorithm.",
+    "What is bridge detection?",
+    "Compare and contrast the different approaches to community detection",
+    "Describe the Girvan-Newman algorithm.",
+    "What is feature distance?",
+    "What is the logic behind percolation and label propagation?",
+    "How does the label propagation algorithm work?",
+    "What is entity closeness?",
+    "Describe the InfoMap algorithm.",
+    "What is a k-clique?",
+    "Explain how structure definition can be used to detect communities and provide an example.",
+    "How can we evaluate a community partition?"
+  )
+)
+```
+
+```{r}
+questions_df <- NA_questions_list %>% 
+  ldply(
+    .,
+    data.frame
+  )
+  
+colnames(questions_df) <- c('Topic', 'Question')
+```
+
+```{r}
+sample_question <- function(df, N = 1, topic = NULL) {
+  
+  total_n <- nrow(questions_df)
+  sub_df <- sample(1:total_n, N)
+  df[c(sub_df),]
+  
+}
+```
+
+```{r}
+sample_question(questions_df, N = 5)
+```
+
+
