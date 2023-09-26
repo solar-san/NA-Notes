@@ -1,5 +1,6 @@
 # NA-Notes
 
+> __The HTML version of the notes can be accessed at [this link](https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html).__
 
 > __DISCLAIMER__:
 >
@@ -12,4 +13,4 @@ A special thanks to [prof. Righi](https://www.simonerighi.com), for this awesome
 
 The final project for this course is available at [this link]().
 
-> __The HTML version of the notes can be accessed at [this link](https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html).__
+
