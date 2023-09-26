@@ -346,10 +346,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>This are personal notes taken while following the lesson of the course in <em>Network Analytics</em>, EM 1422, at Ca’ Foscari University of Venice. Any mistake made is mine: as you might expect, student notes <em>are not</em> peer reviewed and/or endorsed as official materials. I do not own any rights on this material. Feel free to write me at <strong>solar-san@pm.me</strong> if you spot mistakes or have any suggestions. The source code is freely available at <a href="https://github.com/solar-san">GitHub.com</a>. Please share, comment, and leave a star if you use these notes!</p>
 </blockquote>
 <ul>
-<li>Most of the <code>R</code> code is taken from the required textbook, <a href="https://uk.sagepub.com/en-gb/eur/analyzing-social-networks-using-r/book271675"><em>Analyzing Social Networks using <code>R</code></em></a>. The companion website contains useful resources and all code is freely downloadable from <a href="https://sites.google.com/view/asnr-2022/home">the companion website</a>.</li>
-<li>The pictures and tables in the <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Centrality</strong></a> and <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Dyadic</strong></a> sections are taken from <a href="https://www.unive.it/data/persone/11535404">prof. Minello</a> materials for another course about network analysis.</li>
+<li>Most of the <code>R</code> code is taken from the required textbook, <a href="https://uk.sagepub.com/en-gb/eur/analyzing-social-networks-using-r/book271675"><em>Analyzing Social Networks using <code>R</code></em></a>. The companion website contains useful resources and all code can be retrieved from <a href="https://sites.google.com/view/asnr-2022/home">the companion website</a>.</li>
+<li>The pictures and tables in the <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Centrality</strong></a> and <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Dyadic</strong></a> sections are taken from <a href="https://www.unive.it/data/persone/11535404">prof. Giorgia Minello</a> materials for a course about networks.</li>
 </ul>
-<p>A special thanks to <a href="https://www.simonerighi.com">prof. Righi</a>, for this awesome course and who allowed me to make this material freely available online.</p>
+<p>A special thanks to <a href="https://www.simonerighi.com">prof. Righi</a>, for this awesome course and for allowing me to make this material freely available online.</p>
 <p>The final project for this course is available at <a href="">this link</a>.</p>
 <section id="intro-network-theory" class="level1">
 <h1>Intro: Network Theory</h1>
@@ -1071,9 +1071,9 @@ No edge attributes</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"directed"</span>), <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>igraph_file.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH 2b7e944 DN-- 5 36 -- 
+<pre><code>IGRAPH 740c1b7 DN-- 5 36 -- 
 + attr: name (v/c)
-+ edges from 2b7e944 (vertex names):
++ edges from 740c1b7 (vertex names):
  [1] Ana -&gt;Ella Ana -&gt;Ella Ana -&gt;Isra Ana -&gt;Petr Ana -&gt;Petr Ana -&gt;Petr
  [7] Ana -&gt;Sam  Ana -&gt;Sam  Ella-&gt;Ana  Ella-&gt;Isra Ella-&gt;Isra Ella-&gt;Isra
 [13] Ella-&gt;Petr Ella-&gt;Sam  Ella-&gt;Sam  Ella-&gt;Sam  Isra-&gt;Ana  Isra-&gt;Ana 
@@ -2810,7 +2810,7 @@ A21                      83                     0.83</code></pre>
   ..$ :List of 1
   .. ..$ name: chr [1:21] "A01" "A02" "A03" "A04" ...
   ..$ : Named list()
- $ :&lt;environment: 0x138d63c00&gt; </code></pre>
+ $ :&lt;environment: 0x1546c3b50&gt; </code></pre>
 </div>
 </div>
 <p>The advantage of using this format is that it is compatible with many applications. We might be interested to know which nodes belong to which components.</p>
@@ -3542,33 +3542,31 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="ot">&lt;-</span><span class="fu">cluster_louvain</span>(Friends, <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>CluLouvain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.16
+<pre><code>IGRAPH clustering multi level, groups: 3, mod: 0.16
 + groups:
   $`1`
-  [1] "A01" "A02" "A04" "A08" "A16"
+  [1] "A01" "A04" "A08" "A10" "A12" "A16" "A17"
   
   $`2`
-  [1] "A03" "A05" "A09" "A10" "A14" "A15" "A19"
+  [1] "A02" "A06" "A18" "A20" "A21"
   
   $`3`
-  [1] "A06" "A07" "A12" "A17" "A21"
-  
-  $`4`
-  + ... omitted several groups/vertices</code></pre>
+  [1] "A03" "A05" "A07" "A09" "A11" "A13" "A14" "A15" "A19"
+  </code></pre>
 </div>
 </div>
 <p>This creates an object of type <code>communities</code>. We can look at the labels by calling:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>membership</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 2 1 2 3 3 1 2 2 4 3 4 2 2 1 3 4 2 4 3</code></pre>
+<pre><code> [1] 1 2 3 1 3 2 3 1 3 1 3 1 3 3 3 1 1 2 3 2 2</code></pre>
 </div>
 </div>
 <p>Modularity instead can be obtained with:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>modularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1579074 0.1615927</code></pre>
+<pre><code>[1] 0.1578273 0.1592693</code></pre>
 </div>
 </div>
 <p>We can then plot the graphical representation of our communities in our graph:</p>
@@ -3842,21 +3840,21 @@ sample estimates:
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xCorrelation</span>(M18Centrz,M18Perf, <span class="at">NPERM=</span><span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                              Value
-NumberOfCases          18.000000000
-ValidCases_VEC1        18.000000000
-ValidCases_VEC2        18.000000000
-ValidCases_Both        18.000000000
-CorrCoeff               0.131145360
-ClassicSign_2tailed     0.603964787
-Mean_Perm               0.002578717
-SD_Perm                 0.244173474
-Min_Perm               -0.724473600
-Max_Perm                0.809787760
-AsSmall                 0.687800000
-AsLarge                 0.312400000
-AsExtreme               0.615800000
-NumberOfPermutations 5000.000000000</code></pre>
+<pre><code>                               Value
+NumberOfCases          18.0000000000
+ValidCases_VEC1        18.0000000000
+ValidCases_VEC2        18.0000000000
+ValidCases_Both        18.0000000000
+CorrCoeff               0.1311453600
+ClassicSign_2tailed     0.6039647866
+Mean_Perm               0.0001576222
+SD_Perm                 0.2413993639
+Min_Perm               -0.7147189865
+Max_Perm                0.7972461138
+AsSmall                 0.6980000000
+AsLarge                 0.3022000000
+AsExtreme               0.6050000000
+NumberOfPermutations 5000.0000000000</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Network_Analysis_files/figure-html/unnamed-chunk-110-1.png" class="img-fluid" width="768"></p>
@@ -3931,15 +3929,15 @@ NumberOfPermutations   5000.00000
 
 $Variables
                Coeff   StErr  t_value Classic_Sign Mean_Perm SD_Perm AsSmall
-(Intercept)  1.70298 1.78308  0.95508      0.36006   5.05543 2.18521  0.0648
-Age15        0.06421 0.02536  2.53190      0.02788   0.00019 0.03146  0.9788
-Consc15     -0.24450 0.15633 -1.56399      0.14611   0.00080 0.19267  0.1086
-Degr15       0.39188 0.42826  0.91504      0.37979  -0.01356 0.53873  0.7676
+(Intercept)  1.70298 1.78308  0.95508      0.36006   5.05783 2.15487  0.0616
+Age15        0.06421 0.02536  2.53190      0.02788  -0.00049 0.03147  0.9802
+Consc15     -0.24450 0.15633 -1.56399      0.14611  -0.00001 0.19591  0.1142
+Degr15       0.39188 0.42826  0.91504      0.37979  -0.00210 0.53192  0.7656
             AsLarge AsExtreme
-(Intercept)  0.9352     0.065
-Age15        0.0212     0.998
-Consc15      0.8914     1.002
-Degr15       0.2324     1.020
+(Intercept)  0.9384    0.0616
+Age15        0.0198    0.9976
+Consc15      0.8858    1.0048
+Degr15       0.2344    1.0064
 
 Classic significance value based on assumption of independence of cases.</code></pre>
 </div>
@@ -3959,13 +3957,13 @@ ValidCases_NET2        240.000000000000000
 ValidCases_Both        240.000000000000000
 CorrCoef                 0.371867872080548
 ClassicSign_2tailed      0.000000002756827
-Mean_Perm                0.000331300467854
-SD_Perm                  0.092016426014876
+Mean_Perm                0.000838393020691
+SD_Perm                  0.092409845939353
 Min_Perm                -0.169030850945704
-Max_Perm                 0.439480212458830
-AsSmall                  0.999300000000000
-AsLarge                  0.000700000000000
-AsExtreme                0.000700000000000
+Max_Perm                 0.371867872080549
+AsSmall                  0.999600000000000
+AsLarge                  0.000400000000000
+AsExtreme                0.000400000000000
 NumberOfPermutations 10000.000000000000000</code></pre>
 </div>
 </div>
@@ -3997,13 +3995,13 @@ NumberOfPermutations 1000.00000
 
 $Variables
    Stand_Coeff    Coeff   StErr  t_value [Sign*] Mean_Perm SD_Perm AsSmall
-       0.00000  4.66096 1.30201  3.57983 0.00593   0.40960 1.23459   0.964
-X1     0.59238  0.57998 0.28150  2.06030 0.06945  -0.05118 1.08123   1.000
-X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856  -0.11982 1.55035   0.129
+       0.00000  4.66096 1.30201  3.57983 0.00593   0.47190 1.29186   0.952
+X1     0.59238  0.57998 0.28150  2.06030 0.06945  -0.02439 1.05984   1.000
+X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856   0.06382 1.54250   0.104
    AsLarge AsExtreme
-     0.036     0.036
-X1   0.034     0.077
-X2   0.871     0.162
+     0.048     0.048
+X1   0.035     0.077
+X2   0.896     0.145
 
 Sign* = classic significance value based on assumption of independence of cases. Not to be used.</code></pre>
 </div>
@@ -4058,9 +4056,9 @@ Residuals:
 
 Coefficients:
             Estimate   Pr(&lt;=b) Pr(&gt;=b) Pr(&gt;=|b|)
-(intercept)  4.6609589 0.964   0.036   0.036    
-x1           0.5799758 1.000   0.034   0.077    
-x2          -0.7455681 0.129   0.871   0.162    
+(intercept)  4.6609589 0.952   0.048   0.048    
+x1           0.5799758 1.000   0.035   0.077    
+x2          -0.7455681 0.104   0.896   0.145    
 
 Residual standard error: 1.746 on 9 degrees of freedom
 Multiple R-squared: 0.4066  Adjusted R-squared: 0.2748 
@@ -4075,22 +4073,22 @@ Test Diagnostics:
 
        (intercept)        x1        x2
 Min      -0.993642 -2.285941 -2.779011
-1stQ     -0.453042 -0.644983 -1.994552
-Median   -0.005771 -0.348813 -0.043745
-Mean      0.409598 -0.051183 -0.119818
-3rdQ      1.002197  0.463377  1.103108
+1stQ     -0.421383 -0.585866 -0.391838
+Median   -0.005771 -0.348813  0.209301
+Mean      0.471896 -0.024386  0.063821
+3rdQ      1.002197  0.463377  1.116248
 Max       3.579827  2.060298  3.471753
 
 
 $Variables
    Stand_Coeff      Coeff     StErr   t_value     [Sign*]   Mean_Perm  SD_Perm
-     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.40959783 1.234589
-X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 -0.05118309 1.081233
-X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 -0.11981800 1.550346
+     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.47189580 1.291856
+X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 -0.02438608 1.059835
+X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298  0.06382076 1.542503
    AsSmall AsLarge AsExtreme
-     0.964   0.036     0.036
-X1   1.000   0.034     0.077
-X2   0.129   0.871     0.162</code></pre>
+     0.952   0.048     0.048
+X1   1.000   0.035     0.077
+X2   0.104   0.896     0.145</code></pre>
 </div>
 </div>
 <p>In this case, we are interested in the <code>Sign*</code> as our significance. The method can be changed by calling the <code>method</code> argument inside the function call; as a default, it uses the <em>semi-partialling</em> method to compute the permutations.</p>
