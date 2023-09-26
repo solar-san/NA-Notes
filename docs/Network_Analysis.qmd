@@ -1,6 +1,7 @@
 ---
+title: "EM 1422, Ca' Foscari University of Venice"
 author: "solar-san"
-date-modified: "2023-02-06"
+date-modified: "2023-09-26"
 format:
   html:
     theme: github
@@ -33,9 +34,21 @@ rm(list = ls())
 files_path <- "/Volumes/Roland/Notes/Network_Analysis/Import/"
 ```
 
-![](Figures/NA-Notes_header.png)
+![](header/NA-Notes_header.png)
 
 ---
+
+> __DISCLAIMER__:
+>
+> This are personal notes taken while following the lesson of the course in _Network Analytics_, EM 1422, at Ca' Foscari University of Venice. Any mistake made is mine: as you might expect, student notes _are not_ peer reviewed and/or endorsed as official materials. I do not own any rights on this material. Feel free to write me at __solar-san@pm.me__ if you spot mistakes or have any suggestions. The source code is freely available at [GitHub.com](https://github.com/solar-san). Please share, comment, and leave a star if you use these notes!
+
+- Most of the `R` code is taken from the required textbook, [_Analyzing Social Networks using `R`_](https://uk.sagepub.com/en-gb/eur/analyzing-social-networks-using-r/book271675). The companion website contains useful resources and all code is freely downloadable from [the companion website](https://sites.google.com/view/asnr-2022/home).
+- The pictures and tables in the [__Centrality__](https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality) and [__Dyadic__](https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality) sections are taken from [prof. Giorgia Minello](https://www.unive.it/data/persone/11535404) materials for a course about networks.
+
+A special thanks to [prof. Righi](https://www.simonerighi.com), for this awesome course and for allowing me to make this material freely available online.
+
+The final project for this course is available at [this link]().
+
 
 # Intro: Network Theory
 
@@ -268,7 +281,7 @@ $$
 
 # Networks in `R`
 
-This are the packages required to work with networks in `R`:
+These are the packages required to work with networks in `R`:
 ```{r required packages}
 #| message: false
 #| warning: false
@@ -1034,7 +1047,7 @@ Finding properties about these aspects is a really important aspect of character
 > + ***Trail*: an open walk in which no *edge* is repeated, but a *vertex* can be repeated.**
 
 
-![](Figures/Screenshot 2023-02-16 at 13.15.01.png)
+![](Figures/Screenshot 2023-02-16 at 13.15.01.png "This picture is taken prof. Giorgia Minello slides, Ca' Foscari.")
 
 
 > + ***Circuit*: is a closed trail in which there are no repeated *edges*, but we can have repeated *nodes*, other than the first *vertex* which should be the same as the last.**
@@ -1241,7 +1254,7 @@ In each of the following networks, $X$ as higher centrality than $Y$ according t
 
 It is always possible, once fixed a contest, to measure or distance from a *focal* node (a node which is particularly important). An example of this is the *Erdös number*.
 
-![](Figures/Screenshot 2023-02-20 at 11.46.48.png)
+![](Figures/Screenshot 2023-02-20 at 11.46.48.png "This picture is taken prof. Giorgia Minello slides, Ca' Foscari."){fig-align="center"}
 
 
 ## Degree centrality
@@ -1368,7 +1381,7 @@ Which centrality measure is really useful? It depends on the *objective*, which 
 
 They are best used to *explore* a network.
 
-![](Figures/Screenshot 2023-02-21 at 11.21.41.png)
+![](Figures/Screenshot 2023-02-21 at 11.21.41.png "This picture is taken prof. Giorgia Minello slides, Ca' Foscari.")
 
 
 ## Connectivity based centralities
@@ -1686,11 +1699,17 @@ plot(table((DC)))
 ```
 
 ```{r}
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: "center"
 hist(DC, col = 'gold')
 ```
 
 Note that we have *out-degree*; to obtain the *in-degree*:
 ```{r}
+#| fig-width: 5
+#| fig-height: 5
+#| fig-align: "center"
 Indegrees <- Krackhardt_HighTech$Friendship |> t() |> xDegreeCentrality()
 hist(Indegrees, col = 'dodgerblue')
 ```
@@ -2051,7 +2070,7 @@ A taxonomy of approach can be conceptualised, based on the characteristic of a n
 
 We can group standard algorithms in the following families (each element of the table a different one):
 
-![](Figures/Screenshot 2023-03-02 at 12.53.28.png){width=50%}
+![](Figures/Screenshot 2023-03-02 at 12.53.28.png){width=70% fig-align="center"}
 
 
 ## Fundamental assumptions
@@ -2081,7 +2100,7 @@ In this case, we are trying to recognise communities as *sets of densely connect
 
 To measure this density, we need to define a *function*: in particular, a *quality* function that measures the density of a community and then we will try to *maximize* it to obtain clusters.
 $$
-Q = \frac {1}{2m} \sum_{ij} \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} }_{\mathrm{Null \ model \ expected \ density}} \right] \delta(c_i, c_j)
+Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} }_{\mathrm{Null \ model \ expected \ density}} \right]  \delta(c_i, c_j)
 $$
 
 $\delta(c_i, c_j)$ will assume value 1 if $i,j$ are in the same community, 0 otherwise.
@@ -2514,7 +2533,7 @@ xCorrelation(M18Centrz,M18Perf, NPERM=5000)
 The most important result of the list is `AsExtreme`, which tells us the probability that the result from the permuted vectors is *as extreme* as the one we observe. Note also that the correlation value is the same we got earlier; the main difference belongs to the way in which *significance* is computed.
 
 ```{r fig.width=10, fig.height=12}
-par(mfrow = c(2, 3))
+par(mfrow = c(1, 3))
 
 Age15<-c(29, 72, 23, 51, 49, 61, 48, 68, 38, 46, 31, 63, 62, 59, 26)
 hist(Age15)
@@ -2542,7 +2561,9 @@ Comm15<-matrix(c(0,1,0,1,0, 1,1,0,0,0, 0,0,0,0,0,
                  0,0,0,0,0, 0,0,0,1,1, 1,0,0,0,0,
                  0,0,0,0,0, 0,0,0,0,1, 0,1,0,0,0,
                  0,0,0,0,0, 0,1,1,0,0, 0,0,0,0,0),15,15)
+```
 
+```{r}
 gplot(Comm15, gmode="graph")
 ```
 

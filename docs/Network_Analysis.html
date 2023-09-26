@@ -8,7 +8,7 @@
 
 <meta name="author" content="solar-san">
 
-<title>network_analysis</title>
+<title>EM 1422, Ca’ Foscari University of Venice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -310,10 +310,47 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">EM 1422, Ca’ Foscari University of Venice</h1>
+</div>
 
 
-<p><img src="Figures/NA-Notes_header.png" class="img-fluid"></p>
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>solar-san </p>
+          </div>
+  </div>
+    
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">September 26, 2023</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<p><img src="header/NA-Notes_header.png" class="img-fluid"></p>
 <hr>
+<blockquote class="blockquote">
+<p><strong>DISCLAIMER</strong>:</p>
+<p>This are personal notes taken while following the lesson of the course in <em>Network Analytics</em>, EM 1422, at Ca’ Foscari University of Venice. Any mistake made is mine: as you might expect, student notes <em>are not</em> peer reviewed and/or endorsed as official materials. I do not own any rights on this material. Feel free to write me at <strong>solar-san@pm.me</strong> if you spot mistakes or have any suggestions. The source code is freely available at <a href="https://github.com/solar-san">GitHub.com</a>. Please share, comment, and leave a star if you use these notes!</p>
+</blockquote>
+<ul>
+<li>Most of the <code>R</code> code is taken from the required textbook, <a href="https://uk.sagepub.com/en-gb/eur/analyzing-social-networks-using-r/book271675"><em>Analyzing Social Networks using <code>R</code></em></a>. The companion website contains useful resources and all code is freely downloadable from <a href="https://sites.google.com/view/asnr-2022/home">the companion website</a>.</li>
+<li>The pictures and tables in the <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Centrality</strong></a> and <a href="https://solar-san.github.io/NA-Notes/docs/Network_Analysis.html#centrality"><strong>Dyadic</strong></a> sections are taken from <a href="https://www.unive.it/data/persone/11535404">prof. Minello</a> materials for another course about network analysis.</li>
+</ul>
+<p>A special thanks to <a href="https://www.simonerighi.com">prof. Righi</a>, for this awesome course and who allowed me to make this material freely available online.</p>
+<p>The final project for this course is available at <a href="">this link</a>.</p>
 <section id="intro-network-theory" class="level1">
 <h1>Intro: Network Theory</h1>
 <blockquote class="blockquote">
@@ -549,7 +586,7 @@ D = \frac{\sum_i \sum_j A_{i, j}}{2 N(N -1)}
 </section>
 <section id="networks-in-r" class="level1">
 <h1>Networks in <code>R</code></h1>
-<p>This are the packages required to work with networks in <code>R</code>:</p>
+<p>These are the packages required to work with networks in <code>R</code>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(sna)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(xUCINET)</span>
@@ -1034,9 +1071,9 @@ No edge attributes</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"directed"</span>), <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>igraph_file.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH 5e8b403 DN-- 5 36 -- 
+<pre><code>IGRAPH 2b7e944 DN-- 5 36 -- 
 + attr: name (v/c)
-+ edges from 5e8b403 (vertex names):
++ edges from 2b7e944 (vertex names):
  [1] Ana -&gt;Ella Ana -&gt;Ella Ana -&gt;Isra Ana -&gt;Petr Ana -&gt;Petr Ana -&gt;Petr
  [7] Ana -&gt;Sam  Ana -&gt;Sam  Ella-&gt;Ana  Ella-&gt;Isra Ella-&gt;Isra Ella-&gt;Isra
 [13] Ella-&gt;Petr Ella-&gt;Sam  Ella-&gt;Sam  Ella-&gt;Sam  Isra-&gt;Ana  Isra-&gt;Ana 
@@ -1947,7 +1984,7 @@ A21     15    0.75</code></pre>
 <li><strong><em>Trail</em>: an open walk in which no <em>edge</em> is repeated, but a <em>vertex</em> can be repeated.</strong></li>
 </ul>
 </blockquote>
-<p><img src="Figures/Screenshot%202023-02-16%20at%2013.15.01.png" class="img-fluid"></p>
+<p><img src="Figures/Screenshot%202023-02-16%20at%2013.15.01.png" title="This picture is taken prof. Giorgia Minello slides, Ca' Foscari." class="img-fluid"></p>
 <blockquote class="blockquote">
 <ul>
 <li><strong><em>Circuit</em>: is a closed trail in which there are no repeated <em>edges</em>, but we can have repeated <em>nodes</em>, other than the first <em>vertex</em> which should be the same as the last.</strong></li>
@@ -2186,7 +2223,11 @@ k_{nn}(k) = \frac {1}{N_k} \sum_i \left [ \delta_{k_i, k} \left ( \frac{1}{k} \s
 <p>This depends on the context and purpose of the measure.</p>
 <p>In each of the following networks, <span class="math inline">X</span> as higher centrality than <span class="math inline">Y</span> according to a particular measure. In other words, position (e.g.&nbsp;<em>choke points</em>) in a network matters when considering centrality.</p>
 <p>It is always possible, once fixed a contest, to measure or distance from a <em>focal</em> node (a node which is particularly important). An example of this is the <em>Erdös number</em>.</p>
-<p><img src="Figures/Screenshot%202023-02-20%20at%2011.46.48.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/Screenshot%202023-02-20%20at%2011.46.48.png" title="This picture is taken prof. Giorgia Minello slides, Ca' Foscari." class="img-fluid figure-img"></p>
+</figure>
+</div>
 <section id="degree-centrality" class="level2">
 <h2 class="anchored" data-anchor-id="degree-centrality">Degree centrality</h2>
 <blockquote class="blockquote">
@@ -2311,7 +2352,7 @@ BC'(i) = \frac {BC(i)}{[(N-1)(N-2)]/2}
 <p><strong>Note that none of them is a wrong measure, they just reveal different features: this means that it is usually a good practice to compute a set of them. Moreover, each centrality measure is a proxy of an underlying network process. If such a process is irrelevant for the network then the centrality measure makes no sense.</strong></p>
 </blockquote>
 <p>They are best used to <em>explore</em> a network.</p>
-<p><img src="Figures/Screenshot%202023-02-21%20at%2011.21.41.png" class="img-fluid"></p>
+<p><img src="Figures/Screenshot%202023-02-21%20at%2011.21.41.png" title="This picture is taken prof. Giorgia Minello slides, Ca' Foscari." class="img-fluid"></p>
 </section>
 <section id="connectivity-based-centralities" class="level2">
 <h2 class="anchored" data-anchor-id="connectivity-based-centralities">Connectivity based centralities</h2>
@@ -2769,7 +2810,7 @@ A21                      83                     0.83</code></pre>
   ..$ :List of 1
   .. ..$ name: chr [1:21] "A01" "A02" "A03" "A04" ...
   ..$ : Named list()
- $ :&lt;environment: 0x14e4fea78&gt; </code></pre>
+ $ :&lt;environment: 0x138d63c00&gt; </code></pre>
 </div>
 </div>
 <p>The advantage of using this format is that it is compatible with many applications. We might be interested to know which nodes belong to which components.</p>
@@ -2921,18 +2962,26 @@ $no
 <p><img src="Network_Analysis_files/figure-html/unnamed-chunk-92-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb148"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb148-1"><a href="#cb148-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(DC, <span class="at">col =</span> <span class="st">'gold'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-93-1.png" class="img-fluid" width="768"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-93-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
 </div>
 </div>
 <p>Note that we have <em>out-degree</em>; to obtain the <em>in-degree</em>:</p>
-<div class="cell">
+<div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb149"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href="#cb149-1" aria-hidden="true" tabindex="-1"></a>Indegrees <span class="ot">&lt;-</span> Krackhardt_HighTech<span class="sc">$</span>Friendship <span class="sc">|&gt;</span> <span class="fu">t</span>() <span class="sc">|&gt;</span> <span class="fu">xDegreeCentrality</span>()</span>
 <span id="cb149-2"><a href="#cb149-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Indegrees, <span class="at">col =</span> <span class="st">'dodgerblue'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-94-1.png" class="img-fluid" width="768"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-94-1.png" class="img-fluid figure-img" width="480"></p>
+</figure>
+</div>
 </div>
 </div>
 </section>
@@ -3273,7 +3322,11 @@ P(d) = 2m^2d^{−3}
 </ul></li>
 </ul>
 <p>We can group standard algorithms in the following families (each element of the table a different one):</p>
-<p><img src="Figures/Screenshot%202023-03-02%20at%2012.53.28.png" class="img-fluid" style="width:50.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Figures/Screenshot%202023-03-02%20at%2012.53.28.png" class="img-fluid figure-img" style="width:70.0%"></p>
+</figure>
+</div>
 </section>
 <section id="fundamental-assumptions" class="level2">
 <h2 class="anchored" data-anchor-id="fundamental-assumptions">Fundamental assumptions</h2>
@@ -3297,7 +3350,7 @@ P(d) = 2m^2d^{−3}
 </ul>
 <p>In this case, we are trying to recognise communities as <em>sets of densely connected entities</em>: each community should have a number of edges significantly higher than what it is expected from a <em>random graph.</em></p>
 <p>To measure this density, we need to define a <em>function</em>: in particular, a <em>quality</em> function that measures the density of a community and then we will try to <em>maximize</em> it to obtain clusters. <span class="math display">
-Q = \frac {1}{2m} \sum_{ij} \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} }_{\mathrm{Null \ model \ expected \ density}} \right] \delta(c_i, c_j)
+Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} }_{\mathrm{Null \ model \ expected \ density}} \right]  \delta(c_i, c_j)
 </span></p>
 <p><span class="math inline">\delta(c_i, c_j)</span> will assume value 1 if <span class="math inline">i,j</span> are in the same community, 0 otherwise.</p>
 </section>
@@ -3489,31 +3542,33 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="ot">&lt;-</span><span class="fu">cluster_louvain</span>(Friends, <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>CluLouvain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH clustering multi level, groups: 3, mod: 0.16
+<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.16
 + groups:
   $`1`
-  [1] "A01" "A04" "A08" "A10" "A12" "A16" "A17"
+  [1] "A01" "A02" "A04" "A08" "A16"
   
   $`2`
-  [1] "A02" "A06" "A18" "A20" "A21"
+  [1] "A03" "A05" "A09" "A10" "A14" "A15" "A19"
   
   $`3`
-  [1] "A03" "A05" "A07" "A09" "A11" "A13" "A14" "A15" "A19"
-  </code></pre>
+  [1] "A06" "A07" "A12" "A17" "A21"
+  
+  $`4`
+  + ... omitted several groups/vertices</code></pre>
 </div>
 </div>
 <p>This creates an object of type <code>communities</code>. We can look at the labels by calling:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>membership</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 2 3 1 3 2 3 1 3 1 3 1 3 3 3 1 1 2 3 2 2</code></pre>
+<pre><code> [1] 1 1 2 1 2 3 3 1 2 2 4 3 4 2 2 1 3 4 2 4 3</code></pre>
 </div>
 </div>
 <p>Modularity instead can be obtained with:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>modularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1578273 0.1592693</code></pre>
+<pre><code>[1] 0.1579074 0.1615927</code></pre>
 </div>
 </div>
 <p>We can then plot the graphical representation of our communities in our graph:</p>
@@ -3787,21 +3842,21 @@ sample estimates:
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xCorrelation</span>(M18Centrz,M18Perf, <span class="at">NPERM=</span><span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                               Value
-NumberOfCases          18.0000000000
-ValidCases_VEC1        18.0000000000
-ValidCases_VEC2        18.0000000000
-ValidCases_Both        18.0000000000
-CorrCoeff               0.1311453600
-ClassicSign_2tailed     0.6039647866
-Mean_Perm               0.0009290727
-SD_Perm                 0.2405889288
-Min_Perm               -0.7411957947
-Max_Perm                0.8529867627
-AsSmall                 0.6982000000
-AsLarge                 0.3022000000
-AsExtreme               0.6032000000
-NumberOfPermutations 5000.0000000000</code></pre>
+<pre><code>                              Value
+NumberOfCases          18.000000000
+ValidCases_VEC1        18.000000000
+ValidCases_VEC2        18.000000000
+ValidCases_Both        18.000000000
+CorrCoeff               0.131145360
+ClassicSign_2tailed     0.603964787
+Mean_Perm               0.002578717
+SD_Perm                 0.244173474
+Min_Perm               -0.724473600
+Max_Perm                0.809787760
+AsSmall                 0.687800000
+AsLarge                 0.312400000
+AsExtreme               0.615800000
+NumberOfPermutations 5000.000000000</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Network_Analysis_files/figure-html/unnamed-chunk-110-1.png" class="img-fluid" width="768"></p>
@@ -3809,7 +3864,7 @@ NumberOfPermutations 5000.0000000000</code></pre>
 </div>
 <p>The most important result of the list is <code>AsExtreme</code>, which tells us the probability that the result from the permuted vectors is <em>as extreme</em> as the one we observe. Note also that the correlation value is the same we got earlier; the main difference belongs to the way in which <em>significance</em> is computed.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>))</span>
+<div class="sourceCode cell-code" id="cb175"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href="#cb175-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">3</span>))</span>
 <span id="cb175-2"><a href="#cb175-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb175-3"><a href="#cb175-3" aria-hidden="true" tabindex="-1"></a>Age15<span class="ot">&lt;-</span><span class="fu">c</span>(<span class="dv">29</span>, <span class="dv">72</span>, <span class="dv">23</span>, <span class="dv">51</span>, <span class="dv">49</span>, <span class="dv">61</span>, <span class="dv">48</span>, <span class="dv">68</span>, <span class="dv">38</span>, <span class="dv">46</span>, <span class="dv">31</span>, <span class="dv">63</span>, <span class="dv">62</span>, <span class="dv">59</span>, <span class="dv">26</span>)</span>
 <span id="cb175-4"><a href="#cb175-4" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Age15)</span>
@@ -3818,33 +3873,36 @@ NumberOfPermutations 5000.0000000000</code></pre>
 <span id="cb175-7"><a href="#cb175-7" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Consc15)</span>
 <span id="cb175-8"><a href="#cb175-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb175-9"><a href="#cb175-9" aria-hidden="true" tabindex="-1"></a>Burnout15<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">2.55</span>, <span class="fl">6.80</span>, <span class="fl">5.00</span>, <span class="fl">6.19</span>, <span class="fl">3.00</span>, <span class="fl">3.84</span>, <span class="fl">3.42</span>, <span class="fl">8.31</span>, <span class="fl">5.41</span>, <span class="fl">6.58</span>, <span class="fl">4.74</span>, <span class="fl">7.14</span>, <span class="fl">6.43</span>, <span class="fl">3.18</span>, <span class="fl">2.83</span>)</span>
-<span id="cb175-10"><a href="#cb175-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Burnout15)</span>
-<span id="cb175-11"><a href="#cb175-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb175-12"><a href="#cb175-12" aria-hidden="true" tabindex="-1"></a>Comm15<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, </span>
-<span id="cb175-13"><a href="#cb175-13" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-14"><a href="#cb175-14" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-15"><a href="#cb175-15" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-16"><a href="#cb175-16" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-17"><a href="#cb175-17" aria-hidden="true" tabindex="-1"></a>                 </span>
-<span id="cb175-18"><a href="#cb175-18" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-19"><a href="#cb175-19" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,</span>
-<span id="cb175-20"><a href="#cb175-20" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,</span>
-<span id="cb175-21"><a href="#cb175-21" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-22"><a href="#cb175-22" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
-<span id="cb175-23"><a href="#cb175-23" aria-hidden="true" tabindex="-1"></a>                 </span>
-<span id="cb175-24"><a href="#cb175-24" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-25"><a href="#cb175-25" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
-<span id="cb175-26"><a href="#cb175-26" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-27"><a href="#cb175-27" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
-<span id="cb175-28"><a href="#cb175-28" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dv">15</span>,<span class="dv">15</span>)</span>
-<span id="cb175-29"><a href="#cb175-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb175-30"><a href="#cb175-30" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(Comm15, <span class="at">gmode=</span><span class="st">"graph"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb175-10"><a href="#cb175-10" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(Burnout15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="Network_Analysis_files/figure-html/unnamed-chunk-111-1.png" class="img-fluid" width="960"></p>
 </div>
+<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>Comm15<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, </span>
+<span id="cb176-2"><a href="#cb176-2" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-3"><a href="#cb176-3" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-4"><a href="#cb176-4" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-5"><a href="#cb176-5" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-6"><a href="#cb176-6" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb176-7"><a href="#cb176-7" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-8"><a href="#cb176-8" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,</span>
+<span id="cb176-9"><a href="#cb176-9" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,</span>
+<span id="cb176-10"><a href="#cb176-10" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-11"><a href="#cb176-11" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb176-12"><a href="#cb176-12" aria-hidden="true" tabindex="-1"></a>                 </span>
+<span id="cb176-13"><a href="#cb176-13" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-14"><a href="#cb176-14" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,</span>
+<span id="cb176-15"><a href="#cb176-15" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>, <span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-16"><a href="#cb176-16" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,</span>
+<span id="cb176-17"><a href="#cb176-17" aria-hidden="true" tabindex="-1"></a>                 <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">1</span>,<span class="dv">0</span>,<span class="dv">0</span>, <span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">0</span>),<span class="dv">15</span>,<span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb176"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb176-1"><a href="#cb176-1" aria-hidden="true" tabindex="-1"></a>Degr15<span class="ot">&lt;-</span><span class="fu">rowSums</span>(Comm15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(Comm15, <span class="at">gmode=</span><span class="st">"graph"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-112-1.png" class="img-fluid" width="768"></p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb178"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb178-1"><a href="#cb178-1" aria-hidden="true" tabindex="-1"></a>Degr15<span class="ot">&lt;-</span><span class="fu">rowSums</span>(Comm15)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>To call the regression function, beware that:</p>
 <ul>
@@ -3852,8 +3910,8 @@ NumberOfPermutations 5000.0000000000</code></pre>
 <li>The <span class="math inline">Y</span> needs to be a <em>vector.</em></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb177"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb177-1"><a href="#cb177-1" aria-hidden="true" tabindex="-1"></a>X15<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Age15,Consc15,Degr15)</span>
-<span id="cb177-2"><a href="#cb177-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xRegression</span>(Burnout15,X15,<span class="at">NPERM=</span><span class="dv">5000</span>) <span class="co"># NPERM&gt;1000 is advisable.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>X15<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Age15,Consc15,Degr15)</span>
+<span id="cb179-2"><a href="#cb179-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xRegression</span>(Burnout15,X15,<span class="at">NPERM=</span><span class="dv">5000</span>) <span class="co"># NPERM&gt;1000 is advisable.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Model
                             Value
@@ -3873,24 +3931,24 @@ NumberOfPermutations   5000.00000
 
 $Variables
                Coeff   StErr  t_value Classic_Sign Mean_Perm SD_Perm AsSmall
-(Intercept)  1.70298 1.78308  0.95508      0.36006   4.99673 2.16492  0.0658
-Age15        0.06421 0.02536  2.53190      0.02788   0.00085 0.03098  0.9794
-Consc15     -0.24450 0.15633 -1.56399      0.14611   0.00233 0.19357  0.1012
-Degr15       0.39188 0.42826  0.91504      0.37979  -0.00638 0.53327  0.7650
+(Intercept)  1.70298 1.78308  0.95508      0.36006   5.05543 2.18521  0.0648
+Age15        0.06421 0.02536  2.53190      0.02788   0.00019 0.03146  0.9788
+Consc15     -0.24450 0.15633 -1.56399      0.14611   0.00080 0.19267  0.1086
+Degr15       0.39188 0.42826  0.91504      0.37979  -0.01356 0.53873  0.7676
             AsLarge AsExtreme
-(Intercept)  0.9342    0.0658
-Age15        0.0206    0.9960
-Consc15      0.8988    0.9872
-Degr15       0.2350    1.0150
+(Intercept)  0.9352     0.065
+Age15        0.0212     0.998
+Consc15      0.8914     1.002
+Degr15       0.2324     1.020
 
 Classic significance value based on assumption of independence of cases.</code></pre>
 </div>
 </div>
 <p><code>Classic_Sign</code> is the <em>classic</em> p-values; we need to compare it with the measures we obtain with the permutation process. The relevant ones are the one either <code>AsSmall</code> or <code>AsLarge</code> : we can see that the degree of significance differs heavily from the ones we obtain with the standard approach.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xQAPCorrelation</span>(Padgett_FlorentineFamilies<span class="sc">$</span>Marriage,Padgett_FlorentineFamilies<span class="sc">$</span>Business,<span class="at">NPERM =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xQAPCorrelation</span>(Padgett_FlorentineFamilies<span class="sc">$</span>Marriage,Padgett_FlorentineFamilies<span class="sc">$</span>Business,<span class="at">NPERM =</span> <span class="dv">10000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-114-1.png" class="img-fluid" width="768"></p>
+<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-115-1.png" class="img-fluid" width="768"></p>
 </div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                                     Value
@@ -3901,24 +3959,24 @@ ValidCases_NET2        240.000000000000000
 ValidCases_Both        240.000000000000000
 CorrCoef                 0.371867872080548
 ClassicSign_2tailed      0.000000002756827
-Mean_Perm               -0.001250828296998
-SD_Perm                  0.093472657573064
+Mean_Perm                0.000331300467854
+SD_Perm                  0.092016426014876
 Min_Perm                -0.169030850945704
 Max_Perm                 0.439480212458830
-AsSmall                  0.999200000000000
-AsLarge                  0.000800000000000
-AsExtreme                0.000800000000000
+AsSmall                  0.999300000000000
+AsLarge                  0.000700000000000
+AsExtreme                0.000700000000000
 NumberOfPermutations 10000.000000000000000</code></pre>
 </div>
 </div>
 <p>To perform a regression, we need to transform the regressors variables into <em>lists</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb181"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb181-1"><a href="#cb181-1" aria-hidden="true" tabindex="-1"></a>MATRIX1<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>, <span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb181-2"><a href="#cb181-2" aria-hidden="true" tabindex="-1"></a>MATRIX2<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>, <span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>, <span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb181-3"><a href="#cb181-3" aria-hidden="true" tabindex="-1"></a>MATRIX3<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">8</span>, <span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
-<span id="cb181-4"><a href="#cb181-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb181-5"><a href="#cb181-5" aria-hidden="true" tabindex="-1"></a>LIST2<span class="ot">&lt;-</span><span class="fu">list</span>(MATRIX2,MATRIX3)</span>
-<span id="cb181-6"><a href="#cb181-6" aria-hidden="true" tabindex="-1"></a>RESULTS1<span class="ot">&lt;-</span><span class="fu">xQAPRegression</span>(MATRIX1,LIST2,<span class="at">NPERM=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a>MATRIX1<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">3</span>, <span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">1</span>, <span class="dv">4</span>,<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">6</span>,<span class="dv">2</span>,<span class="dv">6</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb183-2"><a href="#cb183-2" aria-hidden="true" tabindex="-1"></a>MATRIX2<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">1</span>, <span class="dv">3</span>,<span class="dv">0</span>,<span class="dv">3</span>,<span class="dv">7</span>, <span class="dv">4</span>,<span class="dv">7</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">5</span>,<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb183-3"><a href="#cb183-3" aria-hidden="true" tabindex="-1"></a>MATRIX3<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">0</span>,<span class="dv">4</span>,<span class="dv">5</span>,<span class="dv">3</span>, <span class="dv">2</span>,<span class="dv">0</span>,<span class="dv">2</span>,<span class="dv">8</span>, <span class="dv">4</span>,<span class="dv">4</span>,<span class="dv">0</span>,<span class="dv">2</span>, <span class="dv">3</span>,<span class="dv">5</span>,<span class="dv">3</span>,<span class="dv">0</span>),<span class="dv">4</span>,<span class="dv">4</span>)</span>
+<span id="cb183-4"><a href="#cb183-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb183-5"><a href="#cb183-5" aria-hidden="true" tabindex="-1"></a>LIST2<span class="ot">&lt;-</span><span class="fu">list</span>(MATRIX2,MATRIX3)</span>
+<span id="cb183-6"><a href="#cb183-6" aria-hidden="true" tabindex="-1"></a>RESULTS1<span class="ot">&lt;-</span><span class="fu">xQAPRegression</span>(MATRIX1,LIST2,<span class="at">NPERM=</span><span class="dv">1000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 $Model
@@ -3939,17 +3997,17 @@ NumberOfPermutations 1000.00000
 
 $Variables
    Stand_Coeff    Coeff   StErr  t_value [Sign*] Mean_Perm SD_Perm AsSmall
-       0.00000  4.66096 1.30201  3.57983 0.00593   0.54308 1.31954   0.953
-X1     0.59238  0.57998 0.28150  2.06030 0.06945   0.01019 1.09278   1.000
-X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856   0.03193 1.52046   0.101
+       0.00000  4.66096 1.30201  3.57983 0.00593   0.40960 1.23459   0.964
+X1     0.59238  0.57998 0.28150  2.06030 0.06945  -0.05118 1.08123   1.000
+X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856  -0.11982 1.55035   0.129
    AsLarge AsExtreme
-     0.047     0.047
-X1   0.039     0.076
-X2   0.899     0.134
+     0.036     0.036
+X1   0.034     0.077
+X2   0.871     0.162
 
 Sign* = classic significance value based on assumption of independence of cases. Not to be used.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb183"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb183-1"><a href="#cb183-1" aria-hidden="true" tabindex="-1"></a>RESULTS1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>RESULTS1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$Model
 $Model$NumberOfNodes
@@ -4000,9 +4058,9 @@ Residuals:
 
 Coefficients:
             Estimate   Pr(&lt;=b) Pr(&gt;=b) Pr(&gt;=|b|)
-(intercept)  4.6609589 0.953   0.047   0.047    
-x1           0.5799758 1.000   0.039   0.076    
-x2          -0.7455681 0.101   0.899   0.134    
+(intercept)  4.6609589 0.964   0.036   0.036    
+x1           0.5799758 1.000   0.034   0.077    
+x2          -0.7455681 0.129   0.871   0.162    
 
 Residual standard error: 1.746 on 9 degrees of freedom
 Multiple R-squared: 0.4066  Adjusted R-squared: 0.2748 
@@ -4015,24 +4073,24 @@ Test Diagnostics:
     Replications: 1000 
     Coefficient Distribution Summary:
 
-       (intercept)       x1       x2
-Min       -0.99364 -2.28594 -2.77901
-1stQ      -0.42138 -0.64498 -0.39184
-Median     0.06583 -0.34881  0.20930
-Mean       0.54308  0.01019  0.03193
-3rdQ       1.73611  0.46338  1.11625
-Max        3.57983  2.06030  3.47175
+       (intercept)        x1        x2
+Min      -0.993642 -2.285941 -2.779011
+1stQ     -0.453042 -0.644983 -1.994552
+Median   -0.005771 -0.348813 -0.043745
+Mean      0.409598 -0.051183 -0.119818
+3rdQ      1.002197  0.463377  1.103108
+Max       3.579827  2.060298  3.471753
 
 
 $Variables
-   Stand_Coeff      Coeff     StErr   t_value     [Sign*]  Mean_Perm  SD_Perm
-     0.0000000  4.6609589 1.3020068  3.579827 0.005932359 0.54308248 1.319545
-X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 0.01018748 1.092783
-X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 0.03193289 1.520460
+   Stand_Coeff      Coeff     StErr   t_value     [Sign*]   Mean_Perm  SD_Perm
+     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.40959783 1.234589
+X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 -0.05118309 1.081233
+X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 -0.11981800 1.550346
    AsSmall AsLarge AsExtreme
-     0.953   0.047     0.047
-X1   1.000   0.039     0.076
-X2   0.101   0.899     0.134</code></pre>
+     0.964   0.036     0.036
+X1   1.000   0.034     0.077
+X2   0.129   0.871     0.162</code></pre>
 </div>
 </div>
 <p>In this case, we are interested in the <code>Sign*</code> as our significance. The method can be changed by calling the <code>method</code> argument inside the function call; as a default, it uses the <em>semi-partialling</em> method to compute the permutations.</p>
@@ -4349,7 +4407,7 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 <h2 class="anchored" data-anchor-id="ergms-in-r">ERGMs in <code>R</code></h2>
 <p>We will use the following network:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb185"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb185-1"><a href="#cb185-1" aria-hidden="true" tabindex="-1"></a>ASNR_Fig15x1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>ASNR_Fig15x1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$ProjectInfo
 $ProjectInfo$ProjectName
@@ -4445,9 +4503,9 @@ a14   0   0   0   0   0   0   0   0   0   0   1   1   1   0</code></pre>
 </div>
 <p>The <code>ergm</code> package needs a <code>network</code> object to perform its computations.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb187"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb187-1"><a href="#cb187-1" aria-hidden="true" tabindex="-1"></a>E14A <span class="ot">&lt;-</span> <span class="fu">as.network</span>(ASNR_Fig15x1<span class="sc">$</span><span class="st">`</span><span class="at">Network A</span><span class="st">`</span>,<span class="at">directed=</span>F)</span>
-<span id="cb187-2"><a href="#cb187-2" aria-hidden="true" tabindex="-1"></a>E14_ATTR <span class="ot">&lt;-</span> ASNR_Fig15x1<span class="sc">$</span>Attributes</span>
-<span id="cb187-3"><a href="#cb187-3" aria-hidden="true" tabindex="-1"></a>E14_ATTR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>E14A <span class="ot">&lt;-</span> <span class="fu">as.network</span>(ASNR_Fig15x1<span class="sc">$</span><span class="st">`</span><span class="at">Network A</span><span class="st">`</span>,<span class="at">directed=</span>F)</span>
+<span id="cb189-2"><a href="#cb189-2" aria-hidden="true" tabindex="-1"></a>E14_ATTR <span class="ot">&lt;-</span> ASNR_Fig15x1<span class="sc">$</span>Attributes</span>
+<span id="cb189-3"><a href="#cb189-3" aria-hidden="true" tabindex="-1"></a>E14_ATTR</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    Gender
 a01      0
@@ -4468,24 +4526,24 @@ a14      0</code></pre>
 </div>
 <p>With the following command we will attach the <em>gender</em> attribute to the network.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb189"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb189-1"><a href="#cb189-1" aria-hidden="true" tabindex="-1"></a>E14A <span class="sc">%v%</span> <span class="st">"Gender"</span> <span class="ot">&lt;-</span> E14_ATTR<span class="sc">$</span>Gender</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb191"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a>E14A <span class="sc">%v%</span> <span class="st">"Gender"</span> <span class="ot">&lt;-</span> E14_ATTR<span class="sc">$</span>Gender</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>A simple plot:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb190"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb190-1"><a href="#cb190-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(</span>
-<span id="cb190-2"><a href="#cb190-2" aria-hidden="true" tabindex="-1"></a>  E14A,</span>
-<span id="cb190-3"><a href="#cb190-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gmode=</span><span class="st">"graph"</span>,</span>
-<span id="cb190-4"><a href="#cb190-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">displaylabels=</span>T,</span>
-<span id="cb190-5"><a href="#cb190-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">vertex.col=</span>E14A <span class="sc">%v%</span> <span class="st">"Gender"</span><span class="sc">*</span><span class="dv">2</span></span>
-<span id="cb190-6"><a href="#cb190-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb192"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb192-1"><a href="#cb192-1" aria-hidden="true" tabindex="-1"></a><span class="fu">gplot</span>(</span>
+<span id="cb192-2"><a href="#cb192-2" aria-hidden="true" tabindex="-1"></a>  E14A,</span>
+<span id="cb192-3"><a href="#cb192-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">gmode=</span><span class="st">"graph"</span>,</span>
+<span id="cb192-4"><a href="#cb192-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">displaylabels=</span>T,</span>
+<span id="cb192-5"><a href="#cb192-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">vertex.col=</span>E14A <span class="sc">%v%</span> <span class="st">"Gender"</span><span class="sc">*</span><span class="dv">2</span></span>
+<span id="cb192-6"><a href="#cb192-6" aria-hidden="true" tabindex="-1"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-119-1.png" class="img-fluid" width="768"></p>
+<p><img src="Network_Analysis_files/figure-html/unnamed-chunk-120-1.png" class="img-fluid" width="768"></p>
 </div>
 </div>
 <p>We are now ready to compute a model with only structural variables:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb191"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb191-1"><a href="#cb191-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">516</span>)</span>
-<span id="cb191-2"><a href="#cb191-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">kstar</span>(<span class="dv">2</span>) <span class="sc">+</span> triangle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb193"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb193-1"><a href="#cb193-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">516</span>)</span>
+<span id="cb193-2"><a href="#cb193-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.1</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">kstar</span>(<span class="dv">2</span>) <span class="sc">+</span> triangle)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Starting maximum pseudolikelihood estimation (MPLE):</code></pre>
 </div>
@@ -4595,7 +4653,7 @@ Bridging finished.
 This model was fit using MCMC.  To examine model diagnostics and check
 for degeneracy, use the mcmc.diagnostics() function.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb215"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb215-1"><a href="#cb215-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Call:
 ergm(formula = E14A ~ edges + kstar(2) + triangle)
@@ -4616,8 +4674,8 @@ AIC: 86.62  BIC: 94.15  (Smaller is better. MC Std. Err. = 0.6533)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb217"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb217-1"><a href="#cb217-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">738</span>)</span>
-<span id="cb217-2"><a href="#cb217-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.2</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">nodefactor</span>(<span class="st">"Gender"</span>,<span class="at">levels=</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">nodematch</span>(<span class="st">"Gender"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb219"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb219-1"><a href="#cb219-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">738</span>)</span>
+<span id="cb219-2"><a href="#cb219-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.2</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">nodefactor</span>(<span class="st">"Gender"</span>,<span class="at">levels=</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">nodematch</span>(<span class="st">"Gender"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Starting maximum pseudolikelihood estimation (MPLE):</code></pre>
 </div>
@@ -4636,7 +4694,7 @@ AIC: 86.62  BIC: 94.15  (Smaller is better. MC Std. Err. = 0.6533)</code></pre>
 <div class="cell-output cell-output-stderr">
 <pre><code>Evaluating log-likelihood at the estimate. </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb224"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb224-1"><a href="#cb224-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb226"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Call:
 ergm(formula = E14A ~ edges + nodefactor("Gender", levels = 2) + 
@@ -4658,9 +4716,9 @@ AIC: 112.6  BIC: 120.1  (Smaller is better. MC Std. Err. = 0)</code></pre>
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb226"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb226-1"><a href="#cb226-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">343</span>)</span>
-<span id="cb226-2"><a href="#cb226-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.3</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(</span>
-<span id="cb226-3"><a href="#cb226-3" aria-hidden="true" tabindex="-1"></a>  E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">kstar</span>(<span class="dv">2</span>) <span class="sc">+</span> triangle <span class="sc">+</span> <span class="fu">nodefactor</span>(<span class="st">"Gender"</span>,<span class="at">levels=</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">nodematch</span>(<span class="st">"Gender"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb228"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb228-1"><a href="#cb228-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">343</span>)</span>
+<span id="cb228-2"><a href="#cb228-2" aria-hidden="true" tabindex="-1"></a>M.E14A<span class="fl">.3</span><span class="ot">&lt;-</span><span class="fu">ergm</span>(</span>
+<span id="cb228-3"><a href="#cb228-3" aria-hidden="true" tabindex="-1"></a>  E14A <span class="sc">~</span> edges <span class="sc">+</span> <span class="fu">kstar</span>(<span class="dv">2</span>) <span class="sc">+</span> triangle <span class="sc">+</span> <span class="fu">nodefactor</span>(<span class="st">"Gender"</span>,<span class="at">levels=</span><span class="dv">2</span>) <span class="sc">+</span> <span class="fu">nodematch</span>(<span class="st">"Gender"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Starting maximum pseudolikelihood estimation (MPLE):</code></pre>
 </div>
@@ -4765,7 +4823,7 @@ Bridging finished.
 This model was fit using MCMC.  To examine model diagnostics and check
 for degeneracy, use the mcmc.diagnostics() function.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb249"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb249-1"><a href="#cb249-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb251"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb251-1"><a href="#cb251-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(M.E14A<span class="fl">.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Call:
 ergm(formula = E14A ~ edges + kstar(2) + triangle + nodefactor("Gender", 
