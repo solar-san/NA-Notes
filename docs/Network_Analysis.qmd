@@ -195,7 +195,7 @@ A_{ij} =
 0 \ \ \ \ if \ (i,j) \notin E
 \end{cases}
 $$
-This kind of matrix can have only values 1 or 0 if we are dealing with an *unweighted* network; moreover, it is a *symmetric matrix* (links are reciprocated). In case of a *undirected* network, the matrix is *asymmetric* while edges can as well either have value 0 or 1 (or `NA`); the order is important: rows and columns are symmetric and must be ordered in the same way (e.g.: *if row 3 contains data about node A its links, then column 3 must contain the same data and be about node A*).
+This kind of matrix can have only values 1 or 0 if we are dealing with an *unweighed* network; moreover, it is a *symmetric matrix* (links are reciprocated). In case of a *undirected* network, the matrix is *asymmetric* while edges can as well either have value 0 or 1 (or `NA`); the order is important: rows and columns are symmetric and must be ordered in the same way (e.g.: *if row 3 contains data about node A its links, then column 3 must contain the same data and be about node A*).
 
 The degree $k_i$ of node $i$ can be obtained directly from the elements of the adjacency matrix. For *undirected* networks:
 $$
@@ -693,7 +693,7 @@ Note that we are using `age` (y-axis) and `rev_Rank` (x-axis) as coordinates for
 
 We will study the `Krackhardt_HighTech`: we wish to plot nodes belonging to the same department in the same group.
 When we want to use a nominal/categorical variable (such as Department) to position those nodes closer to each other who belong to the same category, we will use a trick. 
-The default setting for plotting uses an algorithm that positions nodes close to each other if they are connected (see later). So what if we would create a matrix where we would have a value 1 when two nodes belong to the same category and 0 if they don’t and we would use this to generate the positions of the nodes in the figure? We can then use these as coordinates for drawing the nodes in a graph containing the real network.
+The default setting for plotting uses an algorithm that positions nodes close to each other if they are connected (see later). So what if we would create a matrix where we would have a value 1 when two nodes belong to the same category and 0 if they do not and we would use this to generate the positions of the nodes in the figure? We can then use these as coordinates for drawing the nodes in a graph containing the real network.
 
 We first need to generate the matrix containing same department, which we will call `MATRIX_A2`:
 ```{r}
@@ -1330,7 +1330,7 @@ Nodes with a high BC are also called *network broker*: the network structure is 
 
 However, the shortest path is not necessarily *unique*.
 
-> **If there are $n$ alternative paths not passing through the node, then the path contributes only $1/n$ to the node’s centrality.**
+> **If there are $n$ alternative paths not passing through the node, then the path contributes only $1/n$ to the node's centrality.**
 
 Another issue regards *hubs*: in the context of a network, a hub is a node with a large degree, meaning it has connections with many other nodes. However, even though they might have a high BC, this is not necessarily implying that they work as *brokers*.
 
@@ -1427,7 +1427,7 @@ It is recommended to choose $\alpha$ between 0 and $1/\rho(A)$, where $\rho(A)$ 
 
 > **It is a matter of relative weights. When you increase $\alpha$, you are increasing the importance of being connected to important individuals. Decreasing, you are giving more weight to the importance of being connected.**
 
-The main issue with this measure is: when a node becomes very central in a network, it passes its centrality to all its outgoing links, making all those nodes very popular. However, they might not be important. As a solution, We can divide the value of passed centrality by the number of outgoing links, e.g., out degree of that node. This way, each connected neighbour gets a fraction of the source node’s centrality.
+The main issue with this measure is: when a node becomes very central in a network, it passes its centrality to all its outgoing links, making all those nodes very popular. However, they might not be important. As a solution, We can divide the value of passed centrality by the number of outgoing links, e.g., out degree of that node. This way, each connected neighbour gets a fraction of the source node's centrality.
 
 If your node connection has a high centrality, you will receive only a small proportion of it.
 
@@ -1771,7 +1771,7 @@ We can then compute the probability that a random network presents nodes of degr
 ## Clustering
 
 + In a random network the probability that two of $i$’s neighbours link to each other is $p$.
-+ To calculate $C_i$ for a node in a random network we need to estimate the expected number of links $L_i$ between the node’s $k_i$ neighbours.
++ To calculate $C_i$ for a node in a random network we need to estimate the expected number of links $L_i$ between the node's $k_i$ neighbours.
 + There are $k_i (k_i − 1)/2$ possible links between the $k_i$ neighbours of node $i$. The *local clustering coefficient* is:
 $$
 C_i = \frac {\bar{k}} {n} = p
@@ -1810,7 +1810,7 @@ How does a giant component emerge from a random network? We need to consider the
 A single link can be critical to prompt the emergence of a giant connected component. The key variable is the average degree $\bar{k}$, as in random networks every node as a degree close to it. We can then distinguish different cases:
 
 1. *Sub-critical*: $0 < \bar{k} < 1$. Small number of links. Most components are tiny compared to $n$.
-2. *Critical*: $\bar{k} = 1$. However (with some math) we can find that the largest component is now much larger than in the previous phase^[While in relative terms the size of the giant components remains negligible at $\bar{k} = 1$, in absolute terms there is a significant jump in the size of the largest component.]. Different components sizes coexist. Size distribution: $Probs = s^{ - \frac {3}{2}}$^[This is a power law; the number of components decreases very fast.]. In this case we have a single large component.
+2. *Critical*: $\bar{k} = 1$. However (with some maths) we can find that the largest component is now much larger than in the previous phase^[While in relative terms the size of the giant components remains negligible at $\bar{k} = 1$, in absolute terms there is a significant jump in the size of the largest component.]. Different components sizes coexist. Size distribution: $Probs = s^{ - \frac {3}{2}}$^[This is a power law; the number of components decreases very fast.]. In this case we have a single large component.
 3. *Super-critical*: $\bar{k} > 1$, $NG /n \sim \bar{k} − 1$. The giant component is formed and contains a sizeable proportion of nodes. Isolated components are much smaller. Large components are rare.
 
 If we reach enough connections:
@@ -1883,7 +1883,7 @@ These two social interactions classes have different effect on the network and i
 + From the topological point of view, a new weak tie creates a very large number of *new open triads *and bridging across groups creates the opportunity to act as a *gate-keeper* of information.
   + Each new person connected to a weak tie creates open triads and creates the possibility of joining together previously unconnected groups.
 
-**Why can’t we just form one large strongly connected group?**
+**Why cannot we just form one large strongly connected group?**
 
 Open triads tend to close, so we need to ask why we do not have one strongly connected group over time?
 
@@ -2190,7 +2190,7 @@ The main idea is that in a community nodes end up usually surrounded by nodes wi
 
 > **In a community, nodes will end up surrounded by nodes with the same label.**
 >
-> + **Nodes decide for themselves to which community they belong by looking at their neighbors’ community assignments.**
+> + **Nodes decide for themselves to which community they belong by looking at their neighbours’ community assignments.**
 > + **Node labels indicate to which community each node belongs.**
   
 This approach involves the following steps:
@@ -2505,13 +2505,13 @@ There are a number of ways to compute this:
   + Run the regression on the observed data ($Y$ regressed on $X,Z,W$).
   + We start running a regression to predict $X$ using $W$ and $Z$ (the other covariates). This way I get the predicted $X$ values, $\hat X$.
   + We then calculate the residual matrix, $X − \hat X$, which we will call $X_r$ . This variable is X with effects of W and Z removed from it.
-Now, we repeatedly permute the rows and columns of Xr and regress Y on W, Z and the permuted Xr , keeping track of the t-statistics (I.e., the coefficient divided by the standard error for the coefficient).
-The p-value for the coefficient on X is given by the propo
+Now, we repeatedly permute the rows and columns of $X_r$ and regress Y on W, Z and the permuted $X_r$ , keeping track of the t-statistics (I.e., the coefficient divided by the standard error for the coefficient).
+The p-value for the coefficient on X is given by the proportion.
 
 
 ## Network inference in `R`
 
-We wich to perform a classic correlation analysis between centralization and performance across 18 teams.
+We wish to perform a classic correlation analysis between centralization and performance across 18 teams.
 ```{r}
 M18Centrz<-c(0.59, 0.83, 0.60, 0.45, 0.52, 0.62, 0.64, 0.00, 0.43, 0.44, 
              0.76, 0.50, 0.65, 0.68, 0.48, 0.52, 0.80, 0.10)
@@ -2637,7 +2637,7 @@ Other important facts:
 + 89% of the links in the system regards only the top 5% of the nodes: a few banks are heavily connected to most links in the system.
 + It is a *disassortative* network (with *negative assortativity*): this can enhance the diversification of each network component (where diversification is the number of counter parties).
 + We also have *large local clustering*; this connection creates an enhanced systemic default risk.
-  + Being this a real networks built over a long period of time, different types of links cohexists.
+  + Being this a real networks built over a long period of time, different types of links coexists.
 
 > **These properties are present in most interbank networks**.
 
