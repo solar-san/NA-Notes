@@ -101,22 +101,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&amp;family=Fira+Code&amp;display=swap" rel="stylesheet">
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css">
 
 </head>
 
@@ -413,38 +397,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>Basic networks parameters are:</p>
 <ul>
-<li><em>The number of nodes</em>, or <span class="math inline">N</span>. Represents the number of components of the system. It is often called the <em>size</em> of the network.
+<li><em>The number of nodes</em>, or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>. Represents the number of components of the system. It is often called the <em>size</em> of the network.
 <ul>
-<li>To distinguish them, nodes are labelled: <span class="math inline">i = 1,2,...,N</span>.</li>
+<li>To distinguish them, nodes are labelled: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo>,</mo><mn>2</mn><mo>,</mo><mi>.</mi><mi>.</mi><mi>.</mi><mo>,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">i = 1,2,...,N</annotation></semantics></math>.</li>
 <li>A key characteristic of each node is its <em>degree</em>, representing the number of links it has to other nodes.</li>
 </ul></li>
-<li><em>The number of links</em>, or <span class="math inline">L</span>, represents the number of interactions between the nodes.
+<li><em>The number of links</em>, or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>L</mi><annotation encoding="application/x-tex">L</annotation></semantics></math>, represents the number of interactions between the nodes.
 <ul>
 <li>They are rarely labelled, as they can be identified through the nodes they connect.</li>
-<li>In an <em>undirected</em> network, the total number of links can be expressed as the sum of the node degrees: <span class="math display">
+<li>In an <em>undirected</em> network, the total number of links can be expressed as the sum of the node degrees: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>k</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">
 L=  \frac{1}{2} \sum^N_{i=1} k_i
-</span> The <span class="math inline">1/2</span> corrects for the fact that in the sum each link is counted <em>twice</em>.</li>
-<li>In a <em>directed</em> network, instead: <span class="math display">
-L = \sum^N_{i=1} k^{in}_i = \sum^N_{i=1} k^{out}_i
-</span></li>
+</annotation></semantics></math> The <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math> corrects for the fact that in the sum each link is counted <em>twice</em>.</li>
+<li>In a <em>directed</em> network, instead: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">
+L = \sum^N_{i=1} k^{in}_i = \sum^N_{i=1} k^{out}_i 
+</annotation></semantics></math></li>
 </ul></li>
 </ul>
-<p>The <em>average degree</em> for an <em>undirected network</em> is; <span class="math display">
+<p>The <em>average degree</em> for an <em>undirected network</em> is; <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>k</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>L</mi></mrow><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">
 \langle k \rangle = \frac {1}{N} \sum^N_{i=1} k_i = \frac {2L} {N}
-</span></p>
-<p>The <em>average degree</em> for a <em>directed network</em> is: <span class="math display">
+</annotation></semantics></math></p>
+<p>The <em>average degree</em> for a <em>directed network</em> is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><msup><mi>k</mi><mrow><mi>i</mi><mi>n</mi></mrow></msup><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>=</mo><mo stretchy="false" form="prefix">⟨</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><mfrac><mn>1</mn><mi>N</mi></mfrac><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup><mo>=</mo><mfrac><mi>L</mi><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">
 \langle k^{in} \rangle = \frac {1}{N} \sum^N_{i=1} k^{in}_i = \langle k \rangle = \frac {1}{N} \sum^N_{i=1} k^{out}_i  = \frac {L}{N}
-</span></p>
+</annotation></semantics></math></p>
 <p>In <em>directed</em> networks it is important to distinguish between:</p>
 <ul>
-<li><em>incoming degree</em>, <span class="math inline">k^{in}_i</span>: number of nodes that point to node <span class="math inline">i</span>.</li>
-<li><em>outgoing degree</em>, <span class="math inline">k^{out}_i</span>: number of nodes that point from node <span class="math inline">i</span> to other nodes.</li>
-<li><em>node total degree</em>, <span class="math inline">k_i</span>: <span class="math display">
+<li><em>incoming degree</em>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><annotation encoding="application/x-tex">k^{in}_i</annotation></semantics></math>: number of nodes that point to node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.</li>
+<li><em>outgoing degree</em>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup><annotation encoding="application/x-tex">k^{out}_i</annotation></semantics></math>: number of nodes that point from node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> to other nodes.</li>
+<li><em>node total degree</em>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>i</mi></msub><annotation encoding="application/x-tex">k_i</annotation></semantics></math>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>i</mi></msub><mo>=</mo><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>+</mo><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">
 k_i = k^{in}_i + k^{out}_i
-</span></li>
+</annotation></semantics></math></li>
 </ul>
 <blockquote class="blockquote">
-<p><strong><em>Graphs</em>: graphs are a mathematical concept defined as a set <span class="math inline">G(V, E)</span> of:</strong></p>
+<p><strong><em>Graphs</em>: graphs are a mathematical concept defined as a set <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G(V, E)</annotation></semantics></math> of:</strong></p>
 <ul>
 <li><strong>set of vertices (V).</strong></li>
 <li><strong>set of edges (E) between vertices.</strong></li>
@@ -456,12 +440,12 @@ k_i = k^{in}_i + k^{out}_i
 <li><strong>attributes of vertices and edges.</strong></li>
 </ul>
 </blockquote>
-<p>The <em>degree distribution</em> <span class="math inline">p_k</span> provides the probability that a randomly selected node in the network has degree <em>k</em>. For a network with <span class="math inline">N</span> nodes, the degree distribution is the <em>normalised</em> histogram given by: <span class="math display">
+<p>The <em>degree distribution</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>k</mi></msub><annotation encoding="application/x-tex">p_k</annotation></semantics></math> provides the probability that a randomly selected node in the network has degree <em>k</em>. For a network with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> nodes, the degree distribution is the <em>normalised</em> histogram given by: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>=</mo><mfrac><msub><mi>N</mi><mi>k</mi></msub><mi>N</mi></mfrac></mrow><annotation encoding="application/x-tex">
 p_k = \frac{N_k}{N}
-</span> where <span class="math inline">N_k</span> is the number of degree-<span class="math inline">k</span> nodes. The calculation of most network properties requires to know <span class="math inline">p_k</span>. The average degree of a network can be re-written as: <span class="math display">
+</annotation></semantics></math> where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>k</mi></msub><annotation encoding="application/x-tex">N_k</annotation></semantics></math> is the number of degree-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> nodes. The calculation of most network properties requires to know <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>k</mi></msub><annotation encoding="application/x-tex">p_k</annotation></semantics></math>. The average degree of a network can be re-written as: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false" form="prefix">⟨</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo><mo>=</mo><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mo accent="false">∞</mo></munderover><mi>k</mi><msub><mi>p</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">
 \langle k \rangle = \sum^{\infty}_{k=0} k p_k
-</span></p>
-<p><strong>The functional form of <span class="math inline">p_k</span> determines many network phenomena.</strong></p>
+</annotation></semantics></math></p>
+<p><strong>The functional form of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>p</mi><mi>k</mi></msub><annotation encoding="application/x-tex">p_k</annotation></semantics></math> determines many network phenomena.</strong></p>
 </section>
 <section id="computational-representations-of-a-network" class="level1">
 <h1>Computational representations of a network</h1>
@@ -474,24 +458,24 @@ p_k = \frac{N_k}{N}
 <section id="adjacency-matrix" class="level2">
 <h2 class="anchored" data-anchor-id="adjacency-matrix">Adjacency matrix:</h2>
 <blockquote class="blockquote">
-<p><strong>The <em>adjacency matrix</em> allows to keep track of its links by providing a complete list of them. The adjacency matrix for a network of <span class="math inline">N</span> nodes as <span class="math inline">N</span> rows and <span class="math inline">N</span> columns.</strong></p>
+<p><strong>The <em>adjacency matrix</em> allows to keep track of its links by providing a complete list of them. The adjacency matrix for a network of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> nodes as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> rows and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> columns.</strong></p>
 </blockquote>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mn>1</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>i</mi><mi>f</mi><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>E</mi></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>i</mi><mi>f</mi><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∉</mo><mi>E</mi></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
 A_{ij} =
 \begin{cases}
 1 \ \ \ \ if \ (i,j) \in E \\
 0 \ \ \ \ if \ (i,j) \notin E
 \end{cases}
-</span> This kind of matrix can have only values 1 or 0 if we are dealing with an <em>unweighed</em> network; moreover, it is a <em>symmetric matrix</em> (links are reciprocated). In case of a <em>undirected</em> network, the matrix is <em>asymmetric</em> while edges can as well either have value 0 or 1 (or <code>NA</code>); the order is important: rows and columns are symmetric and must be ordered in the same way (e.g.: <em>if row 3 contains data about node A its links, then column 3 must contain the same data and be about node A</em>).</p>
-<p>The degree <span class="math inline">k_i</span> of node <span class="math inline">i</span> can be obtained directly from the elements of the adjacency matrix. For <em>undirected</em> networks: <span class="math display">
+</annotation></semantics></math> This kind of matrix can have only values 1 or 0 if we are dealing with an <em>unweighed</em> network; moreover, it is a <em>symmetric matrix</em> (links are reciprocated). In case of a <em>undirected</em> network, the matrix is <em>asymmetric</em> while edges can as well either have value 0 or 1 (or <code>NA</code>); the order is important: rows and columns are symmetric and must be ordered in the same way (e.g.: <em>if row 3 contains data about node A its links, then column 3 must contain the same data and be about node A</em>).</p>
+<p>The degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>i</mi></msub><annotation encoding="application/x-tex">k_i</annotation></semantics></math> of node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> can be obtained directly from the elements of the adjacency matrix. For <em>undirected</em> networks: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>i</mi></msub><mo>=</mo><munder><munder><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>A</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow><mo accent="true">⏟</mo></munder><mstyle mathvariant="normal"><mi>S</mi><mi>u</mi><mi>m</mi><mspace width="0.222em"></mspace><mi>b</mi><mi>y</mi><mspace width="0.222em"></mspace><mi>r</mi><mi>o</mi><mi>w</mi></mstyle></munder><mo>=</mo><munder><munder><mrow><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>A</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow><mo accent="true">⏟</mo></munder><mstyle mathvariant="normal"><mi>S</mi><mi>u</mi><mi>m</mi><mspace width="0.222em"></mspace><mi>b</mi><mi>y</mi><mspace width="0.222em"></mspace><mi>c</mi><mi>o</mi><mi>l</mi><mi>u</mi><mi>m</mi><mi>n</mi></mstyle></munder></mrow><annotation encoding="application/x-tex">
 k_i  = \underbrace{\sum^N_{j = 1} A_{ji}}_{\mathrm{Sum \ by\ row}} = \underbrace{\sum^N_{i = 1} A_{ji}}_{\mathrm{Sum \ by \ column}}
-</span> It is then a sum over either the rows or the columns of the matrix.</p>
-<p>Given that in an <em>undirected network</em> the number of outgoing links equal the number of incoming links, we have: <span class="math display">
+</annotation></semantics></math> It is then a sum over either the rows or the columns of the matrix.</p>
+<p>Given that in an <em>undirected network</em> the number of outgoing links equal the number of incoming links, we have: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>L</mi><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow><mi>N</mi></munderover><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
 2L = \sum^N_{i = 1} k^{in}_i = \sum^N_{i = 1} k^{out}_i = \sum^N_{ij} A_{ij}
-</span> In other words, the number of <em>non-zero elements</em> of the adjacency matrix is <span class="math inline">2L</span>, or twice the number of links.</p>
-<p>For <em>directed</em> networks, the sum over the adjacency matrix row and columns provide either the <em>incoming</em> or <em>out coming</em> degrees: <span class="math display">
+</annotation></semantics></math> In other words, the number of <em>non-zero elements</em> of the adjacency matrix is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mi>L</mi></mrow><annotation encoding="application/x-tex">2L</annotation></semantics></math>, or twice the number of links.</p>
+<p>For <em>directed</em> networks, the sum over the adjacency matrix row and columns provide either the <em>incoming</em> or <em>out coming</em> degrees: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>k</mi><mi>i</mi><mrow><mi>i</mi><mi>n</mi></mrow></msubsup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>A</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub><mo>,</mo><mspace width="0.222em"></mspace><msubsup><mi>k</mi><mi>i</mi><mrow><mi>o</mi><mi>u</mi><mi>t</mi></mrow></msubsup><mo>=</mo><munderover><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></munderover><msub><mi>A</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
 k^{in}_i = \sum^N_{j = 1} A_{ji}, \ k^{out}_i = \sum^N_{i = 1} A_{ji}
-</span></p>
+</annotation></semantics></math></p>
 <ul>
 <li><strong>Advantages</strong>:
 <ul>
@@ -564,17 +548,17 @@ k^{in}_i = \sum^N_{j = 1} A_{ji}, \ k^{out}_i = \sum^N_{i = 1} A_{ji}
 <li><p><strong>Density of a network: number of its edges divided by the total number of possible pair of nodes (which is the <em>maximum number of links that could possibly exist in the network</em>).</strong></p></li>
 </ul>
 </blockquote>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mi>i</mi></munder><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>A</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub></mrow><mrow><mn>2</mn><mi>N</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 D = \frac{\sum_i \sum_j A_{i, j}}{2 N(N -1)}
-</span></p>
+</annotation></semantics></math></p>
 <blockquote class="blockquote">
 <ul>
-<li><strong>A network <span class="math inline">G'=(V', E')</span> is a <em>subgraph</em> of network <span class="math inline">G = (V, E)</span> if <span class="math inline">G'=(V', E') \subseteq G = (V, E)</span></strong>.</li>
+<li><strong>A network <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>′</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mi>′</mi><mo>,</mo><mi>E</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G'=(V', E')</annotation></semantics></math> is a <em>subgraph</em> of network <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G = (V, E)</annotation></semantics></math> if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mi>′</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mi>′</mi><mo>,</mo><mi>E</mi><mi>′</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>⊆</mo><mi>G</mi><mo>=</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>V</mi><mo>,</mo><mi>E</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G'=(V', E') \subseteq G = (V, E)</annotation></semantics></math></strong>.</li>
 </ul>
 </blockquote>
 <blockquote class="blockquote">
 <ul>
-<li><strong>A <em>complete network</em> is a network that contains all the possible links between its nodes and has therefore density <span class="math inline">D = 1</span>.</strong></li>
+<li><strong>A <em>complete network</em> is a network that contains all the possible links between its nodes and has therefore density <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">D = 1</annotation></semantics></math>.</strong></li>
 </ul>
 </blockquote>
 <blockquote class="blockquote">
@@ -1071,9 +1055,9 @@ No edge attributes</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"directed"</span>), <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>igraph_file.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH b54593d DN-- 5 36 -- 
+<pre><code>IGRAPH 88e75fe DN-- 5 36 -- 
 + attr: name (v/c)
-+ edges from b54593d (vertex names):
++ edges from 88e75fe (vertex names):
  [1] Ana -&gt;Ella Ana -&gt;Ella Ana -&gt;Isra Ana -&gt;Petr Ana -&gt;Petr Ana -&gt;Petr
  [7] Ana -&gt;Sam  Ana -&gt;Sam  Ella-&gt;Ana  Ella-&gt;Isra Ella-&gt;Isra Ella-&gt;Isra
 [13] Ella-&gt;Petr Ella-&gt;Sam  Ella-&gt;Sam  Ella-&gt;Sam  Isra-&gt;Ana  Isra-&gt;Ana 
@@ -1736,7 +1720,7 @@ A20   0</code></pre>
 <span id="cb83-5"><a href="#cb83-5" aria-hidden="true" tabindex="-1"></a>colfunc <span class="ot">&lt;-</span> <span class="fu">colorRampPalette</span>(<span class="fu">c</span>(<span class="st">"yellow"</span>, <span class="st">"red"</span>)) </span>
 <span id="cb83-6"><a href="#cb83-6" aria-hidden="true" tabindex="-1"></a>COLWB <span class="ot">&lt;-</span> <span class="fu">colfunc</span>(<span class="dv">7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The <code>colorRampPalette</code> takes two values as the extreme of your range of colours and interpolates the <span class="math inline">n</span> intermediate colours in the range. We can assign a colour to each level of the variable:</p>
+<p>The <code>colorRampPalette</code> takes two values as the extreme of your range of colours and interpolates the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> intermediate colours in the range. We can assign a colour to each level of the variable:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>TenureA2 <span class="ot">&lt;-</span> TenureA</span>
 <span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>TenureA2[TenureA<span class="sc">==</span><span class="dv">0</span>] <span class="ot">&lt;-</span> COLWB[<span class="dv">1</span>]</span>
@@ -1884,11 +1868,11 @@ A20   0</code></pre>
 <blockquote class="blockquote">
 <p>We are talking about the characterization of <em>nodes</em>.</p>
 </blockquote>
-<p>We use the <em>degree</em>, <span class="math inline">k</span>: the number of edges incident to a vertex.</p>
+<p>We use the <em>degree</em>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>: the number of edges incident to a vertex.</p>
 <ul>
-<li>a node with <span class="math inline">k=0</span> is <em>isolated.</em></li>
-<li>a node with <span class="math inline">k = 1</span> is a <em>leaf</em>, or <em>terminal</em> node.</li>
-<li>a node with <span class="math inline">k &gt;&gt; \langle k \rangle</span> is an <em>hub.</em></li>
+<li>a node with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k=0</annotation></semantics></math> is <em>isolated.</em></li>
+<li>a node with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math> is a <em>leaf</em>, or <em>terminal</em> node.</li>
+<li>a node with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>&gt;</mo><mo>&gt;</mo><mo stretchy="false" form="prefix">⟨</mo><mi>k</mi><mo stretchy="false" form="postfix">⟩</mo></mrow><annotation encoding="application/x-tex">k &gt;&gt; \langle k \rangle</annotation></semantics></math> is an <em>hub.</em></li>
 </ul>
 <p>For directed networks:</p>
 <ul>
@@ -2008,23 +1992,23 @@ A21     15    0.75</code></pre>
 <p>In contrast to Euler tours, there is no known efficient procedure by which one can determine whether a graph is Hamiltonian or not - that makes the issue of (non)Hamiltonian graphs difficult.</p>
 <section id="counting-paths-between-nodes" class="level3">
 <h3 class="anchored" data-anchor-id="counting-paths-between-nodes">Counting paths between nodes</h3>
-<p>One of the most important characteristic of a network are its paths; we can use the adjacency matrix to compute the number of paths leading from one node to the other. We need to raise it to the power of <span class="math inline">r</span> (length of the path): the number of different paths of length <span class="math inline">r</span> from <span class="math inline">v_i</span> to <span class="math inline">v_j</span> (vertices) equals the <span class="math inline">(i,j)</span>th entry of <span class="math inline">A^r</span>, where <span class="math inline">r&gt;0</span> is a positive integer. <span class="math display">
+<p>One of the most important characteristic of a network are its paths; we can use the adjacency matrix to compute the number of paths leading from one node to the other. We need to raise it to the power of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> (length of the path): the number of different paths of length <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>r</mi><annotation encoding="application/x-tex">r</annotation></semantics></math> from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>i</mi></msub><annotation encoding="application/x-tex">v_i</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>v</mi><mi>j</mi></msub><annotation encoding="application/x-tex">v_j</annotation></semantics></math> (vertices) equals the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo>,</mo><mi>j</mi><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(i,j)</annotation></semantics></math>th entry of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>A</mi><mi>r</mi></msup><annotation encoding="application/x-tex">A^r</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r&gt;0</annotation></semantics></math> is a positive integer. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>N</mi><mrow><mi>i</mi><mi>j</mi></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></msubsup><mo>=</mo><msub><mrow><mo stretchy="true" form="prefix">[</mo><msup><mi>A</mi><mi>n</mi></msup><mo stretchy="true" form="postfix">]</mo></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
 N^{(n)}_{ij} = [A^n]_{ij}
-</span></p>
+</annotation></semantics></math></p>
 <p>Moreover: if</p>
 <ul>
-<li><span class="math inline">A^n_{uv} = 0</span> there are no walks of length <span class="math inline">n</span> going from <span class="math inline">u</span> to <span class="math inline">v</span>.</li>
-<li><span class="math inline">A^n_{uv} &gt; 0</span> is exactly the number of such walks.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>A</mi><mrow><mi>u</mi><mi>v</mi></mrow><mi>n</mi></msubsup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A^n_{uv} = 0</annotation></semantics></math> there are no walks of length <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> going from <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math> to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math>.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msubsup><mi>A</mi><mrow><mi>u</mi><mi>v</mi></mrow><mi>n</mi></msubsup><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A^n_{uv} &gt; 0</annotation></semantics></math> is exactly the number of such walks.</li>
 </ul>
 </section>
 <section id="geodesic-paths" class="level3">
 <h3 class="anchored" data-anchor-id="geodesic-paths">Geodesic Paths</h3>
 <blockquote class="blockquote">
 <ul>
-<li><strong><em>Geodesic path</em>: a path that is a sequence of vertices connected by edges between vertices <span class="math inline">u</span> and <span class="math inline">v</span> with the fewest possible edges. It is the path between two vertices such that <em>no shorter path exists</em>. A geodesic path is also called a <em>shortest path</em> or a <em>graph geodesic</em>.</strong></li>
+<li><strong><em>Geodesic path</em>: a path that is a sequence of vertices connected by edges between vertices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>u</mi><annotation encoding="application/x-tex">u</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> with the fewest possible edges. It is the path between two vertices such that <em>no shorter path exists</em>. A geodesic path is also called a <em>shortest path</em> or a <em>graph geodesic</em>.</strong></li>
 </ul>
 </blockquote>
-<p>There is no geodesic path between two vertices if the vertices are not connected by any route through the network; if so, the geodesic distance is <em>infinite</em> (<span class="math inline">\infty</span>) by convention. Geodesic paths are not necessarily unique as it is possible to have two or more paths of equal length between a given pair of vertices.</p>
+<p>There is no geodesic path between two vertices if the vertices are not connected by any route through the network; if so, the geodesic distance is <em>infinite</em> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>∞</mi><annotation encoding="application/x-tex">\infty</annotation></semantics></math>) by convention. Geodesic paths are not necessarily unique as it is possible to have two or more paths of equal length between a given pair of vertices.</p>
 <blockquote class="blockquote">
 <ul>
 <li><strong><em>Geodesic distance</em>, also called <em>shortest distance</em>, is the length of the geodesic path. It is the shortest network distance between the vertices in question. In other words, the distance between two vertices in a graph is the number of edges in the shortest path connecting them.</strong></li>
@@ -2081,8 +2065,8 @@ N^{(n)}_{ij} = [A^n]_{ij}
 <p>Some remarks about <em>Dijkstra</em>’s algorithm:</p>
 <ul>
 <li>It is an <em>optimal</em> algorithm, meaning that it always produces the actual shortest path.</li>
-<li>It is <em>efficient</em>, meaning that it can be implemented in a reasonable amount of time; in this case, <span class="math inline">\sqrt{V}</span>, or the number of nodes.</li>
-<li>It takes around <span class="math inline">V^2</span> calculations, where <span class="math inline">V</span> is the number of vertices in a graph.</li>
+<li>It is <em>efficient</em>, meaning that it can be implemented in a reasonable amount of time; in this case, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msqrt><mi>V</mi></msqrt><annotation encoding="application/x-tex">\sqrt{V}</annotation></semantics></math>, or the number of nodes.</li>
+<li>It takes around <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msup><mi>V</mi><mn>2</mn></msup><annotation encoding="application/x-tex">V^2</annotation></semantics></math> calculations, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>V</mi><annotation encoding="application/x-tex">V</annotation></semantics></math> is the number of vertices in a graph.</li>
 </ul>
 <p>This algorithm is the default choice in <code>R</code> when computing the shortest distance. It is also used to compute the <em>average shortest path</em>.</p>
 <blockquote class="blockquote">
@@ -2098,20 +2082,20 @@ N^{(n)}_{ij} = [A^n]_{ij}
 </section>
 <section id="laplacian-matrix" class="level3">
 <h3 class="anchored" data-anchor-id="laplacian-matrix">Laplacian Matrix</h3>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mtable><mtr><mtd columnalign="right"><msub><mi>L</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mstyle mathvariant="normal"><mi>d</mi><mi>e</mi><mi>g</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>v</mi><mi>i</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>i</mi><mi>f</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>=</mo><mi>j</mi></mtd></mtr><mtr><mtd columnalign="left"><mo>−</mo><mn>1</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>i</mi><mi>f</mi><mspace width="0.222em"></mspace><mi>i</mi><mo>≠</mo><mi>j</mi><mspace width="0.222em"></mspace><mi>a</mi><mi>n</mi><mi>d</mi><mspace width="0.222em"></mspace><msub><mi>v</mi><mi>i</mi></msub><mspace width="0.222em"></mspace><mi>i</mi><mi>s</mi><mspace width="0.222em"></mspace><mi>a</mi><mi>d</mi><mi>j</mi><mi>a</mi><mi>c</mi><mi>e</mi><mi>n</mi><mi>t</mi><mspace width="0.222em"></mspace><mi>t</mi><mi>o</mi><mspace width="0.222em"></mspace><msub><mi>v</mi><mi>j</mi></msub></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mi>o</mi><mi>t</mi><mi>h</mi><mi>e</mi><mi>r</mi><mi>w</mi><mi>i</mi><mi>s</mi><mi>e</mi></mtd></mtr></mtable></mrow></mtd></mtr></mtable><annotation encoding="application/x-tex">
 \begin{aligned}
-L_{i,j} =
+L_{i,j} = 
 \begin{cases}
 \mathrm{deg}(v_i) \ \ \ \  if \ i=j \\
 -1 \ \ \ \ \ \ \ \  if \ i \neq j \ and \ v_i \ is \ adjacent \ to \ v_j\\
 0 \ \ \ \ \ \ \ \ \ \ \ otherwise
 \end{cases}
 \end{aligned}
-</span></p>
+</annotation></semantics></math></p>
 <p>Or, equivalently, the matrix:</p>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>L</mi><mo>=</mo><mi>D</mi><mo>−</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">
 L = D - A
-</span></p>
+</annotation></semantics></math></p>
 </section>
 <section id="connectivity" class="level3">
 <h3 class="anchored" data-anchor-id="connectivity">Connectivity</h3>
@@ -2127,13 +2111,13 @@ L = D - A
 <p><strong><em>Local clustering</em>: clustering associated with a given individual.</strong></p>
 </blockquote>
 <p>In other words, we are counting and <em>computing all close triads</em> of elements all connected to each other and dividing it by all the connections of a given node (<em>open triads</em>). It is a <em>normalized</em> measure.</p>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mo stretchy="false" form="prefix">{</mo><msub><mi>e</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><mo>:</mo><msub><mi>v</mi><mi>j</mi></msub><mo>,</mo><msub><mi>v</mi><mi>k</mi></msub><mo>∈</mo><msub><mi>N</mi><mi>i</mi></msub><mi>&amp;</mi><msub><mi>e</mi><mrow><mi>j</mi><mi>k</mi></mrow></msub><mo>∈</mo><mi>E</mi><mo stretchy="false" form="postfix">}</mo><mo stretchy="true" form="postfix">|</mo></mrow><mrow><msub><mi>k</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 c_i = \frac {| \{ e_{jk} : v_j, v_k \in N_i \&amp; e_{jk} \in E\} |} {k_i(k_i -1)}
-</span></p>
+</annotation></semantics></math></p>
 <p>The <em>average clustering of a network</em> can also be computed.</p>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>C</mi><mo accent="true">‾</mo></mover><mo>=</mo><mfrac><mn>1</mn><mi>n</mi></mfrac><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">
 \bar{C} = \frac {1}{n} \sum_i c_i
-</span></p>
+</annotation></semantics></math></p>
 <section id="triadic-closure" class="level3">
 <h3 class="anchored" data-anchor-id="triadic-closure">Triadic closure</h3>
 <blockquote class="blockquote">
@@ -2163,14 +2147,14 @@ c_i = \frac {| \{ e_{jk} : v_j, v_k \in N_i \&amp; e_{jk} \in E\} |} {k_i(k_i -1
 </ul>
 <p>Social networks are typically <em>assortative</em>, which technological networks <em>dissortative.</em></p>
 <p>It can be quantified using the Pearson coefficient (<em>correlation</em>) of the degrees of adjacent nodes.</p>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>r</mi><mo>=</mo><mfrac><mrow><munder><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>k</mi><mi>i</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mrow><mrow><mn>2</mn><mi>E</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>k</mi><mi>i</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mrow><mrow><munder><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow></munder><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>δ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><mfrac><mrow><msub><mi>k</mi><mi>i</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mrow><mrow><mn>2</mn><mi>E</mi></mrow></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><msub><mi>k</mi><mi>i</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 r = \frac {\sum_{ij}(A_{ij} - \frac{k_ik_j}{2E} )k_ik_j}{\sum_{ij}(A_{ij}\delta_{ij} - \frac{k_ik_j}{2E})k_ik_j}
-</span></p>
+</annotation></semantics></math></p>
 <p>The assortativity can be computed only for nodes with a <em>given</em> degree and it is possible to visualize the general tendency of your network in the <em>slope</em> of the following function, which looks at the average nearest neighbour degree of nodes with given degree:</p>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>n</mi><mi>n</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mn>1</mn><msub><mi>N</mi><mi>k</mi></msub></mfrac><munder><mo>∑</mo><mi>i</mi></munder><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>δ</mi><mrow><msub><mi>k</mi><mi>i</mi></msub><mo>,</mo><mi>k</mi></mrow></msub><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mi>k</mi></mfrac><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>A</mi><mrow></mrow></msub><mi>i</mi><mi>j</mi><msub><mi>k</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">
 k_{nn}(k) = \frac {1}{N_k} \sum_i \left [ \delta_{k_i, k} \left ( \frac{1}{k} \sum _j A_{}ij k_j\right ) \right ]
-</span></p>
-<p>This is equivalent to <span class="math inline">&lt;k&gt;</span>, which is the <em>conditional probability</em> that an edge of node with degree <span class="math inline">k</span> points to a node with degree <span class="math inline">k′</span>.</p>
+</annotation></semantics></math></p>
+<p>This is equivalent to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&lt;</mo><mi>k</mi><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">&lt;k&gt;</annotation></semantics></math>, which is the <em>conditional probability</em> that an edge of node with degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> points to a node with degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mi>′</mi></mrow><annotation encoding="application/x-tex">k′</annotation></semantics></math>.</p>
 <blockquote class="blockquote">
 <p><strong>Computing this variables and statistical measures for different networks allow to create classifications and opens the way for more analysis.</strong></p>
 </blockquote>
@@ -2221,7 +2205,7 @@ k_{nn}(k) = \frac {1}{N_k} \sum_i \left [ \delta_{k_i, k} \left ( \frac{1}{k} \s
 <p><strong>Who’s important, based on their network position?</strong></p>
 </blockquote>
 <p>This depends on the context and purpose of the measure.</p>
-<p>In each of the following networks, <span class="math inline">X</span> as higher centrality than <span class="math inline">Y</span> according to a particular measure. In other words, position (e.g.&nbsp;<em>choke points</em>) in a network matters when considering centrality.</p>
+<p>In each of the following networks, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> as higher centrality than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> according to a particular measure. In other words, position (e.g.&nbsp;<em>choke points</em>) in a network matters when considering centrality.</p>
 <p>It is always possible, once fixed a contest, to measure or distance from a <em>focal</em> node (a node which is particularly important). An example of this is the <em>Erdös number</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2271,19 +2255,19 @@ k_{nn}(k) = \frac {1}{N_k} \sum_i \left [ \delta_{k_i, k} \left ( \frac{1}{k} \s
 <ul>
 <li>Calculate all shortest paths starting from that node to every possible destination in the network.</li>
 <li>Sum these distances to obtain the <em>total distance</em> measure.</li>
-<li>Take the average of this value by dividing it by the number of all possible destinations, <span class="math inline">(n-1)</span>.</li>
+<li>Take the average of this value by dividing it by the number of all possible destinations, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><annotation encoding="application/x-tex">(n-1)</annotation></semantics></math>.</li>
 <li>Take the opposite (<em>inverse</em>) of what we have just computed.</li>
 </ul>
 <blockquote class="blockquote">
-<p><strong>The closeness centrality of <span class="math inline">v</span> is nothing more than its inverse average path length.</strong></p>
+<p><strong>The closeness centrality of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is nothing more than its inverse average path length.</strong></p>
 </blockquote>
 <ul>
 <li><em>Farness</em>: average of length of shortest paths to all other nodes.</li>
 <li><em>Closeness</em>: inverse of the <em>Farness</em> (normalized by the number of nodes).</li>
 </ul>
-<p>The mathematical definition is: <span class="math display">
+<p>The mathematical definition is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>=</mo><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><munder><mo>∑</mo><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></munder><msub><mi>d</mi><mrow><mi>j</mi><mi>i</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
 C_i = \left (  \frac {1}{n-1} \sum_{j \neq i} d_{ji} \right )^{-1}
-</span></p>
+</annotation></semantics></math></p>
 <p>The higher your closeness centrality value, the more your node is close to other nodes in your network: the highest value is 1. Two limitations however are associated with this measure:</p>
 <ol type="1">
 <li>It spans a very small dynamic range: in most networks, the range (<em>max - min</em>) is small.</li>
@@ -2292,7 +2276,7 @@ C_i = \left (  \frac {1}{n-1} \sum_{j \neq i} d_{ji} \right )^{-1}
 </section>
 <section id="betweenness-centrality" class="level3">
 <h3 class="anchored" data-anchor-id="betweenness-centrality">Betweenness centrality</h3>
-<p>We want to use the whole topology to define the centrality of a node: it is one of the most important measures. <em>Betweenness</em> counts <em>paths</em>: we still calculate all shortest paths between al possible pairs of origins and destinations, although we count the <em>number of paths passing through</em> <span class="math inline">v</span> of which <span class="math inline">v</span> is <em>neither an origin nor a destination</em>. Such a measure then works as a proxy of the relevance of a node in a network connections and its relevance in the spread of information.</p>
+<p>We want to use the whole topology to define the centrality of a node: it is one of the most important measures. <em>Betweenness</em> counts <em>paths</em>: we still calculate all shortest paths between al possible pairs of origins and destinations, although we count the <em>number of paths passing through</em> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> of which <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> is <em>neither an origin nor a destination</em>. Such a measure then works as a proxy of the relevance of a node in a network connections and its relevance in the spread of information.</p>
 <blockquote class="blockquote">
 <p><strong>The main assumption is that important vertices are bridges over which information flows. If information spreads via shortest paths, important nodes are found on many shortest paths.</strong></p>
 </blockquote>
@@ -2303,11 +2287,11 @@ C_i = \left (  \frac {1}{n-1} \sum_{j \neq i} d_{ji} \right )^{-1}
 </blockquote>
 <p>However, the shortest path is not necessarily <em>unique</em>.</p>
 <blockquote class="blockquote">
-<p><strong>If there are <span class="math inline">n</span> alternative paths not passing through the node, then the path contributes only <span class="math inline">1/n</span> to the node’s centrality.</strong></p>
+<p><strong>If there are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> alternative paths not passing through the node, then the path contributes only <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math> to the node’s centrality.</strong></p>
 </blockquote>
 <p>Another issue regards <em>hubs</em>: in the context of a network, a hub is a node with a large degree, meaning it has connections with many other nodes. However, even though they might have a high BC, this is not necessarily implying that they work as <em>brokers</em>.</p>
 <blockquote class="blockquote">
-<p><strong>How many paths would become longer if node <span class="math inline">v</span> would disappear from the network? How much is the network structure dependent on <span class="math inline">v’</span>s presence?</strong></p>
+<p><strong>How many paths would become longer if node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> would disappear from the network? How much is the network structure dependent on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>v</mi><mi>’</mi></mrow><annotation encoding="application/x-tex">v’</annotation></semantics></math>s presence?</strong></p>
 </blockquote>
 <p>Since real world networks have hubs which are closer to most nodes, the shortest paths will use them often.</p>
 <ul>
@@ -2318,9 +2302,9 @@ C_i = \left (  \frac {1}{n-1} \sum_{j \neq i} d_{ji} \right )^{-1}
 <blockquote class="blockquote">
 <p><strong>Scaled formula:</strong></p>
 </blockquote>
-<p><span class="math display">
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mi>C</mi><mi>′</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>B</mi><mi>C</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>i</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo>−</mo><mn>2</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">]</mo></mrow><mi>/</mi><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 BC'(i) = \frac {BC(i)}{[(N-1)(N-2)]/2}
-</span></p>
+</annotation></semantics></math></p>
 <p>Its values are typically distributed over a wide range: its maximum value occurs when the vertex lies on the shortest path between every other pair of vertices, such as in <em>stars networks</em>.</p>
 <p>If the graph is <em>not connected</em>, it is by convention set to 0 for unreachable pairs. Betweenness centrality shares with closeness a drawback: computational complexity, which means that for large structure it is not possible to compute.</p>
 </section>
@@ -2384,19 +2368,19 @@ BC'(i) = \frac {BC(i)}{[(N-1)(N-2)]/2}
 <p>Katz centrality works around this problem by giving a small amount of centrality for <em>free</em>, the minimum of centrality a node can transfer to other nodes by referring to them.</p>
 <blockquote class="blockquote">
 <ul>
-<li>Degree centrality of node <span class="math inline">i</span> measures the local influence of a node.</li>
+<li>Degree centrality of node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> measures the local influence of a node.</li>
 <li>Eigenvector centrality measures the global influence of a node within the network.</li>
-<li>Katz centrality covers both the local and global influence of <span class="math inline">i</span>.</li>
+<li>Katz centrality covers both the local and global influence of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.</li>
 </ul>
 <p><strong>A node is important if it is linked from other important nodes or if it is highly linked.</strong></p>
 </blockquote>
-<p>No vertex has zero centrality and will contribute at least <span class="math inline">\beta</span> to other vertices centrality: the main issue is that <span class="math inline">\alpha</span> (<em>dampening factor</em>) and <span class="math inline">\beta</span> should be chosen before the computation:</p>
-<p><span class="math display">
+<p>No vertex has zero centrality and will contribute at least <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> to other vertices centrality: the main issue is that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> (<em>dampening factor</em>) and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>β</mi><annotation encoding="application/x-tex">\beta</annotation></semantics></math> should be chosen before the computation:</p>
+<p><math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mi>α</mi><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><msub><mi>x</mi><mi>j</mi></msub><mo>+</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">
 x_i = \alpha \sum_j A_{ij} x_j + \beta
-</span></p>
-<p>It is recommended to choose <span class="math inline">\alpha</span> between 0 and <span class="math inline">1/\rho(A)</span>, where <span class="math inline">\rho(A)</span> is the largest eigenvalue of A.</p>
+</annotation></semantics></math></p>
+<p>It is recommended to choose <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math> between 0 and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>1</mn><mi>/</mi><mi>ρ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">1/\rho(A)</annotation></semantics></math>, where <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ρ</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>A</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\rho(A)</annotation></semantics></math> is the largest eigenvalue of A.</p>
 <blockquote class="blockquote">
-<p><strong>It is a matter of relative weights. When you increase <span class="math inline">\alpha</span>, you are increasing the importance of being connected to important individuals. Decreasing, you are giving more weight to the importance of being connected.</strong></p>
+<p><strong>It is a matter of relative weights. When you increase <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>α</mi><annotation encoding="application/x-tex">\alpha</annotation></semantics></math>, you are increasing the importance of being connected to important individuals. Decreasing, you are giving more weight to the importance of being connected.</strong></p>
 </blockquote>
 <p>The main issue with this measure is: when a node becomes very central in a network, it passes its centrality to all its outgoing links, making all those nodes very popular. However, they might not be important. As a solution, We can divide the value of passed centrality by the number of outgoing links, e.g., out degree of that node. This way, each connected neighbour gets a fraction of the source node’s centrality.</p>
 <p>If your node connection has a high centrality, you will receive only a small proportion of it.</p>
@@ -2810,7 +2794,7 @@ A21                      83                     0.83</code></pre>
   ..$ :List of 1
   .. ..$ name: chr [1:21] "A01" "A02" "A03" "A04" ...
   ..$ : Named list()
- $ :&lt;environment: 0x10fb1bc38&gt; </code></pre>
+ $ :&lt;environment: 0x10dcf5a80&gt; </code></pre>
 </div>
 </div>
 <p>The advantage of using this format is that it is compatible with many applications. We might be interested to know which nodes belong to which components.</p>
@@ -2924,7 +2908,7 @@ $no
 </blockquote>
 <p>We can classify networks:</p>
 <ol type="1">
-<li><em>Regular lattices</em> or <span class="math inline">k</span>-regular graphs: it is a network where all nodes have the same degree. Each node have the same number of connection as the others.</li>
+<li><em>Regular lattices</em> or <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-regular graphs: it is a network where all nodes have the same degree. Each node have the same number of connection as the others.</li>
 </ol>
 <ul>
 <li>They are interesting because they characterize networks in which each element is in the same relative position. Some topologies are more structured than others. Usually distance is fundamental and structure is fundamental in shaping such a network.</li>
@@ -2946,13 +2930,13 @@ $no
 <p><strong>Degree distribution:</strong></p>
 </blockquote>
 <ul>
-<li><span class="math inline">k \geq 0</span>: is the degree of a node</li>
-<li><span class="math inline">\rho_k</span> is the fraction of the nodes having degree <span class="math inline">k</span>.
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k \geq 0</annotation></semantics></math>: is the degree of a node</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\rho_k</annotation></semantics></math> is the fraction of the nodes having degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.
 <ul>
-<li>It is the probability that a node chosen at random has degree <span class="math inline">k</span>.</li>
+<li>It is the probability that a node chosen at random has degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
 </ul></li>
-<li>The set of quantities <span class="math inline">\rho_k</span>k with <span class="math inline">k \geq 0</span> is the degree distribution of a network.</li>
-<li><span class="math inline">N \times \rho_k</span> tells us the number of vertices with degree <span class="math inline">k</span>.</li>
+<li>The set of quantities <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>ρ</mi><mi>k</mi></msub><annotation encoding="application/x-tex">\rho_k</annotation></semantics></math>k with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">k \geq 0</annotation></semantics></math> is the degree distribution of a network.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>×</mo><msub><mi>ρ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">N \times \rho_k</annotation></semantics></math> tells us the number of vertices with degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>.</li>
 </ul>
 <p>As we will see the degree distribution is important to characterize a network, but does not provide us with all information about it. This is usually the first thing to be computed, but further statistics are required to actually understand a network.</p>
 <div class="cell">
@@ -3011,22 +2995,22 @@ $no
 <p>We will focus on Erdös-Renyi random graphs, which is a very useful benchmark.</p>
 </blockquote>
 <ul>
-<li><span class="math inline">G(n, p)</span> denotes the undirected Erdös-Reyni graph with <span class="math inline">n</span> nodes and where:
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>G</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">G(n, p)</annotation></semantics></math> denotes the undirected Erdös-Reyni graph with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> nodes and where:
 <ul>
-<li>Every edge is formed with probability <span class="math inline">p \in [0,1]</span>.</li>
+<li>Every edge is formed with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mn>0</mn><mo>,</mo><mn>1</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">p \in [0,1]</annotation></semantics></math>.</li>
 </ul></li>
 </ul>
-<p>In other words: every <span class="math inline">I_{ij}</span> between arbitrarily chosen nodes <span class="math inline">i</span> and <span class="math inline">j</span>: <span class="math display">
+<p>In other words: every <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">I_{ij}</annotation></semantics></math> between arbitrarily chosen nodes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="true" form="prefix">{</mo><mtable><mtr><mtd columnalign="left"><mn>1</mn><mspace width="1.0em"></mspace><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mspace width="0.222em"></mspace><mi>p</mi><mi>r</mi><mi>o</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>i</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr><mtr><mtd columnalign="left"><mn>0</mn><mspace width="1.0em"></mspace><mi>w</mi><mi>i</mi><mi>t</mi><mi>h</mi><mspace width="0.222em"></mspace><mi>p</mi><mi>r</mi><mi>o</mi><mi>b</mi><mi>a</mi><mi>b</mi><mi>i</mi><mi>l</mi><mi>i</mi><mi>t</mi><mi>y</mi><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">(</mo><mn>1</mn><mo>−</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mtd></mtr></mtable></mrow></mrow><annotation encoding="application/x-tex">
 I_{ij} =
 \begin{cases}
 1 \quad with \ probability \ \ \ (p) \\
 0 \quad with \ probability \ \ \ (1-p)
 \end{cases}
-</span> This means that <span class="math inline">I_{ij}</span> is a <em>Bernoulli random variable</em>.</p>
-<p>Given that <span class="math inline">I_{ij} \sim \mathcal{Ber}(p)</span>, the expected number of edges in the network is simply: <span class="math display">
+</annotation></semantics></math> This means that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">I_{ij}</annotation></semantics></math> is a <em>Bernoulli random variable</em>.</p>
+<p>Given that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>∼</mo><mstyle mathvariant="script"><mi>ℬ</mi><mi>ℯ</mi><mi>𝓇</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">I_{ij} \sim \mathcal{Ber}(p)</annotation></semantics></math>, the expected number of edges in the network is simply: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="double-struck"><mi>𝔼</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mo>∑</mo><msub><mi>I</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>n</mi><mo>×</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mn>2</mn></mfrac><mi>p</mi></mrow><annotation encoding="application/x-tex">
 \mathbb{E} \left (\sum I_{ij} \right ) = \frac {n \times (n - 1)}{2} p
-</span></p>
-<p>By the <em>Weak Law of Large Numbers</em>, if <span class="math inline">n</span> diverges all nodes will have a degree close to the average value.</p>
+</annotation></semantics></math></p>
+<p>By the <em>Weak Law of Large Numbers</em>, if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> diverges all nodes will have a degree close to the average value.</p>
 <blockquote class="blockquote">
 <p><strong>In other words, the probability to observe the absence of connection when the network grows large tends to zero; all nodes will have degree will converge to average, with little variance.</strong></p>
 </blockquote>
@@ -3034,20 +3018,20 @@ I_{ij} =
 <h2 class="anchored" data-anchor-id="the-degree-distribution">The degree distribution</h2>
 <p>We can then define the probability distribution function of a given network:</p>
 <ul>
-<li>Consider <span class="math inline">K</span> as the <em>random variable</em> representing the degree of a node.</li>
-<li><span class="math inline">K</span> is a binomial random variable, <span class="math inline">K \sim \mathcal{Bin}(n, p)</span>.</li>
-<li>As <span class="math inline">n \to \infty</span>, the degree distribution becomes a Poisson distribution.</li>
+<li>Consider <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math> as the <em>random variable</em> representing the degree of a node.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math> is a binomial random variable, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>K</mi><mo>∼</mo><mstyle mathvariant="script"><mi>ℬ</mi><mi>𝒾</mi><mi>𝓃</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>,</mo><mi>p</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">K \sim \mathcal{Bin}(n, p)</annotation></semantics></math>.</li>
+<li>As <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math>, the degree distribution becomes a Poisson distribution.</li>
 </ul>
-<p>We can then compute the probability that a random network presents nodes of degree <span class="math inline">K</span>.</p>
+<p>We can then compute the probability that a random network presents nodes of degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>K</mi><annotation encoding="application/x-tex">K</annotation></semantics></math>.</p>
 </section>
 <section id="clustering" class="level2">
 <h2 class="anchored" data-anchor-id="clustering">Clustering</h2>
 <ul>
-<li>In a random network the probability that two of <span class="math inline">i</span>’s neighbours link to each other is <span class="math inline">p</span>.</li>
-<li>To calculate <span class="math inline">C_i</span> for a node in a random network we need to estimate the expected number of links <span class="math inline">L_i</span> between the node’s <span class="math inline">k_i</span> neighbours.</li>
-<li>There are <span class="math inline">k_i (k_i − 1)/2</span> possible links between the <span class="math inline">k_i</span> neighbours of node <span class="math inline">i</span>. The <em>local clustering coefficient</em> is: <span class="math display">
+<li>In a random network the probability that two of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>’s neighbours link to each other is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</li>
+<li>To calculate <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>C</mi><mi>i</mi></msub><annotation encoding="application/x-tex">C_i</annotation></semantics></math> for a node in a random network we need to estimate the expected number of links <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>L</mi><mi>i</mi></msub><annotation encoding="application/x-tex">L_i</annotation></semantics></math> between the node’s <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>i</mi></msub><annotation encoding="application/x-tex">k_i</annotation></semantics></math> neighbours.</li>
+<li>There are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>k</mi><mi>i</mi></msub><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">k_i (k_i − 1)/2</annotation></semantics></math> possible links between the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mi>i</mi></msub><annotation encoding="application/x-tex">k_i</annotation></semantics></math> neighbours of node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>. The <em>local clustering coefficient</em> is: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>C</mi><mi>i</mi></msub><mo>=</mo><mfrac><mover><mi>k</mi><mo accent="true">‾</mo></mover><mi>n</mi></mfrac><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">
 C_i = \frac {\bar{k}} {n} = p
-</span></li>
+</annotation></semantics></math></li>
 </ul>
 <blockquote class="blockquote">
 <p><strong>Note that links and nodes are created <em>randomly</em> and <em>independently</em>. The main idea is that the clustering of a large random network tends to be vanishingly small for large networks. if we generate bigger and bigger graphs with fixed average degree, the average clustering will become negligible.</strong></p>
@@ -3055,52 +3039,52 @@ C_i = \frac {\bar{k}} {n} = p
 </section>
 <section id="average-shortest-path" class="level2">
 <h2 class="anchored" data-anchor-id="average-shortest-path">Average shortest path</h2>
-<p>In this kind of network, each node will have a degree closed to the average one. Given a characteristic degree <span class="math inline">\bar{k}</span> if we explore the network we are limited by the characteristic of this networks, in which there are few triangles and local clusters and most nodes are found in the last step <span class="math inline">\bar{k}^h \sim n</span>. Most of the nodes are reached in the last iteration: only the last steps are actually relevant, as they will contain most of the nodes in the networks.</p>
+<p>In this kind of network, each node will have a degree closed to the average one. Given a characteristic degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>k</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{k}</annotation></semantics></math> if we explore the network we are limited by the characteristic of this networks, in which there are few triangles and local clusters and most nodes are found in the last step <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mover><mi>k</mi><mo accent="true">‾</mo></mover><mi>h</mi></msup><mo>∼</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\bar{k}^h \sim n</annotation></semantics></math>. Most of the nodes are reached in the last iteration: only the last steps are actually relevant, as they will contain most of the nodes in the networks.</p>
 <ul>
-<li>The average shortest path, is then<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <span class="math display">
+<li>The average shortest path, is then<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>h</mi><mo>=</mo><mi>l</mi><mi>o</mi><msub><mi>g</mi><mover><mi>k</mi><mo accent="true">‾</mo></mover></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mfrac><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mo stretchy="false" form="prefix">(</mo><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac><mo>=</mo><mi>O</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 h = log_{\bar{k}} (n) = \frac {log(n)} {log(\bar{k})} = \frac{log(n)} {log(p(n-1)} = O(log(n))
-</span></li>
+</annotation></semantics></math></li>
 </ul>
-<p>The shortest path then scales with some function of the <em>logarithm</em> of nodes: very slowly, as it only grows with orders of magnitude with <span class="math inline">n \to \infty</span>. Even in a very large (random) network we are only a few hops apart.</p>
+<p>The shortest path then scales with some function of the <em>logarithm</em> of nodes: very slowly, as it only grows with orders of magnitude with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math>. Even in a very large (random) network we are only a few hops apart.</p>
 <blockquote class="blockquote">
-<p><strong>In a random graph, the diameter, which is the length of the shortest path between the most distanced nodes, scales as a logarithmic function of the number of nodes <span class="math inline">n</span>.</strong></p>
+<p><strong>In a random graph, the diameter, which is the length of the shortest path between the most distanced nodes, scales as a logarithmic function of the number of nodes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</strong></p>
 </blockquote>
 </section>
 <section id="emergence-of-a-giant-component" class="level2">
 <h2 class="anchored" data-anchor-id="emergence-of-a-giant-component">Emergence of a giant component</h2>
 <p>A giant component is the one with the most number of connections. This is especially important in social networks: you have small groups scattered around a single clustering component with a high number of connection. To simplify, we are looking only at the largest one.</p>
 <blockquote class="blockquote">
-<p><strong>Giant component (<span class="math inline">N_G</span>): a maximal connected subgraph containing most of the nodes.</strong></p>
+<p><strong>Giant component (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>N</mi><mi>G</mi></msub><annotation encoding="application/x-tex">N_G</annotation></semantics></math>): a maximal connected subgraph containing most of the nodes.</strong></p>
 </blockquote>
 <p>How does a giant component emerge from a random network? We need to consider the <em>probability distribution</em> of links among nodes, starting by considering the two extreme cases:</p>
 <ul>
-<li><span class="math inline">p = 0</span>: we have for sure that <span class="math inline">\bar{k} =0</span> and all nodes are isolated.</li>
-<li><span class="math inline">p = 1</span>: we have for sure that <span class="math inline">\bar {k}= n-1</span>. All nodes are directly connected.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p = 0</annotation></semantics></math>: we have for sure that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar{k} =0</annotation></semantics></math> and all nodes are isolated.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p = 1</annotation></semantics></math>: we have for sure that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>=</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\bar {k}= n-1</annotation></semantics></math>. All nodes are directly connected.</li>
 </ul>
 <blockquote class="blockquote">
-<p><strong>In other words, we need to understand <span class="math inline">N_g/n</span> growth as a <em>mapping</em> or <em>function</em> of <span class="math inline">p</span>.</strong></p>
+<p><strong>In other words, we need to understand <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>g</mi></msub><mi>/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">N_g/n</annotation></semantics></math> growth as a <em>mapping</em> or <em>function</em> of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>.</strong></p>
 </blockquote>
-<p>A single link can be critical to prompt the emergence of a giant connected component. The key variable is the average degree <span class="math inline">\bar{k}</span>, as in random networks every node as a degree close to it. We can then distinguish different cases:</p>
+<p>A single link can be critical to prompt the emergence of a giant connected component. The key variable is the average degree <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>k</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{k}</annotation></semantics></math>, as in random networks every node as a degree close to it. We can then distinguish different cases:</p>
 <ol type="1">
-<li><em>Sub-critical</em>: <span class="math inline">0 &lt; \bar{k} &lt; 1</span>. Small number of links. Most components are tiny compared to <span class="math inline">n</span>.</li>
-<li><em>Critical</em>: <span class="math inline">\bar{k} = 1</span>. However (with some maths) we can find that the largest component is now much larger than in the previous phase<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Different components sizes coexist. Size distribution: <span class="math inline">Probs = s^{ - \frac {3}{2}}</span><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. In this case we have a single large component.</li>
-<li><em>Super-critical</em>: <span class="math inline">\bar{k} &gt; 1</span>, <span class="math inline">NG /n \sim \bar{k} − 1</span>. The giant component is formed and contains a sizeable proportion of nodes. Isolated components are much smaller. Large components are rare.</li>
+<li><em>Sub-critical</em>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0</mn><mo>&lt;</mo><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 &lt; \bar{k} &lt; 1</annotation></semantics></math>. Small number of links. Most components are tiny compared to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</li>
+<li><em>Critical</em>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\bar{k} = 1</annotation></semantics></math>. However (with some maths) we can find that the largest component is now much larger than in the previous phase<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>. Different components sizes coexist. Size distribution: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mi>r</mi><mi>o</mi><mi>b</mi><mi>s</mi><mo>=</mo><msup><mi>s</mi><mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">Probs = s^{ - \frac {3}{2}}</annotation></semantics></math><a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>. In this case we have a single large component.</li>
+<li><em>Super-critical</em>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\bar{k} &gt; 1</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mi>G</mi><mi>/</mi><mi>n</mi><mo>∼</mo><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">NG /n \sim \bar{k} − 1</annotation></semantics></math>. The giant component is formed and contains a sizeable proportion of nodes. Isolated components are much smaller. Large components are rare.</li>
 </ol>
 <p>If we reach enough connections:</p>
 <ol start="4" type="1">
-<li><em>Connected</em>: <span class="math inline">\bar{k} &gt; log(n)</span>. All links are absorbed by the giant component. <span class="math inline">N_G = n</span>.</li>
+<li><em>Connected</em>: <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>&gt;</mo><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\bar{k} &gt; log(n)</annotation></semantics></math>. All links are absorbed by the giant component. <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>N</mi><mi>G</mi></msub><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">N_G = n</annotation></semantics></math>.</li>
 </ol>
-<p>The logarithm of <span class="math inline">n</span> is a small number compared to <span class="math inline">n</span>: the average degree is still very low, so we are still looking at a very sparse network, which implies that you do not need a large number of connections to have a fully connected network.</p>
-<p>To ensure that a network is connected then you have to set the average number <span class="math inline">\bar{k}</span> greater than <span class="math inline">log(n)</span>. Note also that the giant component emerges through a phase transition, as <span class="math inline">\bar{k} = 1</span> works as a threshold.</p>
+<p>The logarithm of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> is a small number compared to <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>: the average degree is still very low, so we are still looking at a very sparse network, which implies that you do not need a large number of connections to have a fully connected network.</p>
+<p>To ensure that a network is connected then you have to set the average number <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>k</mi><mo accent="true">‾</mo></mover><annotation encoding="application/x-tex">\bar{k}</annotation></semantics></math> greater than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">log(n)</annotation></semantics></math>. Note also that the giant component emerges through a phase transition, as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\bar{k} = 1</annotation></semantics></math> works as a threshold.</p>
 <blockquote class="blockquote">
 <p><strong>The fact that we need at least one link per node to observe a giant component is not unexpected. Indeed, for a giant component to exist, each of its nodes must be linked to at least one other node. It is somewhat counter-intuitive, however, that one link is sufficient for its emergence.</strong></p>
 </blockquote>
 </section>
 <section id="patterns-in-random-networks" class="level2">
 <h2 class="anchored" data-anchor-id="patterns-in-random-networks">Patterns in random networks</h2>
-<p>We can define <span class="math inline">p = N^z</span>, which is the probability of a link to exist between two nodes, with <span class="math inline">z \in [-\infty, 0]</span> as a tuning parameter. As we vary <span class="math inline">z</span>, we obtain suddenly key properties of random graphs.</p>
+<p>We can define <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><msup><mi>N</mi><mi>z</mi></msup></mrow><annotation encoding="application/x-tex">p = N^z</annotation></semantics></math>, which is the probability of a link to exist between two nodes, with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>z</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mi>∞</mi><mo>,</mo><mn>0</mn><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">z \in [-\infty, 0]</annotation></semantics></math> as a tuning parameter. As we vary <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>z</mi><annotation encoding="application/x-tex">z</annotation></semantics></math>, we obtain suddenly key properties of random graphs.</p>
 <blockquote class="blockquote">
-<p><strong>A graph has a given property <span class="math inline">Q</span> if the probability of having <span class="math inline">Q</span> approaches 1 as <span class="math inline">N \to \infty</span> (for large graphs either all random graphs have <span class="math inline">Q</span> or none has). Several interesting thresholds have been identified, for this whole class of random graphs.</strong></p>
+<p><strong>A graph has a given property <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> if the probability of having <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> approaches 1 as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">N \to \infty</annotation></semantics></math> (for large graphs either all random graphs have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Q</mi><annotation encoding="application/x-tex">Q</annotation></semantics></math> or none has). Several interesting thresholds have been identified, for this whole class of random graphs.</strong></p>
 </blockquote>
 <p>However, this does not happen: real networks are not random. Many of the modelling assumptions from which we obtain a random network are not realistic, which means that our model cannot explain properly the behaviour of a real network.</p>
 <p><img src="Figures/Screenshot%202023-02-27%20at%2011.33.21.png" class="img-fluid"></p>
@@ -3110,7 +3094,7 @@ h = log_{\bar{k}} (n) = \frac {log(n)} {log(\bar{k})} = \frac{log(n)} {log(p(n-1
 <blockquote class="blockquote">
 <p><strong>Choose any two individuals anywhere on Earth, you will find a path of at most <em>six acquaintances</em> between them.</strong></p>
 </blockquote>
-<p>Real networks tend to have <em>short path lengths</em>: even though measuring this is not trivial, empirical studies have confirmed this statement. Moreover, real networks tend to have <em>high clustering</em> (friend of friends are typically friends) but <em>very small average path lengths</em> (growing with <span class="math inline">log(N)</span>).</p>
+<p>Real networks tend to have <em>short path lengths</em>: even though measuring this is not trivial, empirical studies have confirmed this statement. Moreover, real networks tend to have <em>high clustering</em> (friend of friends are typically friends) but <em>very small average path lengths</em> (growing with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>N</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">log(N)</annotation></semantics></math>).</p>
 <p><strong>How do we build a model fitting together these two elements?</strong></p>
 </section>
 <section id="small-world" class="level2">
@@ -3118,7 +3102,7 @@ h = log_{\bar{k}} (n) = \frac {log(n)} {log(\bar{k})} = \frac{log(n)} {log(p(n-1
 <blockquote class="blockquote">
 <p><strong>Watts and Strogatz (1998) <em>small world</em> model formulates a possible explanation.</strong></p>
 </blockquote>
-<p>We consider a <em>lattice</em> with <span class="math inline">n</span> nodes and join each node to its neighbours <span class="math inline">k</span> or fewer hops (<em>lattice spacings</em>) away. For each edge, with probability <span class="math inline">p</span>, move one end of that edge to a new location chosen uniformly at random from the lattice. In other words, rewiring some of the links at random, erasing it and re-connecting to a randomly chosen different node creates short-cuts. The main result is that few short cuts shorten a lot of shortest paths, while the clustering is almost completely untouched.</p>
+<p>We consider a <em>lattice</em> with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> nodes and join each node to its neighbours <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math> or fewer hops (<em>lattice spacings</em>) away. For each edge, with probability <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>, move one end of that edge to a new location chosen uniformly at random from the lattice. In other words, rewiring some of the links at random, erasing it and re-connecting to a randomly chosen different node creates short-cuts. The main result is that few short cuts shorten a lot of shortest paths, while the clustering is almost completely untouched.</p>
 <blockquote class="blockquote">
 <p><strong>We are now considering statistical properties from the perspective of the <em>whole network</em>, considering in particular the fact that real networks, stemming from complex systems, are not random.</strong></p>
 </blockquote>
@@ -3176,59 +3160,59 @@ h = log_{\bar{k}} (n) = \frac {log(n)} {log(\bar{k})} = \frac{log(n)} {log(p(n-1
 <p><strong>How is this distribution created?</strong></p>
 </blockquote>
 <p>The key example is the <em>World Wide Web</em><a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>. With an estimated size of over <em>one trillion documents</em>, the Web is the largest network humanity has ever built: modelling it as a <em>random network</em> creates a very poor fitting.</p>
-<p>Researchers however figured out that on a <em>log-log</em> scale the fit seems to follow a <em>straight line</em>, indicating that it could be fitted with a power law such as: <span class="math display">
+<p>Researchers however figured out that on a <em>log-log</em> scale the fit seems to follow a <em>straight line</em>, indicating that it could be fitted with a power law such as: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>=</mo><msup><mi>k</mi><mrow><mo>−</mo><mi>γ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">
 p_k = k^{-\gamma}
-</span> or: <span class="math display">
+</annotation></semantics></math> or: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>l</mi><mi>o</mi><mi>g</mi><msub><mi>p</mi><mi>k</mi></msub><mo>=</mo><mo>−</mo><mi>γ</mi><mi>l</mi><mi>o</mi><mi>g</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">
 log p_k = -\gamma log k
-</span></p>
+</annotation></semantics></math></p>
 <p>The distribution is then not random, but it follows a <em>power law</em>: networks which follow this law are called <em>scale-free networks</em>.</p>
 <p><strong>Why are they called scale-free? They do not have a <em>characteristic scale</em>: their average degree is not representative of their distribution.</strong></p>
-<p>When looking at the degree distribution, we notice that most nodes have a very few links, but there is a non negligible probability of observing hubs (nodes with high degree). For some values, moreover, the distribution diverge in <span class="math inline">n</span>.</p>
+<p>When looking at the degree distribution, we notice that most nodes have a very few links, but there is a non negligible probability of observing hubs (nodes with high degree). For some values, moreover, the distribution diverge in <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math>.</p>
 <p>Not all networks are scale-free in both in and out degrees. For example, there is a boundary on the number of people that each individual can know well enough to be aware of their job, which means that there is a <em>bell shaped distribution of out-degrees</em>; the opposite is not true: the in-degree distribution is not true<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>.</p>
 <p>Power-law distributions are really important in sociology and economics. Scale-free networks are characterized by the emergence of <em>hubs</em>. They key difference is that random network we have a probability of observing hubs which is basically zero, while in scale-free networks the distribution of observing nodes with a high degree is not negligible.</p>
 <section id="the-size-of-the-largest-hub" class="level2">
 <h2 class="anchored" data-anchor-id="the-size-of-the-largest-hub">The size of the largest hub</h2>
-<p>The size of the largest hubs depends polynomially on <span class="math inline">N</span>. It can be computed as: <span class="math display">
+<p>The size of the largest hubs depends polynomially on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>. It can be computed as: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><mo>=</mo><msub><mi>k</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><mo>×</mo><msup><mi>N</mi><mfrac><mn>1</mn><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac></msup></mrow><annotation encoding="application/x-tex">
 k_{max} = k_{min} \times N^{\frac {1}{{\gamma -1}}}
-</span></p>
-<p>The larger the network, the larger the hub; moreover, given the polynomial dependence on <span class="math inline">N</span>, <span class="math inline">k_{max}</span> can be several orders of magnitude larger than <span class="math inline">k_{min}</span></p>
-<p>The concept of absence of scale can be expressed mathematically by considering the <em>moment</em> of its <em>distribution</em>: <span class="math display">
+</annotation></semantics></math></p>
+<p>The larger the network, the larger the hub; moreover, given the polynomial dependence on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub><annotation encoding="application/x-tex">k_{max}</annotation></semantics></math> can be several orders of magnitude larger than <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>k</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><annotation encoding="application/x-tex">k_{min}</annotation></semantics></math></p>
+<p>The concept of absence of scale can be expressed mathematically by considering the <em>moment</em> of its <em>distribution</em>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><msup><mi>k</mi><mi>μ</mi></msup><mo accent="true">‾</mo></mover><mo>=</mo><msubsup><mo>∫</mo><msub><mi>k</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow></msub><msub><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow></msub></msubsup><msup><mi>k</mi><mi>μ</mi></msup><mi>p</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>k</mi><mo stretchy="true" form="postfix">)</mo></mrow><mspace width="0.222em"></mspace><mi>d</mi><mi>k</mi><mo>=</mo><mi>C</mi><mfrac><mrow><msubsup><mi>k</mi><mrow><mi>m</mi><mi>a</mi><mi>x</mi></mrow><mrow><mi>μ</mi><mo>−</mo><mi>γ</mi><mo>+</mo><mn>1</mn></mrow></msubsup><mo>−</mo><msubsup><mi>k</mi><mrow><mi>m</mi><mi>i</mi><mi>n</mi></mrow><mrow><mi>μ</mi><mo>−</mo><mi>γ</mi><mo>+</mo><mn>1</mn></mrow></msubsup></mrow><mrow><mi>μ</mi><mo>−</mo><mi>γ</mi><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \bar{k^\mu} = \int_{k_{min}}^{k_{max}} k^{\mu} p(k) \ dk = C \frac {k^{\mu - \gamma + 1}_{max}- k^{\mu - \gamma + 1}_{min}}{\mu - \gamma + 1}
-</span></p>
-<p>For most SF networks <span class="math inline">2 &lt; γ \leq 3</span>, so:</p>
+</annotation></semantics></math></p>
+<p>For most SF networks <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&lt;</mo><mi>γ</mi><mo>≤</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2 &lt; γ \leq 3</annotation></semantics></math>, so:</p>
 <ul>
-<li>The 1-st moment (<span class="math inline">\mu = 1</span>) is finite.</li>
-<li>the higher moments (<span class="math inline">\mu &gt; 1</span>) diverge.</li>
+<li>The 1-st moment (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math>) is finite.</li>
+<li>the higher moments (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu &gt; 1</annotation></semantics></math>) diverge.</li>
 </ul>
-<p>In networks characterized by this power law distribution an information such as the average is <em>useless</em>, as <span class="math inline">\sigma</span> is at least a couple of order of magnitude higher thus giving birth to the scale-free property.</p>
+<p>In networks characterized by this power law distribution an information such as the average is <em>useless</em>, as <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>σ</mi><annotation encoding="application/x-tex">\sigma</annotation></semantics></math> is at least a couple of order of magnitude higher thus giving birth to the scale-free property.</p>
 <blockquote class="blockquote">
 <p><strong>In other words, the average degree is not indicative of the information flow inside the network and how its connections are shaped.</strong></p>
 </blockquote>
 <p><strong>Do hubs affect the small world property?</strong></p>
-<p>This aspect is dependent on the exponent <span class="math inline">\gamma</span> of the power-law. Progressively increasing it, we move from a huge hubs to small hubs; the latter connect a large number of nodes.</p>
+<p>This aspect is dependent on the exponent <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>γ</mi><annotation encoding="application/x-tex">\gamma</annotation></semantics></math> of the power-law. Progressively increasing it, we move from a huge hubs to small hubs; the latter connect a large number of nodes.</p>
 <ul>
-<li><span class="math inline">\gamma &lt; 2</span> (<em>non-graphical</em>): it cannot be build, such networks do not exists in reality.</li>
-<li><span class="math inline">\gamma = 2</span> (<em>anomalous regime</em>): the degree of the biggest hub grows linearly with the system size.</li>
-<li><span class="math inline">2 &lt; \gamma &lt; 3</span> (<em>ultra-small world</em>): the average shortest path grows, but very slowly.</li>
-<li><span class="math inline">\gamma = 3</span> (<em>critical point</em>): at this point the standard deviation of the distribution does not diverge any more.</li>
-<li><span class="math inline">\gamma &gt; 3</span>: in this case we still have a scale and we progressively get to distribution in which hubs have less and less importance as brokers and therefore we are losing the small world property.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\gamma &lt; 2</annotation></semantics></math> (<em>non-graphical</em>): it cannot be build, such networks do not exists in reality.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\gamma = 2</annotation></semantics></math> (<em>anomalous regime</em>): the degree of the biggest hub grows linearly with the system size.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&lt;</mo><mi>γ</mi><mo>&lt;</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2 &lt; \gamma &lt; 3</annotation></semantics></math> (<em>ultra-small world</em>): the average shortest path grows, but very slowly.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\gamma = 3</annotation></semantics></math> (<em>critical point</em>): at this point the standard deviation of the distribution does not diverge any more.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>&gt;</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">\gamma &gt; 3</annotation></semantics></math>: in this case we still have a scale and we progressively get to distribution in which hubs have less and less importance as brokers and therefore we are losing the small world property.</li>
 </ul>
-<p>Scale-free networks are at least <em>small world</em> and we are almost always close to a hub; most social and economic networks have <span class="math inline">2 &lt; \gamma &lt; 3</span> (<em>ultra-small world</em>).</p>
+<p>Scale-free networks are at least <em>small world</em> and we are almost always close to a hub; most social and economic networks have <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>2</mn><mo>&lt;</mo><mi>γ</mi><mo>&lt;</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">2 &lt; \gamma &lt; 3</annotation></semantics></math> (<em>ultra-small world</em>).</p>
 </section>
 <section id="preferential-attachment" class="level2">
 <h2 class="anchored" data-anchor-id="preferential-attachment">Preferential attachment</h2>
 <p><strong>Why do scale-free networks emerge?</strong></p>
 <p>Hubs should not emerge in random networks: however, most networks are born <em>over time</em>, dynamically; new nodes are created in time and form attachments to existing nodes.</p>
-<p>Nodes are born over time and indexed by their date of birth and assume that the system starts with a group of <span class="math inline">m</span> nodes all connected to one another. Each node upon birth forms <span class="math inline">m</span> (undirected) edges with pre-existing nodes. The new node attaches to nodes with probabilities proportional to their degrees: the probability of creating new links is proportional the degree. This concept is called <em>preferential attachment</em>.</p>
-<p>Since there are <span class="math inline">tm</span> total links at time <span class="math inline">t</span> in the system, it follows that: <span class="math display">
+<p>Nodes are born over time and indexed by their date of birth and assume that the system starts with a group of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> nodes all connected to one another. Each node upon birth forms <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>m</mi><annotation encoding="application/x-tex">m</annotation></semantics></math> (undirected) edges with pre-existing nodes. The new node attaches to nodes with probabilities proportional to their degrees: the probability of creating new links is proportional the degree. This concept is called <em>preferential attachment</em>.</p>
+<p>Since there are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>t</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">tm</annotation></semantics></math> total links at time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> in the system, it follows that: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><munderover><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>t</mi></munderover><msub><mi>k</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><mi>t</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">
 \sum^t_{j=1} k_j(t) = 2tm
-</span></p>
-<p>So the probability that node <span class="math inline">i</span> gets a new link in time <span class="math inline">t</span> is <span class="math inline">\frac {k_i(t)}{2t}</span>. We can describe the <em>evolution</em> of degrees as the solution of a differential equation. <span class="math display">
+</annotation></semantics></math></p>
+<p>So the probability that node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> gets a new link in time <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>t</mi><annotation encoding="application/x-tex">t</annotation></semantics></math> is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mfrac><mrow><msub><mi>k</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mrow><mn>2</mn><mi>t</mi></mrow></mfrac><annotation encoding="application/x-tex">\frac {k_i(t)}{2t}</annotation></semantics></math>. We can describe the <em>evolution</em> of degrees as the solution of a differential equation. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>k</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mi>m</mi><msup><mrow><mo stretchy="true" form="prefix">(</mo><mfrac><mi>t</mi><mi>i</mi></mfrac><mo stretchy="true" form="postfix">)</mo></mrow><mrow><mn>1</mn><mi>/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
 k_i(t) = m \left (\frac{t}{i} \right )^{1/2}
-</span></p>
-<p>Leading to the following density function: <span class="math display">
+</annotation></semantics></math></p>
+<p>Leading to the following density function: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>d</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><mn>2</mn><msup><mi>m</mi><mn>2</mn></msup><msup><mi>d</mi><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">
 P(d) = 2m^2d^{−3}
-</span></p>
+</annotation></semantics></math></p>
 <p>This density has the following properties:</p>
 <ol type="1">
 <li>The diameter grows slower than the one of a random network.</li>
@@ -3238,7 +3222,7 @@ P(d) = 2m^2d^{−3}
 </section>
 <section id="robustness-to-errors-and-attacks" class="level2">
 <h2 class="anchored" data-anchor-id="robustness-to-errors-and-attacks">Robustness to errors and attacks</h2>
-<p>As <span class="math inline">n \to \infty</span> hubs become very large and very important, but they are numerically very few: SF networks are very robust to random errors. In other words, the probability of hitting by chance an hub is negligible (if a random website goes down nobody notices). However, if the elimination targets hubs, just a few attacks might significantly hurt the network functionality.</p>
+<p>As <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>→</mo><mi>∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math> hubs become very large and very important, but they are numerically very few: SF networks are very robust to random errors. In other words, the probability of hitting by chance an hub is negligible (if a random website goes down nobody notices). However, if the elimination targets hubs, just a few attacks might significantly hurt the network functionality.</p>
 </section>
 </section>
 <section id="community-detection" class="level1">
@@ -3301,7 +3285,7 @@ P(d) = 2m^2d^{−3}
 <li>Data is linked (a graph).</li>
 <li>Network data tends to be discrete, leading to algorithms using the graph property <em>directly</em>.
 <ul>
-<li><span class="math inline">k</span>-clique, quasi-clique, or edge-betweenness.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>k</mi><annotation encoding="application/x-tex">k</annotation></semantics></math>-clique, quasi-clique, or edge-betweenness.</li>
 </ul></li>
 </ul></li>
 </ul>
@@ -3341,18 +3325,18 @@ P(d) = 2m^2d^{−3}
 <h2 class="anchored" data-anchor-id="internal-density">Internal density</h2>
 <p>Graph <em>density</em> represents the ratio between the edges present in a graph and the maximum number of edges that the graph can contain, that is the number of edges in a network over the total possible number of edges that can exist given the number of nodes.</p>
 <ul>
-<li><p>Directed: <span class="math display">
+<li><p>Directed: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow></mrow><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \eta = \frac {2 |E|}{|V|(|V| -1)}
-</span></p></li>
-<li><p>Undirected: <span class="math display">
+</annotation></semantics></math></p></li>
+<li><p>Undirected: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>η</mi><mo>=</mo><mfrac><mrow><mo stretchy="true" form="prefix">|</mo><mi>E</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mrow><mo stretchy="true" form="prefix">(</mo><mrow><mo stretchy="true" form="prefix">|</mo><mi>V</mi><mo stretchy="true" form="postfix">|</mo></mrow><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \eta = \frac {|E|}{|V|(|V| -1)}
-</span></p></li>
+</annotation></semantics></math></p></li>
 </ul>
 <p>In this case, we are trying to recognise communities as <em>sets of densely connected entities</em>: each community should have a number of edges significantly higher than what it is expected from a <em>random graph.</em></p>
-<p>To measure this density, we need to define a <em>function</em>: in particular, a <em>quality</em> function that measures the density of a community and then we will try to <em>maximize</em> it to obtain clusters. <span class="math display">
+<p>To measure this density, we need to define a <em>function</em>: in particular, a <em>quality</em> function that measures the density of a community and then we will try to <em>maximize</em> it to obtain clusters. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Q</mi><mo>=</mo><mfrac><mn>1</mn><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><munder><mo>∑</mo><mrow><mi>i</mi><mi>j</mi></mrow></munder><mspace width="0.222em"></mspace><mrow><mo stretchy="true" form="prefix">[</mo><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>−</mo><munder><munder><mfrac><mrow><msub><mi>k</mi><mi>i</mi></msub><msub><mi>k</mi><mi>j</mi></msub></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo accent="true">⏟</mo></munder><mstyle mathvariant="normal"><mi>N</mi><mi>u</mi><mi>l</mi><mi>l</mi><mspace width="0.222em"></mspace><mi>m</mi><mi>o</mi><mi>d</mi><mi>e</mi><mi>l</mi><mspace width="0.222em"></mspace><mi>e</mi><mi>x</mi><mi>p</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>e</mi><mi>d</mi><mspace width="0.222em"></mspace><mi>d</mi><mi>e</mi><mi>n</mi><mi>s</mi><mi>i</mi><mi>t</mi><mi>y</mi></mstyle></munder><mo stretchy="true" form="postfix">]</mo></mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mi>i</mi></msub><mo>,</mo><msub><mi>c</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} }_{\mathrm{Null \ model \ expected \ density}} \right]  \delta(c_i, c_j)
-</span></p>
-<p><span class="math inline">\delta(c_i, c_j)</span> will assume value 1 if <span class="math inline">i,j</span> are in the same community, 0 otherwise.</p>
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mi>i</mi></msub><mo>,</mo><msub><mi>c</mi><mi>j</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">\delta(c_i, c_j)</annotation></semantics></math> will assume value 1 if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i,j</annotation></semantics></math> are in the same community, 0 otherwise.</p>
 </section>
 <section id="modularity" class="level2">
 <h2 class="anchored" data-anchor-id="modularity">Modularity</h2>
@@ -3364,12 +3348,12 @@ Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} 
 <p><strong>It is the difference between the fraction of the edges that fall within the given groups, i.e., connecting vertices that both lie in the same community, minus the expected fraction if edges were distributed at random, defined as the probability of an edge existing between vertices if connections are made at random but respecting vertex degrees.</strong></p>
 </blockquote>
 <ul>
-<li><p><em>Actual</em> fraction: it is the actual fraction of the edges that fall within the given groups. <span class="math display">
+<li><p><em>Actual</em> fraction: it is the actual fraction of the edges that fall within the given groups. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mfrac><mn>1</mn><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><munder><mo>∑</mo><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></munder><msub><mi>A</mi><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></msub><mi>δ</mi><mrow><mo stretchy="true" form="prefix">(</mo><msub><mi>c</mi><mi>v</mi></msub><mo>,</mo><msub><mi>c</mi><mi>w</mi></msub><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">
 \frac {1}{2m} \sum_{v,w} A_{v,w} \delta(c_v, c_w)
-</span></p></li>
-<li><p><em>Expected</em> fraction: it is the expected fraction of edges if edges were distributed at random, defined as the probability of an edge existing between vertices <span class="math inline">v</span> and <span class="math inline">w</span> if connections are made at random but respecting vertex degrees. <span class="math display">
+</annotation></semantics></math></p></li>
+<li><p><em>Expected</em> fraction: it is the expected fraction of edges if edges were distributed at random, defined as the probability of an edge existing between vertices <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>v</mi><annotation encoding="application/x-tex">v</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>w</mi><annotation encoding="application/x-tex">w</annotation></semantics></math> if connections are made at random but respecting vertex degrees. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>P</mi><mo accent="true">̃</mo></mover><mrow><mo stretchy="true" form="prefix">[</mo><mrow><mo stretchy="true" form="prefix">(</mo><mi>v</mi><mo>,</mo><mi>w</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>∈</mo><mi>E</mi><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><msub><mover><mi>P</mi><mo accent="true">̃</mo></mover><mrow><mi>v</mi><mo>,</mo><mi>w</mi></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi>k</mi><mi>v</mi></msub><msub><mi>k</mi><mi>w</mi></msub></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \tilde{P}[(v,w) \in E] = \tilde{P}_{v,w} = \frac {k_v k_w}{2m}
-</span></p></li>
+</annotation></semantics></math></p></li>
 </ul>
 <p>We can now see how the original formula is just a difference of these two statistics. Modularity is just a function; you can then compute it over the network and the relative algorithm will optimize it.</p>
 <blockquote class="blockquote">
@@ -3482,7 +3466,7 @@ Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} 
 <h3 class="anchored" data-anchor-id="k-cliques">k-cliques</h3>
 <ol type="1">
 <li>Identify k-cliques, which are fully connected networks with k nodes. (The smallest possible k would be k = 3. Otherwise, the cliques would be only edges or a single node).</li>
-<li>A community is then defined as a set of adjacent k-cliques, that is, k-cliques that share exactly k-1 nodes. With <span class="math inline">k = 3</span>, two 3-cliques are adjacent if they share exactly two nodes (equivalent to an edge).</li>
+<li>A community is then defined as a set of adjacent k-cliques, that is, k-cliques that share exactly k-1 nodes. With <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>k</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">k = 3</annotation></semantics></math>, two 3-cliques are adjacent if they share exactly two nodes (equivalent to an edge).</li>
 </ol>
 </section>
 </section>
@@ -3509,11 +3493,11 @@ Q = \frac {1}{2m} \sum_{ij} \ \left [ A_{ij} - \underbrace{ \frac {k_i k_j}{2m} 
 <section id="external-evaluation" class="level3">
 <h3 class="anchored" data-anchor-id="external-evaluation">External Evaluation</h3>
 <blockquote class="blockquote">
-<p><strong>Given a graph <span class="math inline">G</span>, a ground truth partition <span class="math inline">P(G)</span> and the set of identified communities <span class="math inline">C</span> estimate the resemblance the latter has with <span class="math inline">P(G)</span>.</strong></p>
+<p><strong>Given a graph <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>G</mi><annotation encoding="application/x-tex">G</annotation></semantics></math>, a ground truth partition <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(G)</annotation></semantics></math> and the set of identified communities <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>C</mi><annotation encoding="application/x-tex">C</annotation></semantics></math> estimate the resemblance the latter has with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>P</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>G</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">P(G)</annotation></semantics></math>.</strong></p>
 </blockquote>
-<p>Having the two partitions, testing can be conducted against topological truths about communities. In case of not structured data and classification problems, we can use the harmonic mean of precision and recall to <em>consolidate precision and recall into one measure</em>: <span class="math display">
+<p>Having the two partitions, testing can be conducted against topological truths about communities. In case of not structured data and classification problems, we can use the harmonic mean of precision and recall to <em>consolidate precision and recall into one measure</em>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn><mo>×</mo><mfrac><mrow><mi>P</mi><mo>×</mo><mi>R</mi></mrow><mrow><mi>P</mi><mo>+</mo><mi>R</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 F = 2 \times \frac {P \times R}{P + R}
-</span></p>
+</annotation></semantics></math></p>
 <p>In other words, we are computing sensitivity and specificity of a classification learning algorithm.</p>
 </section>
 </section>
@@ -3542,16 +3526,16 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="ot">&lt;-</span><span class="fu">cluster_louvain</span>(Friends, <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>CluLouvain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.15
+<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.16
 + groups:
   $`1`
-  [1] "A01" "A04" "A08" "A11" "A12" "A16"
+  [1] "A01" "A02" "A04" "A08" "A16"
   
   $`2`
-  [1] "A02" "A06" "A07" "A17" "A18" "A20" "A21"
+  [1] "A03" "A05" "A14" "A15" "A19"
   
   $`3`
-  [1] "A03" "A14" "A15" "A19"
+  [1] "A06" "A07" "A09" "A10" "A12" "A17" "A21"
   
   $`4`
   + ... omitted several groups/vertices</code></pre>
@@ -3561,14 +3545,14 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>membership</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 2 3 1 4 2 2 1 4 4 1 1 4 3 3 1 2 2 3 2 2</code></pre>
+<pre><code> [1] 1 1 2 1 2 3 3 1 3 3 4 3 4 2 2 1 3 4 2 4 3</code></pre>
 </div>
 </div>
 <p>Modularity instead can be obtained with:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>modularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1473322</code></pre>
+<pre><code>[1] 0.1604711</code></pre>
 </div>
 </div>
 <p>We can then plot the graphical representation of our communities in our graph:</p>
@@ -3695,7 +3679,7 @@ F = 2 \times \frac {P \times R}{P + R}
 <blockquote class="blockquote">
 <p><strong>If we have a biased sample, or if we have measured the whole population, it does not make sense to use the classical test.</strong></p>
 </blockquote>
-<p>Often the networks of interest, especially at a group level, have small <span class="math inline">N</span>, which creates more problem from a statistical perspective <em>per se</em>. Moreover, classical techniques might be heavily affected by outliers (common in networks) and influential points. Note that all these characteristic are not caused by bad data, but are intrinsic to the problems of interest.</p>
+<p>Often the networks of interest, especially at a group level, have small <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math>, which creates more problem from a statistical perspective <em>per se</em>. Moreover, classical techniques might be heavily affected by outliers (common in networks) and influential points. Note that all these characteristic are not caused by bad data, but are intrinsic to the problems of interest.</p>
 <blockquote class="blockquote">
 <p><strong>We do not have a proper sample (and if we did, it would still be quite small) we need to consider an alternative way to test significance.</strong></p>
 </blockquote>
@@ -3740,15 +3724,15 @@ F = 2 \times \frac {P \times R}{P + R}
 <p>We still have to deal with another very important problem: <em>network auto-correlation</em>. An example might be <em>contagion dynamics</em>: there is a degree of contagion in burnout, because I interact with people who are feeling exhausted and overwhelmed, the more I start feeling the same way. There is then a feedback of information.</p>
 <section id="network-autocorrelation" class="level3">
 <h3 class="anchored" data-anchor-id="network-autocorrelation">Network autocorrelation</h3>
-<p>The basic idea is to add an autoregressive coefficient <span class="math inline">\rho</span> to the standard regression equation: <span class="math display">
+<p>The basic idea is to add an autoregressive coefficient <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math> to the standard regression equation: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>Y</mi><mo>=</mo><msub><mi>b</mi><mn>0</mn></msub><mo>+</mo><mi>ρ</mi><mi>W</mi><mi>Y</mi><mo>+</mo><msub><mi>b</mi><mn>1</mn></msub><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>b</mi><mn>2</mn></msub><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mi>.</mi><mi>.</mi><mi>.</mi><mo>+</mo><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">
 Y = b_0 + \rho WY + b_1 X_1 + b_2 X_2 + ... + \epsilon
-</span></p>
-<p><span class="math inline">WY</span> represents the effect that the other nodes values on the dependent variable (<span class="math inline">Y</span>) have on node as a result of their network relations to each other, which is captured by the matrix <span class="math inline">W</span>. It acts as an <em>autoregressive coefficient</em>, which allows us to represent the feedback of informations and its effect on the network. The size of such an effect is expressed by <span class="math inline">\rho</span>.</p>
+</annotation></semantics></math></p>
+<p><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>W</mi><mi>Y</mi></mrow><annotation encoding="application/x-tex">WY</annotation></semantics></math> represents the effect that the other nodes values on the dependent variable (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>) have on node as a result of their network relations to each other, which is captured by the matrix <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>. It acts as an <em>autoregressive coefficient</em>, which allows us to represent the feedback of informations and its effect on the network. The size of such an effect is expressed by <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>ρ</mi><annotation encoding="application/x-tex">\rho</annotation></semantics></math>.</p>
 <ul>
-<li><span class="math inline">W</span>: could be representing
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math>: could be representing
 <ul>
-<li>The strength of the direct tie between <span class="math inline">I</span> and <span class="math inline">j</span>,</li>
-<li>The level of structural equivalence between both nodes, or the geodesic distance between <span class="math inline">i</span> and <span class="math inline">j</span>.</li>
+<li>The strength of the direct tie between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>I</mi><annotation encoding="application/x-tex">I</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>,</li>
+<li>The level of structural equivalence between both nodes, or the geodesic distance between <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.</li>
 </ul></li>
 </ul>
 <p><code>xAutoRegression</code> computes a simple auto-regression model.</p>
@@ -3756,14 +3740,14 @@ Y = b_0 + \rho WY + b_1 X_1 + b_2 X_2 + ... + \epsilon
 </section>
 <section id="statistical-testing-at-the-dyad-level" class="level2">
 <h2 class="anchored" data-anchor-id="statistical-testing-at-the-dyad-level">Statistical testing at the dyad level</h2>
-<p>The dyad level analysis are the most difficult to deal with, because our data are in the form of <span class="math inline">n \times n</span> matrices. This means that both distance and interaction are valued and undirected <span class="math inline">n \times n</span> matrices, which no standard statistics package will understand.</p>
-<p>A first solution might be to <em>vectorize</em> the data as a <span class="math inline">n(n -1) /2</span> sized vector. However, these values are <em>not independent observations</em>, since they represent the <span class="math inline">n-1</span> observations that all involve node <span class="math inline">i</span>: this implies that any peculiarity of <span class="math inline">i</span> will affect the values of every dyad involving it. As this was not enough, there are myriad other sources of interdependence among dyads in network data.</p>
+<p>The dyad level analysis are the most difficult to deal with, because our data are in the form of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n \times n</annotation></semantics></math> matrices. This means that both distance and interaction are valued and undirected <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n \times n</annotation></semantics></math> matrices, which no standard statistics package will understand.</p>
+<p>A first solution might be to <em>vectorize</em> the data as a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mrow><mo stretchy="true" form="prefix">(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mi>/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">n(n -1) /2</annotation></semantics></math> sized vector. However, these values are <em>not independent observations</em>, since they represent the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math> observations that all involve node <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>: this implies that any peculiarity of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> will affect the values of every dyad involving it. As this was not enough, there are myriad other sources of interdependence among dyads in network data.</p>
 <p>We can solve the interdependency problem by using the QAP, which consists in running a <em>permutation based regression</em> on vectorized data</p>
 <section id="quadratic-assignment-problem" class="level3">
 <h3 class="anchored" data-anchor-id="quadratic-assignment-problem">Quadratic Assignment Problem</h3>
 <ol type="1">
 <li>We compute the test statistic (a correlation in our case) between our two observed variables (distance and frequency of interaction).</li>
-<li>We permute the data in a special way, correlate the permuted data, and repeat, <span class="math inline">N</span> times.</li>
+<li>We permute the data in a special way, correlate the permuted data, and repeat, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>N</mi><annotation encoding="application/x-tex">N</annotation></semantics></math> times.</li>
 <li>We count the proportion smaller or equal (if we are expecting a negative correlation, larger or equal if we are expecting a positive correlation) to the observed correlation.</li>
 </ol>
 <p>This proportion works as our p-value. For a <em>two-tailed test</em>, we simply take the absolute value of the correlations and count the number greater than the absolute value of the observed correlation.</p>
@@ -3775,12 +3759,12 @@ Y = b_0 + \rho WY + b_1 X_1 + b_2 X_2 + ... + \epsilon
 </blockquote>
 <p>As an example:</p>
 <ul>
-<li>We have collected data on the <em>distance among people’s offices</em> (<span class="math inline">X</span>) and the amount of <em>interaction</em> (<span class="math inline">Y</span>).
+<li>We have collected data on the <em>distance among people’s offices</em> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math>) and the amount of <em>interaction</em> (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math>).
 <ul>
-<li>Both are <span class="math inline">n \times n</span> matrices.</li>
+<li>Both are <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi><mo>×</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n \times n</annotation></semantics></math> matrices.</li>
 </ul></li>
-<li>We now permute the rows and the associated columns (<span class="math inline">X</span> stays fixed, because doing otherwise would not provide additional gains).</li>
-<li>Rows and columns move together: this <em>just relabels the nodes</em>, without changing the characteristics of the network, regardless of the fact that <span class="math inline">i</span> and <span class="math inline">j</span> have been relocated in the matrix.</li>
+<li>We now permute the rows and the associated columns (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> stays fixed, because doing otherwise would not provide additional gains).</li>
+<li>Rows and columns move together: this <em>just relabels the nodes</em>, without changing the characteristics of the network, regardless of the fact that <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> have been relocated in the matrix.</li>
 </ul>
 <p>All structural features and dependencies of the original network are preserved by this permutation, even those which are not considered in the analysis and are not known.</p>
 <blockquote class="blockquote">
@@ -3796,14 +3780,14 @@ Y = b_0 + \rho WY + b_1 X_1 + b_2 X_2 + ... + \epsilon
 <li><em>Y-permutation</em> approach:
 <ul>
 <li>Run the regression on the observed data.</li>
-<li>Permute the <span class="math inline">Y</span> variable as in QAP correlation, re-run the regression and record the regression coefficients.</li>
+<li>Permute the <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> variable as in QAP correlation, re-run the regression and record the regression coefficients.</li>
 <li>We do this thousands of times and count up the proportion of times that the permutation coefficient is as extreme as the one we are observing.</li>
 </ul></li>
 <li><em>Double semi-partialing</em> method:
 <ul>
-<li>Run the regression on the observed data (<span class="math inline">Y</span> regressed on <span class="math inline">X,Z,W</span>).</li>
-<li>We start running a regression to predict <span class="math inline">X</span> using <span class="math inline">W</span> and <span class="math inline">Z</span> (the other covariates). This way I get the predicted <span class="math inline">X</span> values, <span class="math inline">\hat X</span>.</li>
-<li>We then calculate the residual matrix, <span class="math inline">X − \hat X</span>, which we will call <span class="math inline">X_r</span> . This variable is X with effects of W and Z removed from it. Now, we repeatedly permute the rows and columns of <span class="math inline">X_r</span> and regress Y on W, Z and the permuted <span class="math inline">X_r</span> , keeping track of the t-statistics (I.e., the coefficient divided by the standard error for the coefficient). The p-value for the coefficient on X is given by the proportion.</li>
+<li>Run the regression on the observed data (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> regressed on <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>,</mo><mi>Z</mi><mo>,</mo><mi>W</mi></mrow><annotation encoding="application/x-tex">X,Z,W</annotation></semantics></math>).</li>
+<li>We start running a regression to predict <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> using <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>W</mi><annotation encoding="application/x-tex">W</annotation></semantics></math> and <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Z</mi><annotation encoding="application/x-tex">Z</annotation></semantics></math> (the other covariates). This way I get the predicted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>X</mi><annotation encoding="application/x-tex">X</annotation></semantics></math> values, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mover><mi>X</mi><mo accent="true">̂</mo></mover><annotation encoding="application/x-tex">\hat X</annotation></semantics></math>.</li>
+<li>We then calculate the residual matrix, <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>X</mi><mo>−</mo><mover><mi>X</mi><mo accent="true">̂</mo></mover></mrow><annotation encoding="application/x-tex">X − \hat X</annotation></semantics></math>, which we will call <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>r</mi></msub><annotation encoding="application/x-tex">X_r</annotation></semantics></math> . This variable is X with effects of W and Z removed from it. Now, we repeatedly permute the rows and columns of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>r</mi></msub><annotation encoding="application/x-tex">X_r</annotation></semantics></math> and regress Y on W, Z and the permuted <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>X</mi><mi>r</mi></msub><annotation encoding="application/x-tex">X_r</annotation></semantics></math> , keeping track of the t-statistics (I.e., the coefficient divided by the standard error for the coefficient). The p-value for the coefficient on X is given by the proportion.</li>
 </ul></li>
 </ul>
 </section>
@@ -3842,21 +3826,21 @@ sample estimates:
 <div class="sourceCode cell-code" id="cb173"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href="#cb173-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span>
 <span id="cb173-2"><a href="#cb173-2" aria-hidden="true" tabindex="-1"></a><span class="fu">xCorrelation</span>(M18Centrz,M18Perf, <span class="at">NPERM=</span><span class="dv">5000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>                             Value
-NumberOfCases          18.00000000
-ValidCases_VEC1        18.00000000
-ValidCases_VEC2        18.00000000
-ValidCases_Both        18.00000000
-CorrCoeff               0.13114536
-ClassicSign_2tailed     0.60396479
-Mean_Perm               0.00265118
-SD_Perm                 0.24326807
-Min_Perm               -0.71750602
-Max_Perm                0.78052392
-AsSmall                 0.69760000
-AsLarge                 0.30240000
-AsExtreme               0.60120000
-NumberOfPermutations 5000.00000000</code></pre>
+<pre><code>                              Value
+NumberOfCases          18.000000000
+ValidCases_VEC1        18.000000000
+ValidCases_VEC2        18.000000000
+ValidCases_Both        18.000000000
+CorrCoeff               0.131145360
+ClassicSign_2tailed     0.603964787
+Mean_Perm               0.002152301
+SD_Perm                 0.246423447
+Min_Perm               -0.732834697
+Max_Perm                0.820935890
+AsSmall                 0.701400000
+AsLarge                 0.299600000
+AsExtreme               0.605200000
+NumberOfPermutations 5000.000000000</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Network_Analysis_files/figure-html/unnamed-chunk-110-1.png" class="img-fluid" width="768"></p>
@@ -3907,7 +3891,7 @@ NumberOfPermutations 5000.00000000</code></pre>
 <p>To call the regression function, beware that:</p>
 <ul>
 <li>The regressors need to be passed as a <em>data frame.</em></li>
-<li>The <span class="math inline">Y</span> needs to be a <em>vector.</em></li>
+<li>The <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Y</mi><annotation encoding="application/x-tex">Y</annotation></semantics></math> needs to be a <em>vector.</em></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb179"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb179-1"><a href="#cb179-1" aria-hidden="true" tabindex="-1"></a>X15<span class="ot">&lt;-</span><span class="fu">data.frame</span>(Age15,Consc15,Degr15)</span>
@@ -3931,15 +3915,15 @@ NumberOfPermutations   5000.00000
 
 $Variables
                Coeff   StErr  t_value Classic_Sign Mean_Perm SD_Perm AsSmall
-(Intercept)  1.70298 1.78308  0.95508      0.36006   4.97023 2.14165  0.0624
-Age15        0.06421 0.02536  2.53190      0.02788   0.00059 0.03149  0.9806
-Consc15     -0.24450 0.15633 -1.56399      0.14611  -0.00010 0.19466  0.1092
-Degr15       0.39188 0.42826  0.91504      0.37979   0.01010 0.53577  0.7540
+(Intercept)  1.70298 1.78308  0.95508      0.36006   5.04588 2.16395  0.0610
+Age15        0.06421 0.02536  2.53190      0.02788  -0.00051 0.03172  0.9834
+Consc15     -0.24450 0.15633 -1.56399      0.14611   0.00178 0.19096  0.1000
+Degr15       0.39188 0.42826  0.91504      0.37979  -0.00006 0.52611  0.7620
             AsLarge AsExtreme
-(Intercept)  0.9376    0.0624
-Age15        0.0194    1.0002
-Consc15      0.8908    0.9988
-Degr15       0.2460    0.9938
+(Intercept)  0.9390    0.0610
+Age15        0.0166    1.0030
+Consc15      0.9000    0.9908
+Degr15       0.2380    0.9970
 
 Classic significance value based on assumption of independence of cases.</code></pre>
 </div>
@@ -3959,13 +3943,13 @@ ValidCases_NET2        240.000000000000000
 ValidCases_Both        240.000000000000000
 CorrCoef                 0.371867872080548
 ClassicSign_2tailed      0.000000002756827
-Mean_Perm                0.001818771956176
-SD_Perm                  0.092943370937927
+Mean_Perm               -0.000114940978643
+SD_Perm                  0.092823287436691
 Min_Perm                -0.169030850945704
 Max_Perm                 0.371867872080549
-AsSmall                  0.999700000000000
-AsLarge                  0.000300000000000
-AsExtreme                0.000300000000000
+AsSmall                  0.999500000000000
+AsLarge                  0.000500000000000
+AsExtreme                0.000500000000000
 NumberOfPermutations 10000.000000000000000</code></pre>
 </div>
 </div>
@@ -3997,13 +3981,13 @@ NumberOfPermutations 1000.00000
 
 $Variables
    Stand_Coeff    Coeff   StErr  t_value [Sign*] Mean_Perm SD_Perm AsSmall
-       0.00000  4.66096 1.30201  3.57983 0.00593   0.49322  1.2831   0.960
-X1     0.59238  0.57998 0.28150  2.06030 0.06945  -0.02691  1.0946   1.000
-X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856  -0.08483  1.6053   0.127
+       0.00000  4.66096 1.30201  3.57983 0.00593   0.53436 1.31753    0.95
+X1     0.59238  0.57998 0.28150  2.06030 0.06945  -0.04842 1.10528    1.00
+X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856  -0.00254 1.61556    0.12
    AsLarge AsExtreme
-     0.040     0.040
-X1   0.050     0.094
-X2   0.873     0.168
+     0.050     0.050
+X1   0.041     0.091
+X2   0.880     0.170
 
 Sign* = classic significance value based on assumption of independence of cases. Not to be used.</code></pre>
 </div>
@@ -4058,9 +4042,9 @@ Residuals:
 
 Coefficients:
             Estimate   Pr(&lt;=b) Pr(&gt;=b) Pr(&gt;=|b|)
-(intercept)  4.6609589 0.960   0.040   0.040    
-x1           0.5799758 1.000   0.050   0.094    
-x2          -0.7455681 0.127   0.873   0.168    
+(intercept)  4.6609589 0.95    0.050   0.050    
+x1           0.5799758 1.00    0.041   0.091    
+x2          -0.7455681 0.12    0.880   0.170    
 
 Residual standard error: 1.746 on 9 degrees of freedom
 Multiple R-squared: 0.4066  Adjusted R-squared: 0.2748 
@@ -4073,24 +4057,24 @@ Test Diagnostics:
     Replications: 1000 
     Coefficient Distribution Summary:
 
-       (intercept)       x1       x2
-Min       -0.99364 -2.28594 -2.77901
-1stQ      -0.42138 -0.64498 -1.99455
-Median     0.03003 -0.34881 -0.04374
-Mean       0.49322 -0.02691 -0.08483
-3rdQ       1.73611  0.46338  1.10311
-Max        3.57983  2.06030  3.47175
+       (intercept)        x1        x2
+Min      -0.993642 -2.285941 -2.779011
+1stQ     -0.453042 -0.644983 -0.391838
+Median   -0.005771 -0.348813  0.209301
+Mean      0.534364 -0.048424 -0.002545
+3rdQ      1.736112  0.463377  1.116248
+Max       3.579827  2.060298  3.471753
 
 
 $Variables
-   Stand_Coeff      Coeff     StErr   t_value     [Sign*]  Mean_Perm  SD_Perm
-     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.4932165 1.283097
-X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 -0.0269110 1.094595
-X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 -0.0848323 1.605305
+   Stand_Coeff      Coeff     StErr   t_value     [Sign*]    Mean_Perm  SD_Perm
+     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.534363615 1.317525
+X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 -0.048423814 1.105279
+X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 -0.002544778 1.615559
    AsSmall AsLarge AsExtreme
-     0.960   0.040     0.040
-X1   1.000   0.050     0.094
-X2   0.127   0.873     0.168</code></pre>
+      0.95   0.050     0.050
+X1    1.00   0.041     0.091
+X2    0.12   0.880     0.170</code></pre>
 </div>
 </div>
 <p>In this case, we are interested in the <code>Sign*</code> as our significance. The method can be changed by calling the <code>method</code> argument inside the function call; as a default, it uses the <em>semi-partialling</em> method to compute the permutations.</p>
@@ -4196,24 +4180,24 @@ X2   0.127   0.873     0.168</code></pre>
 <blockquote class="blockquote">
 <p><strong>Real network dynamics usually are somewhere in between</strong>.</p>
 </blockquote>
-<p>Imagine that we have a discrete time dynamic: shocks arrive at period 1 and we are looking at each period how shocks are propagating. We can then iterate the balance sheet identity, considering the progressive equity loss of each bank. <span class="math display">
+<p>Imagine that we have a discrete time dynamic: shocks arrive at period 1 and we are looking at each period how shocks are propagating. We can then iterate the balance sheet identity, considering the progressive equity loss of each bank. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>h</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo>+</mo><mn>1</mn><mo stretchy="true" form="postfix">)</mo></mrow><mo>=</mo><munder><munder><mrow><mi>β</mi><munder><mo>∑</mo><mi>j</mi></munder><msub><mi>Λ</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><msub><mi>h</mi><mi>j</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mi>t</mi><mo stretchy="true" form="postfix">)</mo></mrow></mrow><mo accent="true">⏟</mo></munder><mstyle mathvariant="normal"><mi>c</mi><mi>o</mi><mi>n</mi><mi>t</mi><mi>a</mi><mi>g</mi><mi>i</mi><mi>o</mi><mi>n</mi></mstyle></munder><mo>+</mo><mover><mover><msub><mi>u</mi><mi>i</mi></msub><mo accent="true">⏞</mo></mover><mstyle mathvariant="normal"><mi>e</mi><mi>x</mi><mi>o</mi><mi>g</mi><mi>e</mi><mi>n</mi><mi>o</mi><mi>u</mi><mi>s</mi><mspace width="0.222em"></mspace><mi>s</mi><mi>h</mi><mi>o</mi><mi>c</mi><mi>k</mi></mstyle></mover></mrow><annotation encoding="application/x-tex">
 h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} + \overbrace{u_i}^{\mathrm{exogenous \ shock}}
-</span> <span class="math inline">\Lambda</span> is also the <em>leverage</em>, which is the contribution of <span class="math inline">i</span> towards <span class="math inline">j</span> towards the exposure and tells us how important this exposure is in relation to its equity. It is then a parameter that can be tuned to properly model the severity of the contagion.</p>
-<p>We can model a <em>matrix of interbank leverage</em>: <span class="math display">
+</annotation></semantics></math> <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Λ</mi><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math> is also the <em>leverage</em>, which is the contribution of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> towards <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math> towards the exposure and tells us how important this exposure is in relation to its equity. It is then a parameter that can be tuned to properly model the severity of the contagion.</p>
+<p>We can model a <em>matrix of interbank leverage</em>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>Λ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mfrac><msub><mi>W</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mrow><msub><mi>E</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \Lambda_{ij} = \frac{ W_{ij}} {E_i(0)}
-</span></p>
+</annotation></semantics></math></p>
 <ul>
-<li><span class="math inline">W_{ij}</span> is the exposure of <span class="math inline">i</span> towards <span class="math inline">j</span>.</li>
-<li><span class="math inline">E_i(0)</span> is the equity of <span class="math inline">i</span>.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>W</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><annotation encoding="application/x-tex">W_{ij}</annotation></semantics></math> is the exposure of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math> towards <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>j</mi><annotation encoding="application/x-tex">j</annotation></semantics></math>.</li>
+<li><math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>E</mi><mi>i</mi></msub><mrow><mo stretchy="true" form="prefix">(</mo><mn>0</mn><mo stretchy="true" form="postfix">)</mo></mrow></mrow><annotation encoding="application/x-tex">E_i(0)</annotation></semantics></math> is the equity of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>.</li>
 </ul>
 <blockquote class="blockquote">
-<p><strong>The endogenous amplification of shocks depends on the largest eigenvalue of <span class="math inline">\Lambda</span>. It is computed at <em>network level</em></strong>.</p>
+<p><strong>The endogenous amplification of shocks depends on the largest eigenvalue of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>Λ</mi><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math>. It is computed at <em>network level</em></strong>.</p>
 </blockquote>
 <p>It is a <em>centrality metric</em>, similar to the <em>eigenvector centrality</em>.</p>
-<p>Leverage is basically <em>investing borrowed money</em>: it amplifies shocks. <span class="math display">
+<p>Leverage is basically <em>investing borrowed money</em>: it amplifies shocks. <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi><mo>=</mo><mfrac><mstyle mathvariant="normal"><mi>a</mi><mi>s</mi><mi>s</mi><mi>e</mi><mi>t</mi><mi>s</mi></mstyle><mstyle mathvariant="normal"><mi>e</mi><mi>q</mi><mi>u</mi><mi>i</mi><mi>t</mi><mi>y</mi></mstyle></mfrac></mrow><annotation encoding="application/x-tex">
 \lambda = \frac {\mathrm{assets}}{\mathrm{equity}}
-</span></p>
-<p>It is highly related to <em>risk</em>: a 1% asset devaluation, due to leverage, translates into a <span class="math inline">\lambda</span>% devaluation of equity.</p>
+</annotation></semantics></math></p>
+<p>It is highly related to <em>risk</em>: a 1% asset devaluation, due to leverage, translates into a <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>λ</mi><annotation encoding="application/x-tex">\lambda</annotation></semantics></math>% devaluation of equity.</p>
 <blockquote class="blockquote">
 <p><strong>Diversification can be bad, because it can lead to a wider propagation of shocks, caused by the wider exposures existing between banks.</strong></p>
 </blockquote>
@@ -4234,7 +4218,7 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 </section>
 <section id="generational-propagation" class="level3">
 <h3 class="anchored" data-anchor-id="generational-propagation">Generational propagation</h3>
-<p>A mathematical model of this dynamic can be devised through a tree of <em>branching processes</em>. We can have then <em>generational</em> defaults: one bankrupted bank can cause <span class="math inline">n</span> other banks to fail; global cascades occur with non-zero probability if <span class="math inline">\mathbb{E}(x)&gt;1</span>.</p>
+<p>A mathematical model of this dynamic can be devised through a tree of <em>branching processes</em>. We can have then <em>generational</em> defaults: one bankrupted bank can cause <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> other banks to fail; global cascades occur with non-zero probability if <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="double-struck"><mi>𝔼</mi></mstyle><mrow><mo stretchy="true" form="prefix">(</mo><mi>x</mi><mo stretchy="true" form="postfix">)</mo></mrow><mo>&gt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathbb{E}(x)&gt;1</annotation></semantics></math>.</p>
 <blockquote class="blockquote">
 <p><strong>Among its implications: the system is stable if <em>leverage</em> is below a <em>critical threshold.</em> </strong></p>
 </blockquote>
@@ -4281,7 +4265,7 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 <p>We always compare a real network to what would happen by chance: for example, when trying to study the effect of <em>homophily</em> on a network creation and structure, which is the tendency for ties to occur among those similar to each other, we need to take into account alternative explanations and control for <em>other network characteristics</em>.</p>
 <p>Our parameters are:</p>
 <ul>
-<li>Each disposition <em>social force</em> is represented by a parameter <span class="math inline">\theta \in [-\infty, \infty]</span>:
+<li>Each disposition <em>social force</em> is represented by a parameter <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>θ</mi><mo>∈</mo><mrow><mo stretchy="true" form="prefix">[</mo><mo>−</mo><mi>∞</mi><mo>,</mo><mi>∞</mi><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\theta \in [-\infty, \infty]</annotation></semantics></math>:
 <ul>
 <li>A higher positive value for the parameter indicates that the tendency is stronger.</li>
 <li>A zero value indicates it is not important in shaping the network.</li>
@@ -4301,42 +4285,42 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 <section id="types-of-effect" class="level2">
 <h2 class="anchored" data-anchor-id="types-of-effect">Types of effect</h2>
 <ul>
-<li>Baseline tendency to build a tie <span class="math inline">\theta_L</span>:
+<li>Baseline tendency to build a tie <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>L</mi></msub><annotation encoding="application/x-tex">\theta_L</annotation></semantics></math>:
 <ul>
 <li>Positive: preference to build a tie</li>
 <li>Null: equal preference to build/not build a tie</li>
 <li>Negative: Preference not to form a tie.</li>
 <li><strong>Network property measured</strong>: number of ties (density).</li>
 </ul></li>
-<li>Propensity to build a tie depending on the number of ties with other nodes <span class="math inline">\theta_{2S}</span>:
+<li>Propensity to build a tie depending on the number of ties with other nodes <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mrow><mn>2</mn><mi>S</mi></mrow></msub><annotation encoding="application/x-tex">\theta_{2S}</annotation></semantics></math>:
 <ul>
 <li>Positive: preference to build a tie when nodes in dyad have many other ties (<em>centralization</em>).</li>
 <li>Null: no difference in preference to build a tie depending on the other ties.</li>
 <li>Negative: preference to build a tie when nodes in dyad have few other ties (<em>decentralization</em>).</li>
 <li><strong>Network property measured</strong>: 2-stars, alternating stars, or variants of this such as the level of centralization,</li>
 </ul></li>
-<li>Propensity to triadic closure <span class="math inline">\theta_T</span>:
+<li>Propensity to triadic closure <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>T</mi></msub><annotation encoding="application/x-tex">\theta_T</annotation></semantics></math>:
 <ul>
 <li>Positive: preference for ties between nodes who have common connections.</li>
 <li>Null: no difference for ties between nodes who have and have not common connections.</li>
 <li>Negative: preference for ties between nodes who have no common connections.</li>
 <li><strong>Network property measured</strong>: number of closed triads.</li>
 </ul></li>
-<li>Differences in propensity to choose nodes based on nodal attributes (e.g.&nbsp;male/female) <span class="math inline">\theta_A</span>:
+<li>Differences in propensity to choose nodes based on nodal attributes (e.g.&nbsp;male/female) <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>A</mi></msub><annotation encoding="application/x-tex">\theta_A</annotation></semantics></math>:
 <ul>
 <li>Positive: preference to build ties with nodes with specific nodal characteristics (e.g.&nbsp;male).</li>
 <li>Null: no difference in preference fo a ties to nodes with specific nodal characteristics over others.</li>
 <li>Negative: preference to build a tie to nod with nodal characteristics (e.g female).</li>
 <li><strong>Network property measured</strong>: number of ties involving node with specific characteristics, or difference in average degree for node with specific characteristic.</li>
 </ul></li>
-<li>Differences in propensity to choose nodes who are similar/different on nodal attributes (e.g.&nbsp;gender) <span class="math inline">\theta_H</span>:
+<li>Differences in propensity to choose nodes who are similar/different on nodal attributes (e.g.&nbsp;gender) <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>H</mi></msub><annotation encoding="application/x-tex">\theta_H</annotation></semantics></math>:
 <ul>
 <li>Positive: Preference to build ties with nodes with same nodal characteristic.</li>
 <li>Null: No difference in preference for a ties to nodes with same or opposite nodal characteristics.</li>
 <li>Negative: Preference to build a tie to nod with opposite nodal characteristics.</li>
 <li><strong>Network property measured</strong>: Number of homophilous ties (level of homophily).</li>
 </ul></li>
-<li>Differences in propensity to build a ties between nodes who are linked by another tie (e.g distance) <span class="math inline">\theta_M</span>:
+<li>Differences in propensity to build a ties between nodes who are linked by another tie (e.g distance) <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>M</mi></msub><annotation encoding="application/x-tex">\theta_M</annotation></semantics></math>:
 <ul>
 <li>Positive: Preference for a tie between nodes who are connected by another type of tie</li>
 <li>Null: No difference in preference for a tie between nodes who are/are not connected by another type of tie.</li>
@@ -4348,14 +4332,14 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 <h3 class="anchored" data-anchor-id="example-toy-model">Example: toy model</h3>
 <p>We will consider a model with three structural network effects:</p>
 <ul>
-<li>Edges <span class="math inline">\theta_L</span></li>
-<li>2-stars <span class="math inline">\theta_{2S}</span></li>
-<li>Triangles <span class="math inline">\theta_{T}</span></li>
+<li>Edges <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>L</mi></msub><annotation encoding="application/x-tex">\theta_L</annotation></semantics></math></li>
+<li>2-stars <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mrow><mn>2</mn><mi>S</mi></mrow></msub><annotation encoding="application/x-tex">\theta_{2S}</annotation></semantics></math></li>
+<li>Triangles <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>T</mi></msub><annotation encoding="application/x-tex">\theta_{T}</annotation></semantics></math></li>
 </ul>
 <p>And two idiosyncratic effects:</p>
 <ul>
-<li>Differential propensity based on gender <span class="math inline">\theta_{A}</span></li>
-<li>Homophily Based on Gender <span class="math inline">\theta_{H}</span></li>
+<li>Differential propensity based on gender <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>A</mi></msub><annotation encoding="application/x-tex">\theta_{A}</annotation></semantics></math></li>
+<li>Homophily Based on Gender <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>θ</mi><mi>H</mi></msub><annotation encoding="application/x-tex">\theta_{H}</annotation></semantics></math></li>
 </ul>
 <p>The observed variable is the <em>network</em> and we wish to understand how it has been created. We need to account that the observed network should be considered as the <em>combined outcome</em> of a set of tie-generating processes which jointly have led to a specific network structure. QAP accounts for all possible effects, even those who are not known; ERGMs help controlling for structural (and other relevant) tendencies when studying a specific effect.</p>
 <blockquote class="blockquote">
@@ -4368,18 +4352,18 @@ h_i(t +1) = \underbrace{\beta \sum_j \Lambda_{i,j} h_j(t)}_{\mathrm{contagion}} 
 <blockquote class="blockquote">
 <p><strong>How are parameters values generated?</strong></p>
 </blockquote>
-<p>They are created with a version of a <em>maximum likelihood procedure</em>: <span class="math display">
+<p>They are created with a version of a <em>maximum likelihood procedure</em>: <math display="block" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="double-struck"><mi>ℙ</mi></mstyle><mrow><mo stretchy="true" form="prefix">[</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow><mo>=</mo><mfrac><msup><mi>e</mi><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>θ</mi><mi>i</mi></msub><msub><mi>z</mi><mi>i</mi></msub><msub><mi>x</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub></mrow></msup><mrow><munderover><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>a</mi><mi>l</mi><mi>l</mi></mrow></munderover><msup><mi>e</mi><mrow><munder><mo>∑</mo><mi>i</mi></munder><msub><mi>θ</mi><mi>i</mi></msub><msub><mi>z</mi><mi>i</mi></msub><msub><mi>x</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">
 \mathbb{P}[X = x_{obs}] = \frac {e^{\sum_i \theta_i z_i x_{obs}}} {\sum^{all}_{k = 1} e^{\sum_i \theta_i z_i x_{obs}}}
-</span></p>
-<p>We wish to maximize this function: our objective is to find the value for the set of parameters (<span class="math inline">\theta</span>) that will maximize the probability of observing the graph we did maximize the value of <span class="math inline">\mathbb{P}[X = x_{obs}]</span>.</p>
-<p>Because of this complex dependencies, finding the optimal combination across the set of parameters in a ERGM is not a closed form solution; a simulation-based algorithm is used to approximate the ML estimates. However this is computationally expensive, therefore we cannot compute all the simulations: we need to find an algorithm that allows us to start from some random <span class="math inline">\theta</span> and find a optimal solution.</p>
+</annotation></semantics></math></p>
+<p>We wish to maximize this function: our objective is to find the value for the set of parameters (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math>) that will maximize the probability of observing the graph we did maximize the value of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mstyle mathvariant="double-struck"><mi>ℙ</mi></mstyle><mrow><mo stretchy="true" form="prefix">[</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mrow><mi>o</mi><mi>b</mi><mi>s</mi></mrow></msub><mo stretchy="true" form="postfix">]</mo></mrow></mrow><annotation encoding="application/x-tex">\mathbb{P}[X = x_{obs}]</annotation></semantics></math>.</p>
+<p>Because of this complex dependencies, finding the optimal combination across the set of parameters in a ERGM is not a closed form solution; a simulation-based algorithm is used to approximate the ML estimates. However this is computationally expensive, therefore we cannot compute all the simulations: we need to find an algorithm that allows us to start from some random <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>θ</mi><annotation encoding="application/x-tex">\theta</annotation></semantics></math> and find a optimal solution.</p>
 <blockquote class="blockquote">
 <p><strong>We generate likely networks that would come about when a specific set of tendencies is at work.</strong></p>
 </blockquote>
 <p>When this process converges towards a stable distribution, the resulting sample of networks will be representative of networks generated by a model with the specified parameters: in this case, the approach used is a <em>Markov chain approach.</em></p>
 <section id="markov-chain-approach" class="level3">
 <h3 class="anchored" data-anchor-id="markov-chain-approach">Markov chain approach</h3>
-<p>At each time step, starting from a random network with <span class="math inline">n</span> nodes, we apply the specific parameters values on selected dyads; this is performed many times: the probability of generating a tie in that dyad is the result of the parameter values being used and the current surrounding of the dyad. This sequential process in which a tie decision is solely based on the current structure of the network (we therefore have a Markov process).</p>
+<p>At each time step, starting from a random network with <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>n</mi><annotation encoding="application/x-tex">n</annotation></semantics></math> nodes, we apply the specific parameters values on selected dyads; this is performed many times: the probability of generating a tie in that dyad is the result of the parameter values being used and the current surrounding of the dyad. This sequential process in which a tie decision is solely based on the current structure of the network (we therefore have a Markov process).</p>
 <p>Over time this process will start generating <em>independent</em> networks that <em>follow the selected rules</em>: this way we create the <em>denominator</em> of the ML function. The numerator is selected as an hyperparameter and thus we are able to compute the estimates of every coefficient: to approximate ML estimators we need to search for the set of parameter values that generate networks that are similar to our observed network (with regard to the properties for the select parameters in the model).</p>
 <blockquote class="blockquote">
 <p><strong>If this procedure succeed, networks that are similar to our observed network will emerge</strong>.</p>
@@ -4853,8 +4837,8 @@ AIC: 82.57  BIC: 95.12  (Smaller is better. MC Std. Err. = 0.2437)</code></pre>
 <div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
 
 <ol>
-<li id="fn1"><p>Taking the <em>log</em> of both sides and solving for <span class="math inline">h</span>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>While in relative terms the size of the giant components remains negligible at <span class="math inline">\bar{k} = 1</span>, in absolute terms there is a significant jump in the size of the largest component.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>Taking the <em>log</em> of both sides and solving for <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>h</mi><annotation encoding="application/x-tex">h</annotation></semantics></math>.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>While in relative terms the size of the giant components remains negligible at <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mover><mi>k</mi><mo accent="true">‾</mo></mover><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\bar{k} = 1</annotation></semantics></math>, in absolute terms there is a significant jump in the size of the largest component.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn3"><p>This is a power law; the number of components decreases very fast.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn4"><p>Its tentative models lead to the concept of <em>scale-free networks</em>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 <li id="fn5"><p>This is an important aspect that needs to be checked.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
