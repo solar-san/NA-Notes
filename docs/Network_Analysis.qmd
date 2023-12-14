@@ -6,7 +6,7 @@ format:
   html:
     theme: github
     toc: true
-    toc-location: left
+    toc-location: right
     fig-align: center
     fig-width: 8
     fig-height: 8

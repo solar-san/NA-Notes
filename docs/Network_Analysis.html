@@ -106,8 +106,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <body>
 
-<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
-<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
   <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
@@ -289,8 +289,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   </ul>
 </nav>
-</div>
-<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
 </div>
 <main class="content" id="quarto-document-content">
 
@@ -1055,9 +1053,9 @@ No edge attributes</code></pre>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>                                   <span class="at">mode =</span> <span class="fu">c</span>(<span class="st">"directed"</span>), <span class="at">diag =</span> <span class="cn">FALSE</span>)</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>igraph_file.i</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH 32263d7 DN-- 5 36 -- 
+<pre><code>IGRAPH 0f0edc5 DN-- 5 36 -- 
 + attr: name (v/c)
-+ edges from 32263d7 (vertex names):
++ edges from 0f0edc5 (vertex names):
  [1] Ana -&gt;Ella Ana -&gt;Ella Ana -&gt;Isra Ana -&gt;Petr Ana -&gt;Petr Ana -&gt;Petr
  [7] Ana -&gt;Sam  Ana -&gt;Sam  Ella-&gt;Ana  Ella-&gt;Isra Ella-&gt;Isra Ella-&gt;Isra
 [13] Ella-&gt;Petr Ella-&gt;Sam  Ella-&gt;Sam  Ella-&gt;Sam  Isra-&gt;Ana  Isra-&gt;Ana 
@@ -2794,7 +2792,7 @@ A21                      83                     0.83</code></pre>
   ..$ :List of 1
   .. ..$ name: chr [1:21] "A01" "A02" "A03" "A04" ...
   ..$ : Named list()
- $ :&lt;environment: 0x15e4eeb00&gt; </code></pre>
+ $ :&lt;environment: 0x15292ffb0&gt; </code></pre>
 </div>
 </div>
 <p>The advantage of using this format is that it is compatible with many applications. We might be interested to know which nodes belong to which components.</p>
@@ -3526,16 +3524,16 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="sourceCode cell-code" id="cb151"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href="#cb151-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="ot">&lt;-</span><span class="fu">cluster_louvain</span>(Friends, <span class="at">weights =</span> <span class="cn">NULL</span>, <span class="at">resolution =</span> <span class="dv">1</span>)</span>
 <span id="cb151-2"><a href="#cb151-2" aria-hidden="true" tabindex="-1"></a>CluLouvain</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.16
+<pre><code>IGRAPH clustering multi level, groups: 4, mod: 0.15
 + groups:
   $`1`
-  [1] "A01" "A02" "A04" "A08" "A16"
+  [1] "A01" "A04" "A08" "A11" "A12" "A16"
   
   $`2`
-  [1] "A03" "A05" "A09" "A10" "A14" "A15" "A19"
+  [1] "A02" "A06" "A18" "A21"
   
   $`3`
-  [1] "A06" "A07" "A12" "A17" "A21"
+  [1] "A03" "A07" "A14" "A15" "A17" "A19" "A20"
   
   $`4`
   + ... omitted several groups/vertices</code></pre>
@@ -3545,14 +3543,14 @@ F = 2 \times \frac {P \times R}{P + R}
 <div class="cell">
 <div class="sourceCode cell-code" id="cb153"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href="#cb153-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>membership</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code> [1] 1 1 2 1 2 3 3 1 2 2 4 3 4 2 2 1 3 4 2 4 3</code></pre>
+<pre><code> [1] 1 2 3 1 4 2 3 1 4 4 1 1 4 3 3 1 3 2 3 3 2</code></pre>
 </div>
 </div>
 <p>Modularity instead can be obtained with:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb155"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href="#cb155-1" aria-hidden="true" tabindex="-1"></a>CluLouvain<span class="sc">$</span>modularity</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1579074 0.1615927</code></pre>
+<pre><code>[1] 0.1516584</code></pre>
 </div>
 </div>
 <p>We can then plot the graphical representation of our communities in our graph:</p>
@@ -3833,13 +3831,13 @@ ValidCases_VEC2        18.000000000
 ValidCases_Both        18.000000000
 CorrCoeff               0.131145360
 ClassicSign_2tailed     0.603964787
-Mean_Perm              -0.001908126
-SD_Perm                 0.243896958
-Min_Perm               -0.714718986
-Max_Perm                0.749866562
-AsSmall                 0.700600000
-AsLarge                 0.299600000
-AsExtreme               0.612600000
+Mean_Perm              -0.003784357
+SD_Perm                 0.245314222
+Min_Perm               -0.776033700
+Max_Perm                0.804213695
+AsSmall                 0.711600000
+AsLarge                 0.288400000
+AsExtreme               0.606000000
 NumberOfPermutations 5000.000000000</code></pre>
 </div>
 <div class="cell-output-display">
@@ -3915,15 +3913,15 @@ NumberOfPermutations   5000.00000
 
 $Variables
                Coeff   StErr  t_value Classic_Sign Mean_Perm SD_Perm AsSmall
-(Intercept)  1.70298 1.78308  0.95508      0.36006   5.04399 2.14267  0.0600
-Age15        0.06421 0.02536  2.53190      0.02788  -0.00024 0.03158  0.9810
-Consc15     -0.24450 0.15633 -1.56399      0.14611  -0.00303 0.19564  0.1108
-Degr15       0.39188 0.42826  0.91504      0.37979   0.00237 0.52668  0.7600
+(Intercept)  1.70298 1.78308  0.95508      0.36006   5.03682 2.14685  0.0616
+Age15        0.06421 0.02536  2.53190      0.02788   0.00038 0.03152  0.9798
+Consc15     -0.24450 0.15633 -1.56399      0.14611   0.00034 0.18993  0.1052
+Degr15       0.39188 0.42826  0.91504      0.37979  -0.00969 0.52508  0.7694
             AsLarge AsExtreme
-(Intercept)  0.9400    0.0602
-Age15        0.0190    0.9990
-Consc15      0.8892    0.9982
-Degr15       0.2400    0.9930
+(Intercept)  0.9384    0.0616
+Age15        0.0202    0.9990
+Consc15      0.8948    1.0016
+Degr15       0.2306    1.0122
 
 Classic significance value based on assumption of independence of cases.</code></pre>
 </div>
@@ -3943,11 +3941,11 @@ ValidCases_NET2        240.000000000000000
 ValidCases_Both        240.000000000000000
 CorrCoef                 0.371867872080548
 ClassicSign_2tailed      0.000000002756827
-Mean_Perm               -0.001717353445608
-SD_Perm                  0.091612561430495
+Mean_Perm               -0.000229881957286
+SD_Perm                  0.093622468073011
 Min_Perm                -0.169030850945704
-Max_Perm                 0.439480212458830
-AsSmall                  0.999700000000000
+Max_Perm                 0.371867872080548
+AsSmall                  0.999800000000000
 AsLarge                  0.000300000000000
 AsExtreme                0.000300000000000
 NumberOfPermutations 10000.000000000000000</code></pre>
@@ -3981,13 +3979,13 @@ NumberOfPermutations 1000.00000
 
 $Variables
    Stand_Coeff    Coeff   StErr  t_value [Sign*] Mean_Perm SD_Perm AsSmall
-       0.00000  4.66096 1.30201  3.57983 0.00593   0.52451 1.33828   0.947
-X1     0.59238  0.57998 0.28150  2.06030 0.06945   0.01076 1.08988   1.000
-X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856   0.12646 1.59235   0.121
+       0.00000  4.66096 1.30201  3.57983 0.00593   0.49312 1.28978   0.956
+X1     0.59238  0.57998 0.28150  2.06030 0.06945   0.03594 1.09379   1.000
+X2    -0.62258 -0.74557 0.34432 -2.16533 0.05856  -0.04352 1.62418   0.133
    AsLarge AsExtreme
-     0.053     0.053
-X1   0.040     0.090
-X2   0.879     0.172
+     0.044     0.044
+X1   0.049     0.076
+X2   0.867     0.174
 
 Sign* = classic significance value based on assumption of independence of cases. Not to be used.</code></pre>
 </div>
@@ -4042,9 +4040,9 @@ Residuals:
 
 Coefficients:
             Estimate   Pr(&lt;=b) Pr(&gt;=b) Pr(&gt;=|b|)
-(intercept)  4.6609589 0.947   0.053   0.053    
-x1           0.5799758 1.000   0.040   0.090    
-x2          -0.7455681 0.121   0.879   0.172    
+(intercept)  4.6609589 0.956   0.044   0.044    
+x1           0.5799758 1.000   0.049   0.076    
+x2          -0.7455681 0.133   0.867   0.174    
 
 Residual standard error: 1.746 on 9 degrees of freedom
 Multiple R-squared: 0.4066  Adjusted R-squared: 0.2748 
@@ -4057,24 +4055,24 @@ Test Diagnostics:
     Replications: 1000 
     Coefficient Distribution Summary:
 
-       (intercept)        x1        x2
-Min      -0.993642 -2.285941 -2.779011
-1stQ     -0.453042 -0.585866 -0.380921
-Median   -0.005771 -0.268018  0.544615
-Mean      0.524513  0.010764  0.126463
-3rdQ      1.736112  0.529272  1.116248
-Max       3.579827  2.060298  3.471753
+       (intercept)       x1       x2
+Min       -0.99364 -2.28594 -2.77901
+1stQ      -0.45304 -0.58587 -1.99455
+Median     0.06583 -0.30842 -0.04374
+Mean       0.49312  0.03594 -0.04352
+3rdQ       1.73611  0.52927  1.11625
+Max        3.57983  2.06030  3.47175
 
 
 $Variables
-   Stand_Coeff      Coeff     StErr   t_value     [Sign*]  Mean_Perm  SD_Perm
-     0.0000000  4.6609589 1.3020068  3.579827 0.005932359 0.52451262 1.338283
-X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606 0.01076405 1.089880
-X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 0.12646271 1.592352
+   Stand_Coeff      Coeff     StErr   t_value     [Sign*]   Mean_Perm  SD_Perm
+     0.0000000  4.6609589 1.3020068  3.579827 0.005932359  0.49312275 1.289782
+X1   0.5923831  0.5799758 0.2815009  2.060298 0.069446606  0.03594367 1.093791
+X2  -0.6225816 -0.7455681 0.3443211 -2.165328 0.058557298 -0.04352445 1.624178
    AsSmall AsLarge AsExtreme
-     0.947   0.053     0.053
-X1   1.000   0.040     0.090
-X2   0.121   0.879     0.172</code></pre>
+     0.956   0.044     0.044
+X1   1.000   0.049     0.076
+X2   0.133   0.867     0.174</code></pre>
 </div>
 </div>
 <p>In this case, we are interested in the <code>Sign*</code> as our significance. The method can be changed by calling the <code>method</code> argument inside the function call; as a default, it uses the <em>semi-partialling</em> method to compute the permutations.</p>
